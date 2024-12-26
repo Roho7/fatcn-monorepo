@@ -171,6 +171,7 @@ async function init() {
   try {
     // Install dependencies
     const dependencies = [
+        'react',
       '@radix-ui/react-accordion',
       '@radix-ui/react-alert-dialog',
       '@radix-ui/react-aspect-ratio',
@@ -202,7 +203,8 @@ async function init() {
       'autoprefixer',
       'clsx',
       'tailwind-merge',
-      'class-variance-authority'
+      'class-variance-authority',
+      'hugeicons-react'
     ];
 
     console.log('📦 Installing dependencies...');
