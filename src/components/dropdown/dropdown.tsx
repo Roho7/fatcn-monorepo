@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 import { ArrowRight01Icon } from 'hugeicons-react';
 
 const dropdownContentVariants = cva(
-  "whitespace-nowrap flex flex-col gap-1 rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 w-full",
+  "whitespace-nowrap flex flex-col gap-1 p-2.5 rounded-md text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 w-full",
   {
     variants: {
       variant: {
@@ -16,7 +16,7 @@ const dropdownContentVariants = cva(
 );
 
 const dropdownTriggerVariants = cva(
-  "flex items-center justify-center gap-2 p-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow",
+  "flex items-center justify-center gap-2 px-4 py-2 whitespace-nowrap rounded-md text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow",
   {
     variants: {
       variant: {
@@ -29,7 +29,7 @@ const dropdownTriggerVariants = cva(
 );
 
 const dropdownSubTriggerVariants = cva(
-  "flex items-center justify-between gap-2 p-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "flex items-center justify-between items-center gap-2 pl-4 pr-2 py-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -40,7 +40,7 @@ const dropdownSubTriggerVariants = cva(
   },
 );
 
-const dropdownItemClassName = "p-2 flex items-center justify-between gap-1 focus-visible:outline-none rounded-md focus:bg-accent cursor-pointer";
+const dropdownItemClassName = "px-4 py-2 flex items-center justify-between gap-1 focus-visible:outline-none rounded-md focus:bg-accent cursor-pointer";
 
 const Dropdown = ({
   children,
@@ -89,8 +89,8 @@ const Dropdown = ({
                 <DropdownMenu.SubTrigger
                   className={dropdownSubTriggerVariants({ variant: variant })}
                 >
-                  {option.element}
-                  <ArrowRight01Icon />
+                  {option.icon ? option.icon : null} {option.element}
+                  <ArrowRight01Icon size={16}/>
                 </DropdownMenu.SubTrigger>
                 <DropdownMenu.Portal>
                   <DropdownMenu.SubContent
@@ -120,7 +120,7 @@ const Dropdown = ({
                 className={dropdownItemClassName}
                 onSelect={option.action}
               >
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-2">
                   {option.icon ? option.icon : null} {option.element}
                 </div>
                 {option.rightSlot ? option.rightSlot : null}
