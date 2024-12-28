@@ -5,7 +5,7 @@ import * as fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import { THEMES } from "./utils/classes/themes.js";
-import inquirer from 'inquirer';
+import inquirer from "inquirer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -126,14 +126,14 @@ async function init() {
     // Replace readline with inquirer
     const { theme } = await inquirer.prompt([
       {
-        type: 'list',
-        name: 'theme',
-        message: 'Please select a theme:',
+        type: "list",
+        name: "theme",
+        message: "Please select a theme:",
         choices: [
-          { name: 'Rose (Default)', value: 'rose' },
-          { name: 'Algae', value: 'algae' }
-        ]
-      }
+          { name: "Rose (Default)", value: "rose" },
+          { name: "Mint", value: "mint" },
+        ],
+      },
     ]);
 
     console.log(`\n🎨 Setting up ${theme} theme...`);
@@ -176,7 +176,7 @@ async function init() {
       "hugeicons-react",
     ];
 
-    console.log("���� Installing dependencies...");
+    console.log("📦 Installing dependencies...");
     execSync(`npm install ${dependencies.join(" ")}`, { stdio: "inherit" });
 
     const sourceComponentsDir = path.join(SOURCE_DIR, "components");
@@ -239,13 +239,11 @@ async function init() {
       "  font-family: 'Rubik', serif;\n" +
       "}\n\n";
 
-    if (!existingCss.includes("@tailwind")) {
-      existingCss = tailwindDirectives + existingCss;
-    }
+    existingCss = tailwindDirectives;
 
     // Remove existing @layer base section if it exists
-    existingCss = existingCss.replace(/@layer\s+base\s*{[\s\S]*?}/g, '');
-    
+    existingCss = existingCss.replace(/@layer\s+base\s*{[\s\S]*?}/g, "");
+
     // Add the new theme CSS
     existingCss += "\n" + THEMES[theme as keyof typeof THEMES];
 

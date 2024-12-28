@@ -1,4 +1,6 @@
-export const THEMES: Record<'rose' | 'algae', string> = {
+export type ThemeTypes = 'rose' | 'mint'
+
+export const THEMES: Record<ThemeTypes, string> = {
     rose: `@layer base {
       :root {
         --background: 336 100% 99%;
@@ -28,33 +30,37 @@ export const THEMES: Record<'rose' | 'algae', string> = {
         --radius: 0.7rem;
       }
     }`,
-    algae: `@layer base {
+    mint: `@layer base {
       :root {
-        --background: 160 100% 99%;
-        --foreground: 162 45% 37%;
+        --background: 140 100% 100%;
+        --foreground: 140 45% 37%;
         
-        --primary: 162 100% 93%;
-        --primary-foreground: 162 45% 37%;
+        --primary: 140 100% 93%;
+        --primary-foreground: 140 45% 37%;
         
-        --secondary: 162 73% 97%;
-        --secondary-foreground: 162 40% 68%;
+        --secondary: 140 73% 90%;
+        --secondary-foreground: 140 40% 40%;
         
-        --accent: 162 80% 90%;
-        --border: 162 44% 81%;
+        --accent: 140 80% 90%;
+        --border: 140 44% 81%;
         
-        --muted: 160 12% 92%;
+        --muted: 140 12% 92%;
         --muted-foreground: 0 0% 56%;
         
         --destructive: 0 96% 39%;
         --destructive-foreground: 0 61% 93%;
   
-        --popover: 162 100% 93%;
-        --popover-foreground: 162 45% 37%;
+        --popover: 140 100% 93%;
+        --popover-foreground: 140 45% 37%;
         
-        --input: 162 73% 97%;
-        --ring: 162 44% 81%;
+        --input: 140 73% 97%;
+        --ring: 140 44% 81%;
         
         --radius: 0.7rem;
+
+        --complimentary: calc(140 + 30) 64% 90%;
+        --adjacent: calc(140 + 90) 64% 90%;
+        --complimentary-foreground: calc(140 + 30) 45% 35%;
       }
     }`
   };
