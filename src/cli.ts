@@ -193,7 +193,6 @@ async function init() {
     console.log("📂 Copying components to your project...");
     copyDirectoryRecursively(sourceComponentsDir, targetComponentsDir);
 
-    // Copy lib files
     const sourceLibDir = path.join(SOURCE_DIR, "lib");
     const targetLibDir = path.join(process.cwd(), "lib");
 
@@ -202,7 +201,6 @@ async function init() {
       copyDirectoryRecursively(sourceLibDir, targetLibDir);
     }
 
-    // Find globals.css recursively
     function findGlobalsCss(startPath: string): string | null {
       const files = fs.readdirSync(startPath);
       for (const file of files) {
@@ -220,7 +218,6 @@ async function init() {
 
     let cssPath = findGlobalsCss(process.cwd());
     if (!cssPath) {
-      // If globals.css doesn't exist, create it in the default src/app location
       cssPath = path.join(process.cwd(), "src", "app", "globals.css");
       fs.mkdirSync(path.dirname(cssPath), { recursive: true });
     }
@@ -241,21 +238,17 @@ async function init() {
 
     existingCss = tailwindDirectives;
 
-    // Remove existing @layer base section if it exists
     existingCss = existingCss.replace(/@layer\s+base\s*{[\s\S]*?}/g, "");
 
-    // Add the new theme CSS
     existingCss += "\n" + THEMES[theme as keyof typeof THEMES];
 
     fs.writeFileSync(cssPath, existingCss);
     console.log("✅ Updated globals.css with required styles");
 
-    // Create or update tailwind.config.js
     const tailwindConfigPath = path.join(process.cwd(), "tailwind.config.ts");
     fs.writeFileSync(tailwindConfigPath, TAILWIND_CONFIG);
     console.log("✅ Created tailwind.config.ts");
 
-    // Create or update postcss.config.js
     const postcssConfigPath = path.join(process.cwd(), "postcss.config.js");
     fs.writeFileSync(
       postcssConfigPath,

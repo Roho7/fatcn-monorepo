@@ -17,14 +17,14 @@ const buttonVariants = cva(
         ghost: "text-foreground hover:bg-accent",
         link: "text-foreground underline-offset-4 hover:underline",
         gradient:
-          "bg-gradient-complimentary text-complimentary-foreground ring-2 ring-complimentary font-medium hover:bg-gradient-complimentary/90 shadow",
+          "bg-gradient-complimentary text-complimentary-foreground ring-2 ring-complimentary font-medium transition-[background-position] duration-300 bg-[size:200%_200%] hover:bg-[position:100%_100%] shadow",
       },
       size: {
         xs: "h-6 min-w-6 rounded-md px-1 text-xs",
         sm: "h-10 rounded-md px-2 text-xs",
         md: "h-11 px-3 py-2 rounded-lg",
         lg: "h-12 rounded-xl px-4",
-        icon: "h-9 w-9",
+        icon: "h-10 w-10",
       },
     },
     defaultVariants: {

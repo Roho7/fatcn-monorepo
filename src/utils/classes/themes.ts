@@ -28,6 +28,9 @@ export const THEMES: Record<ThemeTypes, string> = {
         --ring: 337 44% 81%;
         
         --radius: 0.7rem;
+
+        --sidebar-width: 12rem;
+        --sidebar-width-collapsed: 4rem;
       }
     }`,
     mint: `@layer base {
@@ -61,6 +64,9 @@ export const THEMES: Record<ThemeTypes, string> = {
         --complimentary: calc(140 + 30) 64% 90%;
         --adjacent: calc(140 + 90) 64% 90%;
         --complimentary-foreground: calc(140 + 30) 45% 35%;
+
+        --sidebar-width: 12rem;
+        --sidebar-width-collapsed: 4rem;
       }
     }`
   };
