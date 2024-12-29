@@ -8,7 +8,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -16,12 +16,12 @@
     "forceConsistentCasingInFileNames": true,
   },
   "include": [
-    "src/cli.ts"
+    "packages/fatcn-ui/cli.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "src/components/**/*",
-    "src/lib/**/*"
+    "packages/fatcn-ui/components/**/*",
+    "packages/fatcn-ui/lib/**/*"
   ]
 }

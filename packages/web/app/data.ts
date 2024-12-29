@@ -1,0 +1,51 @@
+export const tableData = [
+    {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Mubi Doe",
+        email: "mubi.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Soon Doe",
+        email: "soon.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Brad Doe",
+        email: "brad.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Fork Doe",
+        email: "fork.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Susan Doe",
+        email: "susan.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+    {
+        name: "Jane Doe",
+        email: "jane.doe@example.com",
+        phone: "+1 (555) 000-0000",
+        status: "Active",
+        priority: "High",
+    },
+]

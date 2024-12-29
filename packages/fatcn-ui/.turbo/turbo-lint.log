@@ -1,0 +1,22 @@
+
+[2K[1G[1myarn run v1.22.19[22m
+[2K[1G[33mwarning[39m package.json: No license field
+[2K[1G[2m$ eslint ./**/*.ts*[22m
+
+Oops! Something went wrong! :(
+
+ESLint: 9.17.0
+
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+
+From ESLint v9.0.0, the default configuration file is now eslint.config.js.
+If you are using a .eslintrc.* file, please follow the migration guide
+to update your configuration file to the new format:
+
+https://eslint.org/docs/latest/use/configure/migration-guide
+
+If you still have problems after following the migration guide, please stop by
+https://eslint.org/chat/help to chat with the team.
+
+[2K[1G[31merror[39m Command failed with exit code 2.
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.

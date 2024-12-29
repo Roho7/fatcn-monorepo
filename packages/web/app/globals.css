@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Rubik', serif;
+}
+
+
+@layer base {
+      :root {
+        --background: 140 100% 100%;
+        --foreground: 140 45% 37%;
+        
+        --primary: 140 100% 93%;
+        --primary-foreground: 140 45% 37%;
+        
+        --secondary: 140 73% 90%;
+        --secondary-foreground: 140 40% 40%;
+        
+        --accent: 140 80% 90%;
+        --border: 140 44% 81%;
+        
+        --muted: 140 12% 92%;
+        --muted-foreground: 0 0% 56%;
+        
+        --destructive: 0 96% 39%;
+        --destructive-foreground: 0 61% 93%;
+  
+        --popover: 140 100% 93%;
+        --popover-foreground: 140 45% 37%;
+        
+        --input: 140 73% 97%;
+        --ring: 140 44% 81%;
+        
+        --radius: 0.7rem;
+
+        --complimentary: calc(140 + 30) 64% 90%;
+        --adjacent: calc(140 + 90) 64% 90%;
+        --complimentary-foreground: calc(140 + 30) 45% 35%;
+
+        --sidebar-width: 12rem;
+        --sidebar-width-collapsed: 4rem;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+  
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--secondary-foreground) / 0.2);
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--secondary-foreground) / 0.4);
+    }
