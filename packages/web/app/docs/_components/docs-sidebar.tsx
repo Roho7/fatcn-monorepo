@@ -1,14 +1,13 @@
 import {
-  CardTitle,
   Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
+  CardTitle,
   Sidebar,
 } from "@fatcn/ui/dist";
-import { Message01Icon } from "hugeicons-react";
 
 export const DocsSidebar = () => {
   return (

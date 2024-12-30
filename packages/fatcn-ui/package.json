@@ -13,7 +13,8 @@
     "postbuild": "chmod +x dist/cli.js",
     "dev": "tsup ./index.ts --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf dist",
-    "lint": "eslint ./**/*.ts*"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "files": [
     "dist/**"

@@ -11,23 +11,23 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    ignores: ["**/node_modules/*", "**/dist/*", "**/.next/*"]
+    ignores: ["**/node_modules/*", "**/dist/*"]
   },
   ...compat.extends(
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ),
   {
     files: ["**/*.ts", "**/*.tsx"],
     rules: {
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
       "@typescript-eslint/no-empty-object-type": "off"
     }
   }
 ];
 
-export default eslintConfig;
+export default eslintConfig; 

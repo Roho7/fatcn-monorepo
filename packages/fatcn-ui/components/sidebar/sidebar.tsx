@@ -1,15 +1,15 @@
 "use client";
-import { Button } from "../button/button";
+import { Logout01Icon } from "hugeicons-react";
+import { useRouter } from "next/navigation";
 import React, {
   createContext,
+  JSX,
+  ReactNode,
   useContext,
   useState,
-  ReactNode,
-  JSX,
 } from "react";
-import { Logout01Icon } from "hugeicons-react";
 import { cn } from "../../lib";
-import { useRouter } from "next/navigation";
+import { Button } from "../button/button";
 
 interface NavSection{
   title?: string;
@@ -136,7 +136,7 @@ export function Sidebar({
         >
           <ul className="space-y-2">
             {contents.map((section, index) => (
-              <div className="border-b pb-4">
+              <div className="border-b pb-4" key={index}>
                 <p key={index} className="mb-4 text-sm font-medium text-primary-foreground">{section.title}</p>
                 {section.items.map((item, index) => (
                   <li key={index}>
