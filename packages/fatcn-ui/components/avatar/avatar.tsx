@@ -1,11 +1,12 @@
 import { cva, VariantProps } from "class-variance-authority";
 import Image from "next/image";
-import { cn } from "../../lib";
 import React from "react";
+import { cn } from "../../lib";
 
 const avatarVariants = cva("bg-primary/50 overflow-hidden", {
   variants: {
     size: {
+      xs: "w-4 h-4",
       sm: "w-8 h-8",
       md: "w-10 h-10",
       lg: "w-12 h-12",
@@ -22,9 +23,13 @@ const avatarVariants = cva("bg-primary/50 overflow-hidden", {
 });
 
 const avatarImageVariants = {
-      sm: {
-        width: 40,
-        height: 40,
+  xs: {
+    width: 24,
+    height: 24,
+  },
+  sm: {
+    width: 40,
+    height: 40,
       },
       md: {
         width: 48,
@@ -39,6 +44,7 @@ const avatarImageVariants = {
 const avatarRingVariants = cva("ring-ring", {
   variants: {
     size: {
+      xs: "ring-1",
       sm: "ring-1",
       md: "ring-2",
       lg: "ring-[3px]",
@@ -52,15 +58,17 @@ const Avatar = ({
   size,
   shape = "circle",
   ring,
+  className,
 }: {
   src: string;
   alt: string;
   size?: VariantProps<typeof avatarVariants>["size"];
   shape?: VariantProps<typeof avatarVariants>["shape"];
   ring?: boolean;
+  className?: string;
 }) => {
   return (
-    <div className={cn(avatarVariants({ size, shape }), ring ? avatarRingVariants({ size }) : '')}>
+    <div className={cn(avatarVariants({ size, shape }), ring ? avatarRingVariants({ size }) : '', className)}>
       <Image src={src} alt={alt} {...avatarImageVariants[size as keyof typeof avatarImageVariants || 'md']} />
     </div>
   );

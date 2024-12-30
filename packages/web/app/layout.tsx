@@ -12,6 +12,7 @@ import {
   SidebarLayout,
   SidebarProvider,
   ToastProvider,
+  TooltipProvider,
 } from "@fatcn/ui";
 import { Message01Icon, Settings01Icon } from "hugeicons-react";
 import {
@@ -30,7 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased bg-background`}>
-        <ToastProvider>{children}</ToastProvider>
+        <ToastProvider>
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
+        </ToastProvider>
       </body>
     </html>
   );

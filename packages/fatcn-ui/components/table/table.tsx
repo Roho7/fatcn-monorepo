@@ -22,7 +22,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
     }))
 
     return (
-      <div className={cn("flex flex-col gap-4 rounded-lg border overflow-hidden", className)}>
+      <div className={cn("flex flex-col gap-4 rounded-lg border overflow-hidden shadow", className)}>
         <div className="relative w-full overflow-auto">
           <table
             ref={ref}

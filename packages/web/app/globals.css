@@ -12,35 +12,40 @@ body {
 
 @layer base {
       :root {
-        --background: 140 100% 100%;
-        --foreground: 140 45% 37%;
+        --hue: 111;
         
-        --primary: 140 100% 93%;
-        --primary-foreground: 140 45% 37%;
+        --background: var(--hue) 100% 100%;
+        --foreground: var(--hue) 45% 37%;
         
-        --secondary: 140 73% 90%;
-        --secondary-foreground: 140 40% 40%;
+        --primary: var(--hue) 100% 93%;
+        --primary-foreground: var(--hue) 45% 37%;
         
-        --accent: 140 80% 90%;
-        --border: 140 44% 81%;
+        --secondary: var(--hue) 73% 90%;
+        --secondary-foreground: var(--hue) 40% 40%;
         
-        --muted: 140 12% 92%;
+        --accent: var(--hue) 80% 90%;
+        --border: var(--hue) 44% 81%;
+        
+        --muted: 111 12% 92%;
         --muted-foreground: 0 0% 56%;
         
         --destructive: 0 96% 39%;
         --destructive-foreground: 0 61% 93%;
+
+        --card: var(--hue) 100% 99%;
+        --card-foreground: var(--hue) 45% 37%;
   
-        --popover: 140 100% 93%;
-        --popover-foreground: 140 45% 37%;
+        --popover: var(--hue) 100% 93%;
+        --popover-foreground: var(--hue) 45% 37%;
         
-        --input: 140 73% 97%;
-        --ring: 140 44% 81%;
+        --input: var(--hue) 53% 99%;
+        --ring: var(--hue) 44% 81%;
         
         --radius: 0.7rem;
 
-        --complimentary: calc(140 + 30) 64% 90%;
-        --adjacent: calc(140 + 90) 64% 90%;
-        --complimentary-foreground: calc(140 + 30) 45% 35%;
+        --complimentary: calc(var(--hue) + 30) 64% 90%;
+        --adjacent: calc(var(--hue) + 90) 64% 90%;
+        --complimentary-foreground: calc(var(--hue) + 30) 45% 35%;
 
         --sidebar-width: 12rem;
         --sidebar-width-collapsed: 4rem;
@@ -49,6 +54,7 @@ body {
 
     ::-webkit-scrollbar {
       width: 4px;
+      height: 4px;
     }
   
     /* Handle */
@@ -61,3 +67,35 @@ body {
     ::-webkit-scrollbar-thumb:hover {
       background: hsl(var(--secondary-foreground) / 0.4);
     }
+
+
+    h1 {
+      @apply text-4xl font-bold tracking-tight mb-4 text-primary-foreground;
+    }
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(300px, -300px) scale(1.8);
+  }
+  66% {
+    transform: translate(-290px, -200px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

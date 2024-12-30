@@ -1,221 +1,141 @@
 "use client";
 
-import { Download01Icon, FilterIcon, Notification01Icon, Summation01Icon, Search01Icon, AiBrain01Icon, Setting06Icon } from "hugeicons-react";
-// import { tableData } from "./data";
-import { DialogTitle, Dialog, DialogContent, DialogHeader, DialogTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, DialogDescription, Dropdown, Checkbox, DialogFooter, CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card, Avatar } from "@fatcn/ui";
+import { Card, CardContent, Tooltip, TooltipContent, TooltipTrigger, useToast } from "@fatcn/ui";
 import { Button } from "@fatcn/ui/components/button";
-import { useToast } from "@fatcn/ui";
 import { Input } from "@fatcn/ui/components/input/input";
-import "./globals.css"
+import { Copy01Icon } from "hugeicons-react";
+import Image from "next/image";
+import React from "react";
+import Grid from "../public/grid2.svg";
+import VsCodeExample from "./docs/_components/_examples/vscode.example";
+import HeroBannerLeft from "./docs/_components/hero-banner-left";
+import HeroBannerRight from "./docs/_components/hero-banner-right";
+import "./globals.css";
 
 export default function Page() {
   const toast = useToast();
+  const [hue, setHue] = React.useState(111);  
+
+  React.useEffect(() => {
+    const randomHue = Math.floor(Math.random() * 360); // Generate random hue between 0-360
+    document.documentElement.style.setProperty("--hue", randomHue.toString());
+    setHue(randomHue);
+  }, []);
+
+
+
   return (
-    <div className="w-full min-h-screen">
-      {/* Main content */}
-      <div className="flex-1">
-        {/* Top Navigation */}
-        <div className="border-b bg-white p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Input placeholder="Search..." className="w-64" />
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger className="text-primary-foreground" asChild>
-                    <Button variant="ghost" size="icon">
-                      <Notification01Icon size={18} />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Notifications</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-            <div className="flex items-center gap-2">
-              <Dropdown
-                triggerSize="sm"
-                icon={
-                  <Avatar
-                    ring={true}
-                    src="https://avatars.githubusercontent.com/u/125667698?v=4"
-                    alt="Rohosen"
-                    size="sm"
-                    shape="square"
-                  />
-                }
-                options={[
-                  {
-                    element: <div>Profile</div>,
-                    action: () =>
-                      toast.showToast(
-                        "Profile Saved Successfully",
-                        "success",
-                        3000,
-                      ),
-                  },
-                  {
-                    element: <div>Settings</div>,
-                    action: () =>
-                      toast.showToast("An Error Occured", "error", 3000),
-                    suboptions: [
-                      {
-                        element: <div>Suboption 1</div>,
-                        action: () => {},
-                      },
-                    ],
-                  },
-                  {
-                    element: <div>Logout</div>,
-                    action: () =>
-                      toast.showToast("Logout Successfully", "error", 3000),
-                  },
-                ]}
-              >
-                <div className="flex items-center gap-2">
-                  <span>Rohosen</span>
-                </div>
-              </Dropdown>
-            </div>
-          </div>
+    <div className="min-h-screen w-screen overflow-hidden">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 border-b border-primary-foreground/10 mb-2 backdrop-blur-lg">
+        <div className="flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-primary-foreground">fatcn</h2>
         </div>
-
-        {/* Content Area */}
-        <div className="p-8">
-          <div className="mb-8 flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-primary-foreground">
-                Customer Management
-              </h1>
-              <p className="text-muted-foreground">
-                Manage your customer relationships
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="gradient">Add Customer</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Add New Customer</DialogTitle>
-                    <DialogDescription>
-                      Enter customer details below
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
-                    <Input placeholder="Customer name" label="Name" />
-                    <Input placeholder="customer@example.com" label="Email" />
-                    <Input placeholder="+1 (555) 000-0000" label="Phone" />
-                    <Dropdown
-                      options={[
-                        { element: <div>High Priority</div>, action: () => {} },
-                        {
-                          element: <div>Medium Priority</div>,
-                          action: () => {},
-                        },
-                        { element: <div>Low Priority</div>, action: () => {} },
-                      ]}
-                    >
-                      Select Priority
-                    </Dropdown>
-                    <Checkbox
-                      label="Send welcome email"
-                      onCheckedChange={() => alert("checked")}
-                    />
-                  </div>
-                  <DialogFooter>
-                    <Button variant="ghost">Cancel</Button>
-                    <Button>Save Customer</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-              <Button variant="secondary">
-                <FilterIcon size={18} className="mr-2" />
-                Filters
-              </Button>
-              <Button variant="outline">
-                <Download01Icon size={18} className="mr-2" />
-                Export
-              </Button>
-              {/* <Button variant="ghost">
-                <Download01Icon size={18} className="mr-2" />
-                Ghost
-              </Button>
-              <Button variant="link">
-                <Link01Icon size={18} className="mr-2" />
-                Link
-              </Button> */}
-            </div>
-          </div>
-
-          {/* Stats Cards */}
-          <div className="mb-8 grid grid-cols-4 gap-4">
-            {[
-              {
-                label: "Total Customers",
-                value: "1,234",
-                size: "sm",
-                variant: "default",
-              },
-              { label: "Pending Tasks", value: "23", size: "sm" },
-              { label: "Customer Growth", value: "+12%", size: "sm" },
-              { label: "Average Deal Size", value: "$2,345", size: "sm" },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                variant={
-                  (stat.variant as "default" | "secondary" | null) ||
-                  "secondary"
-                }
-                size={stat.size as "sm" | "md" | "lg" | null}
-              >
-                <CardHeader>
-                  <CardTitle>{stat.label}</CardTitle>
-                  <CardDescription>{stat.label}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-semibold">{stat.value}</div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" size="sm">
-                    View Details
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-          {/* <Table data={tableData} itemsPerPage={3} className="mb-8" /> */}
-          <div className="mb-8">
-            <Card variant="default" size={"lg"}>
-              <CardHeader>
-                <CardTitle>Quick Access</CardTitle>
-                <CardDescription>
-                  Access your most used features
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-semibold grid grid-cols-2 gap-4">
-                  <Button variant="secondary" size="lg">
-                    <Search01Icon size={18} className="mr-2" />
-                    Search for Contacts
-                  </Button>
-                  <Button variant="secondary" size="lg">
-                    <Summation01Icon size={18} className="mr-2" />
-                    Account Summary
-                  </Button>
-                  <Button variant="secondary" size="lg">
-                    <Setting06Icon size={18} className="mr-2" />
-                    Settings
-                  </Button>
-                  <Button variant="secondary" size="lg">
-                    <AiBrain01Icon size={18} className="mr-2" />
-                    AI Assistant
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        <Input placeholder="Search" className="w-80" />
+      </nav>
+      {/* Hero Section */}
+      <div className="flex gap-1 justify-center md:justify-between min-h-screen relative">
+        <div className="absolute top-0 left-0 w-full h-full -z-10">
+          <Image
+            src={Grid}
+            alt="Grid"
+            className="w-full h-full opacity-10 -translate-y-1/2 shadow-none"
+            width={100}
+            height={100}
+          />
         </div>
+        <HeroBannerLeft />
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-6xl font-bold tracking-tight mb-4">fatcn</h1>
+          <code className="relative flex items-center whitespace-nowrap gap-4 bg-background pl-4 pr-2 py-2 mb-8 rounded-md font-mono text-sm text-secondary-foreground border border-border">
+            npx fatcn-ui init{" "}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  size="xs"
+                  variant="ghost"
+                  onClick={() => {
+                    navigator.clipboard.writeText("npx fatcn-ui init");
+                    toast.showToast("Copied to clipboard", "success", 2000);
+                  }}
+                >
+                  <Copy01Icon className="w-4 h-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Copy to clipboard</p>
+              </TooltipContent>
+            </Tooltip>
+          </code>
+          <p className="text-sm text-primary-foreground/80">
+            Chonky UI that installs right into your repository
+          </p>
+        </div>
+        <HeroBannerRight />
       </div>
+
+      <section className="flex flex-col md:flex-row items-center justify-center gap-8 md:p-10">
+        <VsCodeExample />
+        <div className="max-w-sm space-y-2">
+          <h2 className="text-xl font-semibold text-primary-foreground">
+            Instant Component Integration
+          </h2>
+          <p className="text-sm text-primary-foreground/80">
+            Our CLI seamlessly pastes components directly into your project
+            structure. Each component comes with full TypeScript support and
+            customizable styles.
+          </p>
+          <div className="text-xs text-primary-foreground/60 flex items-center gap-2">
+            <code className="bg-primary-foreground/10 px-2 py-1 rounded">
+              npx fatcn-ui init
+            </code>
+            <span>→ Instant setup</span>
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row items-center justify-center gap-8 md:p-10">
+        
+        <div className="max-w-sm space-y-2">
+          <h2 className="text-xl font-semibold text-primary-foreground">
+            Quick Themes
+          </h2>
+          <p className="text-sm text-primary-foreground/80">
+            Just change the{" "}
+            <code className="bg-primary-foreground/10 px-2 py-1 rounded">
+              --hue
+            </code>{" "}
+            flag to switch themes.
+          </p>
+          <div className="text-xs text-primary-foreground/60 flex items-center gap-2">
+            <Button size='sm' onClick={() => {
+              const randomHue = Math.floor(Math.random() * 360);
+              document.documentElement.style.setProperty("--hue", randomHue.toString()); 
+              setHue(randomHue);
+            }}>Switch Theme</Button>
+          </div>
+        </div>
+        <Card variant='secondary'>
+          <CardContent>
+          <pre className="text-sm text-primary-foreground/80">
+            <code>{`@layer base {
+  :root {
+    --hue: ${hue};
+    
+    --background: var(--hue) 100% 100%;
+    --foreground: var(--hue) 45% 37%;
+    
+    --primary: var(--hue) 100% 93%;
+    --primary-foreground: var(--hue) 45% 37%;
+    
+    --secondary: var(--hue) 73% 90%;
+    --secondary-foreground: var(--hue) 40% 40%;
+
+    ...
+  }
+}`}</code>
+            </pre>
+          </CardContent>
+        </Card>
+      </section>
     </div>
   );
 }
