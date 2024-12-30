@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
   Sidebar,
-} from "@fatcn/ui/dist";
+} from "@fatcn/ui";
 
 export const DocsSidebar = () => {
   return (

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@fatcn/ui/dist";
+import { Card, CardContent } from "@fatcn/ui";
 import {
     ArrowDown01Icon,
     ArrowRight01Icon,

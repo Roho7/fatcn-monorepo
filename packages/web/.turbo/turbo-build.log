@@ -27,14 +27,14 @@ warn - https://tailwindcss.com/docs/content-configuration#pattern-recommendation
 5:15  Warning: 'props' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
+[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G [36m...[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
 [?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
 [?25l [37m[1m [22m[39m Generating static pages (0/6)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/6)  [36m[=   ][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (6/6)
 [?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
 [2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
 
 [4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
-┌ ○ /                                    8.65 kB         [37m[1m161 kB[22m[39m
+┌ ○ /                                    7.99 kB         [37m[1m160 kB[22m[39m
 ├ ○ /_not-found                          981 B           [37m[1m106 kB[22m[39m
 └ ○ /docs                                135 B           [37m[1m105 kB[22m[39m
 + First Load JS shared by all            [37m[1m105 kB[22m[39m
@@ -45,4 +45,4 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
 
 ○  (Static)  prerendered as static content
 
-[?25h[2K[1G✨  Done in 9.56s.
+[?25h[2K[1G✨  Done in 10.41s.

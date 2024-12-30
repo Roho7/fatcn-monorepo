@@ -1,5 +1,5 @@
 'use client'
-import { SidebarLayout, SidebarProvider } from "@fatcn/ui/dist"
+import { SidebarLayout, SidebarProvider } from "@fatcn/ui"
 import { DocsSidebar } from "./_components/docs-sidebar"
 
 const DocsLayout = ({ children }: { children: React.ReactNode }) => {
