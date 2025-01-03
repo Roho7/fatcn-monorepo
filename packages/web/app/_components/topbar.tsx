@@ -1,4 +1,4 @@
-import { Button, Input } from "@fatcn/ui/dist";
+import { Button, Input } from "@fatcn/ui";
 import { cn } from "@fatcn/ui/lib";
 import { useRouter } from "next/navigation";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { SidebarLayout, SidebarProvider } from "@fatcn/ui/dist";
+import { SidebarLayout, SidebarProvider } from "@fatcn/ui";
 import DocsRHS from "../_components/docs-rhs";
 import { DocsSidebar } from "../_components/docs-sidebar";
 import Footer from "../_components/footer";
