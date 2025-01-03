@@ -59,6 +59,7 @@ const Avatar = ({
   shape = "circle",
   ring,
   className,
+  ...props
 }: {
   src: string;
   alt: string;
@@ -66,9 +67,9 @@ const Avatar = ({
   shape?: VariantProps<typeof avatarVariants>["shape"];
   ring?: boolean;
   className?: string;
-}) => {
+} & React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={cn(avatarVariants({ size, shape }), ring ? avatarRingVariants({ size }) : '', className)}>
+    <div className={cn(avatarVariants({ size, shape }), ring ? avatarRingVariants({ size }) : '', className)} {...props}>
       <Image src={src} alt={alt} {...avatarImageVariants[size as keyof typeof avatarImageVariants || 'md']} />
     </div>
   );

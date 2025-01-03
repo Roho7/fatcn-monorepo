@@ -1,10 +1,9 @@
-import { Card, CardContent } from '@fatcn/ui'
-import { Home01Icon, InboxCheckIcon, Ticket01Icon, UserCircleIcon, Settings01Icon, HelpCircleIcon } from 'hugeicons-react'
-import React from 'react'
+import { Button, Card, CardContent, cn } from '@fatcn/ui'
+import { HelpCircleIcon, Home01Icon, InboxCheckIcon, Settings01Icon, Ticket01Icon, UserCircleIcon } from 'hugeicons-react'
 
-const SidebarExample = () => {
+const SidebarExample = ({className}: {className?: string}) => {
   return (
-    <Card variant="secondary" size="sm" className="w-64 mb-4">
+    <Card variant="secondary" size="sm" className={cn("w-64", className)}>
         <CardContent className="p-2">
           <div className="flex flex-col gap-1">
             {[
@@ -18,13 +17,15 @@ const SidebarExample = () => {
               },
               { icon: <HelpCircleIcon className="w-4 h-4" />, label: "Help" },
             ].map((item, index) => (
-              <div
+              <Button
+                variant="ghost"
+                size="sm"
                 key={index}
-                className="flex items-center gap-3 p-2 hover:bg-secondary/20 rounded-md cursor-pointer"
+                className="flex justify-start items-center gap-2"
               >
                 {item.icon}
                 <span className="text-sm font-medium">{item.label}</span>
-              </div>
+              </Button>
             ))}
           </div>
         </CardContent>

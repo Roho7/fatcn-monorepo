@@ -1,18 +1,18 @@
 import {
+  Button,
   Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  Button,
+  cn,
 } from "@fatcn/ui";
-import React from "react";
 
 
-const CardsExample = () => {
+const CardsExample = ({className}: {className?: string}) => {
   return (
-    <div className="mb-4 grid grid-cols-2 gap-2">
+    <div className={cn("grid grid-cols-2 gap-2 h-fit flex-1", className)}>
       {[
         {
           label: "Customer Growth",

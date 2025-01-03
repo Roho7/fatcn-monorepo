@@ -1,31 +1,9 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Sidebar,
-} from "@fatcn/ui";
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@fatcn/ui'
 
-export const DocsSidebar = () => {
+
+const DocsRHS = () => {
   return (
-    <Sidebar
-      position="left"
-      header={<div>Header</div>}
-      contents={[
-        {
-          title: "Quickstart",
-          items: [
-            {
-              title: "Installation",
-              href: "/installation",
-            },
-          ],
-        },
-      ]}
-      footer={
+    <aside className='w-[20vw] bg-muted/30 border-l p-4'>
         <Card title="Profile Completion" variant="secondary" size={"sm"}>
           <CardHeader>
             <CardTitle>Profile Completion</CardTitle>
@@ -40,7 +18,8 @@ export const DocsSidebar = () => {
             </Button>
           </CardFooter>
         </Card>
-      }
-    />
-  );
-};
+    </aside>
+  )
+}
+
+export default DocsRHS

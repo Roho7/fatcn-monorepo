@@ -1,12 +1,9 @@
-import { Card, CardHeader, CardTitle, CardContent, Button } from '@fatcn/ui'
+import { Button, Card, CardContent, CardHeader, CardTitle, cn } from '@fatcn/ui'
 import { Tag01Icon, Ticket01Icon } from 'hugeicons-react'
-import React from 'react'
 
-type Props = {}
-
-const TicketsExample = (props: Props) => {
+const TicketsExample = ({className}: {className?: string}) => {
   return (
-    <Card variant="default" size="sm" className="w-80 mb-4">
+    <Card variant="default" size="sm" className={cn("w-80", className)}>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Ticket01Icon className="w-4 h-4" />

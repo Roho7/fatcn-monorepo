@@ -1,16 +1,15 @@
 import { Card, CardContent } from "@fatcn/ui";
 import {
-    ArrowDown01Icon,
-    ArrowRight01Icon,
-    File01Icon,
-    Folder01Icon,
-    ReactIcon,
-    Typescript01Icon,
+  ArrowDown01Icon,
+  ArrowRight01Icon,
+  File01Icon,
+  Folder01Icon,
+  ReactIcon,
+  Typescript01Icon,
 } from "hugeicons-react";
 
-type Props = {};
 
-const VsCodeExample = (props: Props) => {
+const VsCodeExample = () => {
   return (
     <Card variant="secondary" size="sm" className="w-80 mb-4">
       <CardContent>

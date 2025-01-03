@@ -1,12 +1,10 @@
-import { Button } from '@fatcn/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@fatcn/ui';
-import { Mail01Icon } from 'hugeicons-react';
-import { InboxCheckIcon } from 'hugeicons-react';
-import React from 'react'
+import { Button } from '@fatcn/ui/components/button';
+import { InboxCheckIcon, Mail01Icon } from 'hugeicons-react';
 
 const InboxExample = () => {
   return (
-    <Card variant="secondary" size="sm" className="w-full mb-4">
+    <Card variant="secondary" size="sm" className="w-full h-fit">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <InboxCheckIcon className="w-4 h-4" />

@@ -10,7 +10,8 @@
     "clean": "turbo run clean",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
-    "start": "cd packages/web && yarn start"
+    "start": "cd packages/web && yarn start",
+    "publish": "cd packages/fatcn-ui && npm run publish"
   },
   "packageManager": "yarn@1.22.22",
   "devDependencies": {

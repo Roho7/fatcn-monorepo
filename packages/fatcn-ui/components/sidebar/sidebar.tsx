@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { Logout01Icon } from "hugeicons-react";
 import { useRouter } from "next/navigation";
 import React, {
@@ -22,7 +22,7 @@ interface NavItem {
 }
 
 interface SidebarProps {
-  header: ReactNode;
+  header?: ReactNode;
   contents: NavSection[];
   footer?: ReactNode;
   showCloseButton?: boolean;
@@ -88,7 +88,7 @@ export function Sidebar({
   return (
     <aside
       className={cn(
-        "sticky top-0 h-screen bg-muted/30 border-r transition-all duration-300 ease-in-out flex-shrink-0",
+        "sticky left-0 h-full bg-muted/30 border-r transition-all duration-300 ease-in-out flex-shrink-0",
         isOpen ? "w-sidebar-width" : "w-sidebar-width-collapsed",
         position === "right" ? "right-0" : "left-0",
         className,
@@ -96,7 +96,7 @@ export function Sidebar({
     >
       <div className="flex flex-col h-full">
         {/* Header */}
-        <div
+        {header && <div
           className={cn(
             "border-b flex items-center justify-between text-primary-foreground relative",
             isOpen ? "p-4" : "p-2 py-4",
@@ -125,7 +125,7 @@ export function Sidebar({
               </Button>
             )}
           </div>
-        </div>
+        </div>}
 
         {/* Navigation */}
         <nav
@@ -182,14 +182,12 @@ export function SidebarLayout({ children }: SidebarLayoutProps): JSX.Element {
   const { isOpen } = useSidebar();
 
   return (
-    <div className="min-h-screen">
-      <main
+      <div
         className={`
-          transition-all duration-300 ease-in-out flex
+          transition-all duration-300 ease-in-out flex h-svh
         `}
       >
         {children}
-      </main>
-    </div>
+      </div>
   );
 }

@@ -1,20 +1,30 @@
 "use client";
 
-import { Card, CardContent, Tooltip, TooltipContent, TooltipTrigger, useToast } from "@fatcn/ui";
+import {
+  Card,
+  CardContent,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  useToast,
+} from "@fatcn/ui";
 import { Button } from "@fatcn/ui/components/button";
-import { Input } from "@fatcn/ui/components/input/input";
 import { Copy01Icon } from "hugeicons-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import Grid from "../public/grid2.svg";
-import VsCodeExample from "./docs/_components/_examples/vscode.example";
-import HeroBannerLeft from "./docs/_components/hero-banner-left";
-import HeroBannerRight from "./docs/_components/hero-banner-right";
+import VsCodeExample from "./_components/_examples/vscode.example";
+import ComponentsShowcase from "./_components/components.showcase";
+import HeroBannerLeft from "./_components/hero-banner-left";
+import HeroBannerRight from "./_components/hero-banner-right";
+import Topbar from "./_components/topbar";
 import "./globals.css";
 
 export default function Page() {
   const toast = useToast();
-  const [hue, setHue] = React.useState(111);  
+  const router = useRouter();
+  const [hue, setHue] = React.useState(111);
 
   React.useEffect(() => {
     const randomHue = Math.floor(Math.random() * 360); // Generate random hue between 0-360
@@ -22,16 +32,10 @@ export default function Page() {
     setHue(randomHue);
   }, []);
 
-
-
   return (
     <div className="min-h-screen w-screen overflow-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 border-b border-primary-foreground/10 mb-2 backdrop-blur-lg">
-        <div className="flex items-center gap-2">
-          <h2 className="text-2xl font-bold text-primary-foreground">fatcn</h2>
-        </div>
-        <Input placeholder="Search" className="w-80" />
-      </nav>
+      <Topbar className="fixed"/>
+
       {/* Hero Section */}
       <div className="flex gap-1 justify-center md:justify-between min-h-screen relative">
         <div className="absolute top-0 left-0 w-full h-full -z-10">
@@ -73,7 +77,7 @@ export default function Page() {
         <HeroBannerRight />
       </div>
 
-      <section className="flex flex-col md:flex-row items-center justify-center gap-8 md:p-10">
+      <section className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 p-4 md:p-10">
         <VsCodeExample />
         <div className="max-w-sm space-y-2">
           <h2 className="text-xl font-semibold text-primary-foreground">
@@ -92,8 +96,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col md:flex-row items-center justify-center gap-8 md:p-10">
-        
+      <section className="flex flex-col md:flex-row items-center justify-center gap-8 p-4 md:p-10">
         <div className="max-w-sm space-y-2">
           <h2 className="text-xl font-semibold text-primary-foreground">
             Quick Themes
@@ -106,17 +109,25 @@ export default function Page() {
             flag to switch themes.
           </p>
           <div className="text-xs text-primary-foreground/60 flex items-center gap-2">
-            <Button size='sm' onClick={() => {
-              const randomHue = Math.floor(Math.random() * 360);
-              document.documentElement.style.setProperty("--hue", randomHue.toString()); 
-              setHue(randomHue);
-            }}>Switch Theme</Button>
+            <Button
+              size="sm"
+              onClick={() => {
+                const randomHue = Math.floor(Math.random() * 360);
+                document.documentElement.style.setProperty(
+                  "--hue",
+                  randomHue.toString(),
+                );
+                setHue(randomHue);
+              }}
+            >
+              Switch Theme
+            </Button>
           </div>
         </div>
-        <Card variant='secondary'>
+        <Card variant="secondary" size={"sm"} className="md:w-[30vw] w-[80vw]">
           <CardContent>
-          <pre className="text-sm text-primary-foreground/80">
-            <code>{`@layer base {
+            <pre className="text-sm text-primary-foreground/80 overflow-x-auto">
+              <code>{`@layer base {
   :root {
     --hue: ${hue};
     
@@ -135,6 +146,9 @@ export default function Page() {
             </pre>
           </CardContent>
         </Card>
+      </section>
+      <section className="p-4 md:p-10">
+        <ComponentsShowcase />
       </section>
     </div>
   );

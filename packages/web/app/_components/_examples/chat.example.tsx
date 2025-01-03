@@ -4,6 +4,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
+  cn,
   Input,
 } from "@fatcn/ui";
 import { SentIcon } from "hugeicons-react";
@@ -57,9 +58,9 @@ const chats = [
   },
 ]
 
-const ChatExample = () => {
+const ChatExample = ({className}: {className?: string }) => {
   return (
-    <Card variant="secondary" size="sm" className="w-80 mb-4 ">
+    <Card variant="secondary" size="sm" className={cn("w-80", className)}>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <div className="w-2 h-2 bg-green-500 rounded-full"></div>

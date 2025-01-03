@@ -1,9 +1,8 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button } from '@fatcn/ui'
-import React from 'react'
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn } from '@fatcn/ui';
 
-const SigninExample = () => {
+const SigninExample = ({className}: {className?: string}) => {
   return (
-    <Card variant="secondary" size="sm" className="w-80 mb-4">
+    <Card variant="secondary" size="sm" className={cn("w-80", className)}>
     <CardHeader>
       <CardTitle>Welcome back!</CardTitle>
       <CardDescription>Sign in to your account</CardDescription>
