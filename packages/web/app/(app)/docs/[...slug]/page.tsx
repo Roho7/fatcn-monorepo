@@ -1,5 +1,5 @@
 import { Mdx } from "@/app/_components/mdx-components"
-import { getUrl } from "@/lib/site.utils"
+import { getUrl, siteConfig } from "@/lib/site.utils"
 import { allDocs } from "contentlayer/generated"
 import { Metadata } from "next"
 
@@ -41,10 +41,10 @@ export async function generateMetadata({
       url: getUrl(doc.slug),
       images: [
         {
-          url: '',
+          url: siteConfig().ogImage,
           width: 1200,
           height: 630,
-          alt: 'fatcn',
+          alt: siteConfig().name,
         },
       ],
     },
@@ -52,8 +52,8 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: doc.title,
       description: doc.description,
-      images: [''],
-      creator: "@shadcn",
+      images: [siteConfig().ogImage],
+      creator: siteConfig().twitter,
     },
   }
 }
