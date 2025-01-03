@@ -88,7 +88,7 @@ export function Sidebar({
   return (
     <aside
       className={cn(
-        "sticky left-0 h-full bg-muted/30 border-r transition-all duration-300 ease-in-out flex-shrink-0",
+        "sticky left-0 h-full bg-muted/30 border-r border-border transition-all duration-300 ease-in-out flex-shrink-0",
         isOpen ? "w-sidebar-width" : "w-sidebar-width-collapsed",
         position === "right" ? "right-0" : "left-0",
         className,
@@ -98,7 +98,7 @@ export function Sidebar({
         {/* Header */}
         {header && <div
           className={cn(
-            "border-b flex items-center justify-between text-primary-foreground relative",
+            "border-b border-border flex items-center justify-between text-primary-foreground relative",
             isOpen ? "p-4" : "p-2 py-4",
           )}
         >
@@ -136,7 +136,7 @@ export function Sidebar({
         >
           <ul className="space-y-2">
             {contents.map((section, index) => (
-              <div className="border-b pb-4" key={index}>
+              <div className="border-b border-border pb-4" key={index}>
                 <p key={index} className="mb-4 text-sm font-medium text-primary-foreground">{section.title}</p>
                 {section.items.map((item, index) => (
                   <li key={index}>
@@ -168,7 +168,7 @@ export function Sidebar({
 
         {/* Footer */}
         {footer && (
-          <div className="p-4 border-t data-[open=true]:opacity-100 data-[open=false]:opacity-0 transition-opacity duration-300 ease-in-out" data-open={isOpen}>
+          <div className="p-4 border-t border-border data-[open=true]:opacity-100 data-[open=false]:opacity-0 transition-opacity duration-300 ease-in-out" data-open={isOpen}>
             {isOpen ? footer : null}
           </div>
         )}

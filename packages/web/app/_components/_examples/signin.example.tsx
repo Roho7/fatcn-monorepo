@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn } from '@fatcn/ui';
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, Input } from '@fatcn/ui';
 
 const SigninExample = ({className}: {className?: string}) => {
   return (
@@ -9,15 +9,13 @@ const SigninExample = ({className}: {className?: string}) => {
     </CardHeader>
     <CardContent>
       <div className="flex flex-col gap-2">
-        <input
+        <Input
           type="email"
           placeholder="Email"
-          className="p-2 rounded-md border"
         />
-        <input
+        <Input
           type="password"
           placeholder="Password"
-          className="p-2 rounded-md border"
         />
       </div>
     </CardContent>

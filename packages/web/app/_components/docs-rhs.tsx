@@ -3,7 +3,7 @@ import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, Car
 
 const DocsRHS = () => {
   return (
-    <aside className='w-[20vw] bg-muted/30 border-l p-4'>
+    <aside className='w-[20vw] bg-muted/30 border-l border-border p-4'>
         <Card title="Profile Completion" variant="secondary" size={"sm"}>
           <CardHeader>
             <CardTitle>Profile Completion</CardTitle>

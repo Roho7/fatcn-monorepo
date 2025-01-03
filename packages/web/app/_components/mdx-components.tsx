@@ -10,6 +10,10 @@ import {
   CardHeader,
   CardTitle,
   cn,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
 } from "@fatcn/ui";
 import { useMDXComponent } from "next-contentlayer2/hooks";
 import Link from "next/link";
@@ -33,7 +37,7 @@ const components = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "text-primary-foreground font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
+        "text-primary-foreground font-heading mt-12 scroll-m-20 border-b border-border pb-2 text-2xl font-semibold tracking-tight first:mt-0",
         className,
       )}
       {...props}
@@ -83,15 +87,30 @@ const components = {
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6 text-primary-foreground/90", className)}
+      className={cn(
+        "leading-7 [&:not(:first-child)]:mt-6 text-primary-foreground/90",
+        className,
+      )}
       {...props}
     />
   ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className={cn("my-6 ml-6 list-disc text-primary-foreground/90", className)} {...props} />
+    <ul
+      className={cn(
+        "my-6 ml-6 list-disc text-primary-foreground/90",
+        className,
+      )}
+      {...props}
+    />
   ),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className={cn("my-6 ml-6 list-decimal text-primary-foreground/90", className)} {...props} />
+    <ol
+      className={cn(
+        "my-6 ml-6 list-decimal text-primary-foreground/90",
+        className,
+      )}
+      {...props}
+    />
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <li className={cn("mt-2", className)} {...props} />
@@ -111,7 +130,7 @@ const components = {
     <img className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
-    <hr className="my-4 md:my-8" {...props} />
+    <hr className="my-4 md:my-8 border-border" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
@@ -148,26 +167,73 @@ const components = {
       {...props}
     />
   ),
-  pre: ({
-    className,
-    __rawString__,
-    __withMeta__,
-    __src__,
-    __event__,
-    ...props
-  }: React.HTMLAttributes<HTMLPreElement> & {
-    __rawString__?: string;
-    __withMeta__?: boolean;
-    __src__?: string;
-    __event__?: Events;
-  }) => {
-    const rawCode = __rawString__ || "";
-    
+  // ... existing code ...
+pre: ({
+  className,
+  __rawString__,
+  __withMeta__,
+  __npmCommand__,
+  __yarnCommand__,
+  __src__,
+  __event__,
+  ...props
+}: React.HTMLAttributes<HTMLPreElement> & {
+  __rawString__?: string;
+  __withMeta__?: boolean;
+  __npmCommand__?: string;
+  __yarnCommand__?: string;
+  __src__?: string;
+  __event__?: Events;
+}) => {
+  const rawCode = __rawString__ || "";
+  if (__npmCommand__ || __yarnCommand__) {
+    return (
+      <Tabs defaultValue="npm">
+        <TabsList>
+          <TabsTrigger value="npm">npm</TabsTrigger>
+          <TabsTrigger value="yarn">yarn</TabsTrigger>
+        </TabsList>
+        <TabsContent value="npm">
+          <div className="relative">
+            <pre
+              className={cn(
+                "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
+                className
+              )}
+            >
+              <code className="relative font-mono text-sm">{__npmCommand__}</code>
+            </pre>
+            <CopyButton
+              value={__npmCommand__ || ""}
+              className="absolute right-4 top-4"
+            />
+          </div>
+        </TabsContent>
+        <TabsContent value="yarn">
+          <div className="relative">
+            <pre
+              className={cn(
+                "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
+                className
+              )}
+            >
+              <code className="relative font-mono text-sm">{__yarnCommand__}</code>
+            </pre>
+            <CopyButton
+              value={__yarnCommand__ || ""}
+              className="absolute right-4 top-4"
+            />
+          </div>
+        </TabsContent>
+      </Tabs>
+    );
+  }
+
     return (
       <div className="relative w-full">
         <pre
           className={cn(
-            "mb-4 mt-6 overflow-x-auto rounded-xl w-full",
+            "mb-4 mt-6 overflow-x-auto rounded-xl w-full !bg-primary !text-primary-foreground p-4",
             className,
           )}
           {...props}
@@ -181,12 +247,9 @@ const components = {
       </div>
     );
   },
-  code: ({
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLPreElement>) => (
+  code: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <code
-      className={cn("rounded-lg px-2 py-2 font-mono text-sm w-full", className)}
+      className={cn("rounded-lg px-2 py-2 font-mono text-sm w-full bg-primary text-primary-foreground", className)}
       {...props}
     />
   ),
@@ -314,8 +377,7 @@ export function Mdx({ code }: MdxProps) {
   //   const [config] = useConfig()
   const Component = useMDXComponent(code);
 
-
-  return (  
+  return (
     <div className="mdx w-full">
       <Component components={components} />
     </div>

@@ -42,7 +42,7 @@ export default function Page() {
               <Image
                 src={Grid}
                 alt="Grid"
-                className="w-full h-full opacity-10 -translate-y-1/2 shadow-none"
+                className="w-full h-full opacity-10 -translate-y-1/2 shadow-none dark:invert dark:opacity-50"
                 width={100}
                 height={100}
               />

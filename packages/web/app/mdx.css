@@ -81,3 +81,6 @@
     @apply mt-8 mb-4 text-base font-semibold;
   }
   
+  hr {
+    @apply border-border;
+  }

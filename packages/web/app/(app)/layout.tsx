@@ -3,7 +3,6 @@
 import { SidebarLayout, SidebarProvider, ToastProvider } from "@fatcn/ui";
 import DocsRHS from "../_components/docs-rhs";
 import { DocsSidebar } from "../_components/docs-sidebar";
-import Footer from "../_components/footer";
 import Topbar from "../_components/topbar";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
@@ -20,7 +19,6 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
             <DocsRHS />
           </SidebarLayout>
         </SidebarProvider>
-        <Footer />
       </ToastProvider>
     </div>
   );
