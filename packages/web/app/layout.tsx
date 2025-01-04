@@ -1,12 +1,35 @@
+import { siteConfig } from "@/lib/site.utils";
+import { Metadata } from "next";
 import Footer from "./_components/footer";
 import { ThemeProvider } from "./_components/themeProvider";
 import "./globals.css";
 
-const generateMetadata = () => {
-  return {
-    title: "Fatcn",
-    description: "Fatcn is a framework for building web applications with Next.js and Tailwind CSS.",
-  }
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+      title: siteConfig().title,
+      description: siteConfig().description,
+      openGraph: {
+        title: siteConfig().title,
+        description: siteConfig().description, 
+        type: "website",
+        url: siteConfig().baseUrl,
+        images: [
+          {
+            url: siteConfig().ogImage,
+            width: 1200,
+            height: 630,
+            alt: siteConfig().name,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: siteConfig().title,
+        description: siteConfig().description,
+        images: [siteConfig().ogImage],
+        creator: siteConfig().twitter,
+      },
+    }
 }
 
 export default function RootLayout({

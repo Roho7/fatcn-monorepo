@@ -25,6 +25,7 @@ export enum Events {
 }
 
 const components = {
+  
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -46,7 +47,7 @@ const components = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-secondary-foreground",
         className,
       )}
       {...props}
@@ -55,7 +56,7 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+        "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight text-accent",
         className,
       )}
       {...props}
@@ -93,6 +94,9 @@ const components = {
       )}
       {...props}
     />
+  ),
+  Callout: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+    <Callout {...props} />
   ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
@@ -167,7 +171,6 @@ const components = {
       {...props}
     />
   ),
-  // ... existing code ...
 pre: ({
   className,
   __rawString__,
@@ -249,7 +252,7 @@ pre: ({
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <code
-      className={cn("rounded-lg px-2 py-2 font-mono text-sm w-full bg-primary text-primary-foreground", className)}
+      className={cn("rounded-lg px-2 py-1 font-mono text-sm w-full bg-primary text-primary-foreground", className)}
       {...props}
     />
   ),
@@ -268,41 +271,41 @@ pre: ({
       {...props}
     />
   ),
-  Button: ({ className, ...props }: React.ComponentProps<typeof Button>) => (
-    <Button className={cn("mt-6", className)} {...props} />
+  Button: ({ ...props }: React.ComponentProps<typeof Button>) => (
+    <Button {...props} />
   ),
   Card: ({ className, ...props }: React.ComponentProps<typeof Card>) => (
-    <Card className={cn("mt-6", className)} {...props} />
+    <Card className={cn('mt-6', className)} {...props} />
   ),
   CardHeader: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardHeader>) => (
-    <CardHeader className={cn("mt-6", className)} {...props} />
+    <CardHeader className={cn( className)} {...props} />
   ),
   CardTitle: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardTitle>) => (
-    <CardTitle className={cn("mt-6", className)} {...props} />
+    <CardTitle className={cn( className)} {...props} />
   ),
   CardDescription: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardDescription>) => (
-    <CardDescription className={cn("mt-6", className)} {...props} />
+    <CardDescription className={cn(className)} {...props} />
   ),
   CardContent: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardContent>) => (
-    <CardContent className={cn("mt-6", className)} {...props} />
+    <CardContent className={cn(className)} {...props} />
   ),
   CardFooter: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardFooter>) => (
-    <CardFooter className={cn("mt-6", className)} {...props} />
+    <CardFooter className={cn(className)} {...props} />
   ),
   // Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
   //       <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
@@ -354,9 +357,6 @@ pre: ({
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
-  ),
-  Callout: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-    <Callout {...props} />
   ),
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link

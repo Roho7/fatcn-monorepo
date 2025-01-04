@@ -15,7 +15,7 @@ const Topbar = ({ className }: Props) => {
   return (
     <header
       className={cn(
-        "fixed md:sticky top-0 left-0 right-0 z-50 flex justify-between items-center p-4 border-b border-primary-foreground/10 backdrop-blur-lg",
+        "sticky top-0 left-0 right-0 z-50 flex justify-between items-center p-4 border-b border-primary-foreground/10 backdrop-blur-lg",
         className,
       )}
     >

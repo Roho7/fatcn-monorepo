@@ -84,3 +84,8 @@
   hr {
     @apply border-border;
   }
+
+  .callout {
+    @apply my-2;
+  }
+

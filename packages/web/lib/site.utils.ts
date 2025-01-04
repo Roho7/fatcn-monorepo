@@ -4,10 +4,11 @@ export function getUrl(path: string) {
 
 export function siteConfig() {
   return {
+    baseUrl: 'https://fatcn.vercel.app',
     name: 'fatcn',
     ogImage: 'https://fatcn.vercel.app/og_image.png',
-    description: 'Fatcn is a modern design system for Next.js.',
-    twitter: '@fatcn',
+    description: 'A chonky and colorful design system for Next.js.',
+    twitter: '@rohosen_',
     title: 'Fatcn',
 
   }

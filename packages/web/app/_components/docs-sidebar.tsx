@@ -10,6 +10,19 @@ const sidebarItems = [
         title: "Installation",
         href: "/docs/installation",
       },
+      {
+        title: "How It Works",
+        href: "/docs/how-it-works",
+      },
+    ],
+  },
+  {
+    title: "Components",
+    items: [
+      {
+        title: "Button",
+        href: "/docs/button",
+      },
     ],
   },
 ];
@@ -17,7 +30,7 @@ const sidebarItems = [
 export const DocsSidebar = () => {
   const router = useRouter();
   return (
-    <aside id="docs-sidebar" className="w-[50vw] md:w-[20vw] bg-background md:bg-muted/30 border-r border-border p-4 fixed left-0 md:sticky top-[4.5rem] md:h-[calc(100vh-4rem)] h-screen overflow-y-auto md:z-0 z-50 md:translate-x-[0%] transition-all duration-300">
+    <aside id="docs-sidebar" className="w-[50vw] md:w-[20vw] bg-background md:bg-muted/30 border-r border-border p-4 fixed left-0 md:sticky top-[4.5rem] md:h-[calc(100vh-4rem)] h-screen overflow-y-auto md:z-0 z-50 -translate-x-[100%] md:translate-x-[0%] transition-all duration-300">
       <div className="flex flex-col gap-2">
         {sidebarItems.map((item) => (
           <div key={item.title} className="border-b border-border pb-2">

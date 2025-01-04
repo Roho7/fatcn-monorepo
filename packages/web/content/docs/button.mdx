@@ -1,0 +1,139 @@
+---
+title: 'Button'
+description: 'Interactive button component with various styles and states.'
+---
+
+# Button
+
+A button component that follows best practices for accessibility and provides multiple variants for different use cases.
+
+## Usage
+
+<Card size="md">
+<CardHeader>
+<CardTitle>Button</CardTitle>
+<CardDescription>Button variants</CardDescription>
+</CardHeader>
+<CardContent >
+<div className="flex gap-2 max-w-full justify-between">
+    <Button variant="default" size="sm">Default</Button>
+    <Button variant="secondary" size="sm">Secondary</Button>
+    <Button variant="destructive" size="sm">Destructive</Button>
+    <Button variant="outline" size="sm">Outline</Button>
+    <Button variant="ghost" size="sm">Ghost</Button>
+    <Button variant="gradient" size="sm">Gradient</Button>
+    <Button variant="link" size="sm">Link</Button>
+</div>
+</CardContent>
+</Card>
+
+
+```tsx
+import { Button } from '@/components/ui/button'
+
+export default function ButtonDemo() {
+return (
+    <Button variant="primary" onClick={() => console.log('clicked')}>
+        Click me
+    </Button>
+)}
+```
+
+
+## Features
+
+- Multiple variants and sizes
+- Accessible by default with ARIA attributes
+- Support for icons and loading states
+- Keyboard navigation support
+
+## Examples
+
+### Variants
+
+Buttons come in different variants to match your design needs.
+
+```tsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+
+### Sizes
+
+Available in different sizes to fit your layout.
+
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+```
+
+### States
+
+Buttons support various states including disabled and loading.
+
+
+```tsx
+<Button disabled>Disabled</Button>
+<Button loading>Loading</Button>
+```
+
+
+### With Icons
+
+Buttons can include icons before or after the text.
+
+
+```tsx
+<Button>
+<IconPlus className="mr-2 h-4 w-4" />
+Add Item
+</Button>
+<Button>
+Next
+<IconArrowRight className="ml-2 h-4 w-4" />
+</Button>
+```
+
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | The visual style of the button |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | The size of the button |
+| `disabled` | `boolean` | `false` | Whether the button is disabled |
+| `loading` | `boolean` | `false` | Shows a loading spinner and disables the button |
+| `asChild` | `boolean` | `false` | Merge props onto child element instead of rendering button |
+| `className` | `string` | - | Additional CSS classes |
+
+## Design Guidelines
+
+- Use primary buttons for main actions
+- Secondary buttons for alternative actions
+- Outline buttons for less prominent actions
+- Ghost buttons for subtle actions within a busy interface
+- Link buttons for navigation-like actions
+
+## Accessibility
+
+The Button component follows WAI-ARIA guidelines:
+
+- Uses native `<button>` element by default
+- Properly handles disabled states
+- Includes appropriate ARIA attributes
+- Supports keyboard navigation
+- Maintains sufficient color contrast
+
+## Best Practices
+
+- Use clear, action-oriented text
+- Keep button text concise
+- Ensure adequate spacing between multiple buttons
+- Use loading state for async actions
+- Maintain consistent button hierarchy across your interface

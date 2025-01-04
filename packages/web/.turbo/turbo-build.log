@@ -5,22 +5,19 @@
    - Environments: .env
 
  [37m[1m [22m[39m Creating an optimized production build ...
-Generated 1 documents in .contentlayer
+Generated 3 documents in .contentlayer
 
 [1m[33mwarn[39m[22m - Your `content` configuration includes a pattern which looks like it's accidentally matching all of `node_modules` and can cause serious performance issues.
 [1m[33mwarn[39m[22m - Pattern: `../fatcn-ui/**/*.ts`
 [1m[33mwarn[39m[22m - See our documentation for recommendations:
 [1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration#pattern-recommendations
  [32m[1m✓[22m[39m Compiled successfully
-[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G[?25h
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G[?25h
 ./app/_components/docs-rhs.tsx
 75:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 ./app/_components/mdx-components.tsx
-358:15  Warning: 'className' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
-
-./app/layout.tsx
-5:7  Warning: 'generateMetadata' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+98:15  Warning: 'className' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
 
 ./lib/tableOfContent.ts
 13:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
@@ -30,16 +27,16 @@ Generated 1 documents in .contentlayer
 47:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
+[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G [36m...[39m [2K[1G [36m.[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
 [?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
-[?25l [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=   ][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (5/5)
+[?25l [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=   ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[==  ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=== ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[  ==][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[   =][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[   =][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[  ==][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[====][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (5/5)
 [?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
 [2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
 
 [4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
 ┌ ○ /                                    10.5 kB         [37m[1m165 kB[22m[39m
 ├ ○ /_not-found                          981 B           [37m[1m106 kB[22m[39m
-└ ƒ /docs/[...slug]                      6.73 kB         [37m[1m161 kB[22m[39m
+└ ƒ /docs/[...slug]                      6.8 kB          [37m[1m161 kB[22m[39m
 + First Load JS shared by all            [37m[1m105 kB[22m[39m
   ├ chunks/855-86f27f7bb9301e91.js       50.5 kB
   ├ chunks/87c73c54-699768dcfc3eb582.js  52.9 kB
@@ -49,4 +46,4 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
-[?25h[2K[1G✨  Done in 20.16s.
+[?25h[2K[1G✨  Done in 16.17s.
