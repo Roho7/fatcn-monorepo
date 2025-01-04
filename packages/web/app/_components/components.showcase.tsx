@@ -25,12 +25,12 @@ const ComponentsShowcase = () => {
         <h1>Beautiful and Cute</h1>
         <p className="text-sm text-primary-foreground/50">All the components you need, just <strong>cuter</strong> 🐱</p>
       <div
-        className={`grid grid-cols-2 gap-2 p-4 transition-all duration-500 ease-in-out ${
+        className={`grid grid-cols-1 md:grid-cols-2 gap-2 p-4 transition-all duration-500 ease-in-out ${
           isExpanded ? "max-h-[2000px]" : "max-h-[30vh] overflow-hidden"
         }`}
       >
-        <div className="grid grid-cols-4 gap-2">
-            <div className="col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="md:col-span-2">
               <ChatExample className="w-full mb-2" />
               {[
                   {
@@ -61,7 +61,7 @@ const ComponentsShowcase = () => {
                   </Card>
                 ))}
             </div>
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <div className={cn("mb-2 gap-2 h-fit flex-1 w-full")}>
                 {[
                   {
@@ -92,14 +92,14 @@ const ComponentsShowcase = () => {
                   </Card>
                 ))}
               </div>
-              <div className="col-span-4">
+              <div className="md:col-span-4">
               <SigninExample className="w-full" />
 
               </div>
             </div>
         </div>
-        <div className="grid grid-cols-2 gap-2">
-            <div className="col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="md:col-span-2">
               <InboxExample />
             </div>
               <SidebarExample className="w-full" />

@@ -3,4 +3,4 @@
 [2K[1G[33mwarning[39m package.json: No license field
 [2K[1G[2m$ tsc && mkdir -p dist/source && cp -r ./components ./lib dist/source/[22m
 [2K[1G[2m$ chmod +x dist/cli.js[22m
-[2K[1G✨  Done in 0.94s.
+[2K[1G✨  Done in 1.13s.

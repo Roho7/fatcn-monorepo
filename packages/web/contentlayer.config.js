@@ -114,7 +114,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-light",
+          theme: "everforest-light",
           getHighlighter,
           onVisitLine(node) {
             if (node.children.length === 0) {

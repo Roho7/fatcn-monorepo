@@ -1,8 +1,10 @@
+import DocsRHS from "@/app/_components/docs-rhs"
+import { DocsSidebar } from "@/app/_components/docs-sidebar"
 import { Mdx } from "@/app/_components/mdx-components"
 import { getUrl, siteConfig } from "@/lib/site.utils"
+import { getTableOfContents } from "@/lib/tableOfContent"
 import { allDocs } from "contentlayer/generated"
 import { Metadata } from "next"
-
 
 interface DocPageProps {
   params: Promise<{
@@ -65,8 +67,16 @@ const Page = async ({ params }: DocPageProps) => {
     return null
   }
 
+  const toc = await getTableOfContents(doc.body.raw)
+
   return (
-    <Mdx code={doc.body.code} />
+    <div className="mx-auto md:grid md:grid-cols-[20vw_1fr_20vw]">
+      <DocsSidebar />
+      <div className="p-8 h-full w-full md:col-start-2 " id="mdx-container">
+        <Mdx code={doc.body.code} />
+      </div>
+      <DocsRHS toc={toc} />
+    </div>
   )
 }
 

@@ -1,24 +1,14 @@
 "use client";
 
-import { SidebarLayout, SidebarProvider, ToastProvider } from "@fatcn/ui";
-import DocsRHS from "../_components/docs-rhs";
-import { DocsSidebar } from "../_components/docs-sidebar";
+import { ToastProvider } from "@fatcn/ui";
 import Topbar from "../_components/topbar";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <ToastProvider>
         <Topbar />
-        <SidebarProvider>
-          <SidebarLayout>
-            <DocsSidebar />
-            <div className="flex-1 overflow-y-auto h-[calc(100vh-9vh)]">
-              {children}
-            </div>
-            <DocsRHS />
-          </SidebarLayout>
-        </SidebarProvider>
+          <div className="flex-1 relative">{children}</div>
       </ToastProvider>
     </div>
   );
