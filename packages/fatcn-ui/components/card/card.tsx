@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useContext } from "react";
 
-import { cn } from "../../lib";
 import { cva, VariantProps } from "class-variance-authority";
+import { cn } from "../../lib";
 
 const cardVariants = cva("flex flex-col space-y-1.5", {
   variants: {
     variant: {
-      default: "bg-primary text-primary-foreground shadow",
+      default: "bg-primary/50 text-primary-foreground shadow",
       secondary: "bg-card text-card-foreground shadow",
     },
     size: {
@@ -157,10 +157,6 @@ const CardFooter = React.forwardRef<
 CardFooter.displayName = "CardFooter";
 
 export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
-  CardContent,
+  Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
 };
+

@@ -3,31 +3,80 @@ export type ThemeTypes = 'rose' | 'mint'
 export const THEMES: Record<ThemeTypes, string> = {
     rose: `@layer base {
       :root {
-        --background: 336 100% 99%;
-        --foreground: 337 45% 37%;
+        --hue: 336;
         
-        --primary: 337 100% 93%;
-        --primary-foreground: 337 45% 37%;
+        --background: var(--hue) 100% 100%;
+        --foreground: var(--hue) 45% 37%;
         
-        --secondary: 337 73% 97%;
-        --secondary-foreground: 337 40% 68%;
+        --primary: var(--hue) 100% 93%;
+        --primary-foreground: var(--hue) 45% 37%;
         
-        --accent: 337 80% 90%;
-        --border: 337 44% 81%;
+        --secondary: var(--hue) 73% 90%;
+        --secondary-foreground: var(--hue) 40% 40%;
         
-        --muted: 336 12% 92%;
-        --muted-foreground: 0 0% 56%;
+        --accent: var(--hue) 80% 90%;
+        --border: var(--hue) 44% 81%;
         
-        --destructive: 340 96% 39%;
-        --destructive-foreground:338 61% 93%;
+        --muted: var(--hue) 12% 92%;
+        --muted-foreground: var(--hue) 0% 56%;
+        
+        --destructive: 0 96% 39%;
+        --destructive-foreground: 0 61% 93%;
+
+        --card: var(--hue) 100% 99%;
+        --card-foreground: var(--hue) 45% 37%;
   
-        --popover: 337 100% 93%;
-        --popover-foreground: 337 45% 37%;
+        --popover: var(--hue) 100% 93%;
+        --popover-foreground: var(--hue) 45% 37%;
         
-        --input: 338 73% 97%;
-        --ring: 337 44% 81%;
+        --input: var(--hue) 53% 99%;
+        --ring: var(--hue) 44% 81%;
         
         --radius: 0.7rem;
+
+        --complimentary: calc(var(--hue) + 30) 64% 90%;
+        --adjacent: calc(var(--hue) + 90) 64% 90%;
+        --complimentary-foreground: calc(var(--hue) + 30) 45% 35%;
+
+        --sidebar-width: 12rem;
+        --sidebar-width-collapsed: 4rem;
+      }
+
+      .dark {
+        --hue: 336;
+        
+        --background: var(--hue) 0% 0%;
+        --foreground: var(--hue) 52% 88%;
+        
+        --primary: var(--hue) 24% 13%;
+        --primary-foreground: var(--hue) 52% 88%;
+        
+        --secondary: var(--hue) 42% 16%;
+        --secondary-foreground: var(--hue) 51% 82%;
+        
+        --accent: var(--hue) 42% 34%;
+        --border: var(--hue) 28% 15%;
+        
+        --muted: var(--hue) 5% 32%;
+        --muted-foreground: var(--hue) 5% 56%;
+        
+        --destructive: 0 96% 39%;
+        --destructive-foreground: 0 61% 93%;
+
+        --card: var(--hue) 70% 10%;
+        --card-foreground: var(--hue) 52% 88%;
+  
+        --popover: var(--hue) 29% 39%;
+        --popover-foreground: var(--hue) 52% 88%;
+        
+        --input: var(--hue) 58% 15%;
+        --ring: var(--hue) 28% 15%;
+        
+        --radius: 0.7rem;
+
+        --complimentary: calc(var(--hue) + 30) 64% 50%;
+        --adjacent: calc(var(--hue) + 90) 64% 50%;
+        --complimentary-foreground: calc(var(--hue) + 30) 45% 95%;
 
         --sidebar-width: 12rem;
         --sidebar-width-collapsed: 4rem;
@@ -35,35 +84,80 @@ export const THEMES: Record<ThemeTypes, string> = {
     }`,
     mint: `@layer base {
       :root {
-        --background: 140 100% 100%;
-        --foreground: 140 45% 37%;
+        --hue: 140;
         
-        --primary: 140 100% 93%;
-        --primary-foreground: 140 45% 37%;
+        --background: var(--hue) 100% 100%;
+        --foreground: var(--hue) 45% 37%;
         
-        --secondary: 140 73% 90%;
-        --secondary-foreground: 140 40% 40%;
+        --primary: var(--hue) 100% 93%;
+        --primary-foreground: var(--hue) 45% 37%;
         
-        --accent: 140 80% 90%;
-        --border: 140 44% 81%;
+        --secondary: var(--hue) 73% 90%;
+        --secondary-foreground: var(--hue) 40% 40%;
         
-        --muted: 140 12% 92%;
-        --muted-foreground: 0 0% 56%;
+        --accent: var(--hue) 80% 90%;
+        --border: var(--hue) 44% 81%;
+        
+        --muted: var(--hue) 12% 92%;
+        --muted-foreground: var(--hue) 0% 56%;
         
         --destructive: 0 96% 39%;
         --destructive-foreground: 0 61% 93%;
+
+        --card: var(--hue) 100% 99%;
+        --card-foreground: var(--hue) 45% 37%;
   
-        --popover: 140 100% 93%;
-        --popover-foreground: 140 45% 37%;
+        --popover: var(--hue) 100% 93%;
+        --popover-foreground: var(--hue) 45% 37%;
         
-        --input: 140 73% 97%;
-        --ring: 140 44% 81%;
+        --input: var(--hue) 53% 99%;
+        --ring: var(--hue) 44% 81%;
         
         --radius: 0.7rem;
 
-        --complimentary: calc(140 + 30) 64% 90%;
-        --adjacent: calc(140 + 90) 64% 90%;
-        --complimentary-foreground: calc(140 + 30) 45% 35%;
+        --complimentary: calc(var(--hue) + 30) 64% 90%;
+        --adjacent: calc(var(--hue) + 90) 64% 90%;
+        --complimentary-foreground: calc(var(--hue) + 30) 45% 35%;
+
+        --sidebar-width: 12rem;
+        --sidebar-width-collapsed: 4rem;
+      }
+
+      .dark {
+        --hue: 140;
+        
+        --background: var(--hue) 0% 0%;
+        --foreground: var(--hue) 52% 88%;
+        
+        --primary: var(--hue) 24% 13%;
+        --primary-foreground: var(--hue) 52% 88%;
+        
+        --secondary: var(--hue) 42% 16%;
+        --secondary-foreground: var(--hue) 51% 82%;
+        
+        --accent: var(--hue) 42% 34%;
+        --border: var(--hue) 28% 15%;
+        
+        --muted: var(--hue) 5% 32%;
+        --muted-foreground: var(--hue) 5% 56%;
+        
+        --destructive: 0 96% 39%;
+        --destructive-foreground: 0 61% 93%;
+
+        --card: var(--hue) 70% 10%;
+        --card-foreground: var(--hue) 52% 88%;
+  
+        --popover: var(--hue) 29% 39%;
+        --popover-foreground: var(--hue) 52% 88%;
+        
+        --input: var(--hue) 58% 15%;
+        --ring: var(--hue) 28% 15%;
+        
+        --radius: 0.7rem;
+
+        --complimentary: calc(var(--hue) + 30) 64% 50%;
+        --adjacent: calc(var(--hue) + 90) 64% 50%;
+        --complimentary-foreground: calc(var(--hue) + 30) 45% 95%;
 
         --sidebar-width: 12rem;
         --sidebar-width-collapsed: 4rem;

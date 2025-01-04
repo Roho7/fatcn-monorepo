@@ -1,21 +1,25 @@
+
 import fs from "fs"
 import path from "path"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
-import { UnistNode, UnistTree } from "./unist"
 
+import { registry } from "@/_registry"
+import { UnistNode, UnistTree } from "./unist"
 
 export function rehypeComponent() {
     return async (tree: UnistTree) => {
       visit(tree, (node: UnistNode) => {
         // src prop overrides both name and fileName.
+
+
         const { value: srcPath } =
           (getNodeAttributeByName(node, "src") as {
             name: string
             value?: string
             type?: string
           }) || {}
-  
+
         if (node.name === "ComponentSource") {
           const name = getNodeAttributeByName(node, "name")?.value as string
           // const fileName = getNodeAttributeByName(node, "fileName")?.value as string | undefined
@@ -61,17 +65,19 @@ export function rehypeComponent() {
         }
   
         if (node.name === "ComponentPreview") {
+          console.log("ComponentPreview", node.name)
           const name = getNodeAttributeByName(node, "name")?.value as string
   
           if (!name) {
             return null
           }
   
+
           try {
             // TODO: Add your logic here to determine the source file path
-            const src = '' // Replace with your source path logic
+            const src = registry[name as keyof typeof registry].src
             
-            // Read the source file.
+            // // Read the source file.
             const filePath = src
             const source = fs.readFileSync(filePath, "utf8")
   
@@ -80,7 +86,8 @@ export function rehypeComponent() {
               u("element", {
                 tagName: "pre",
                 properties: {
-                  __src__: src,
+                  // __src__: src,
+                  name: name,
                 },
                 children: [
                   u("element", {
@@ -102,6 +109,7 @@ export function rehypeComponent() {
             console.error(error)
           }
         }
+
       })
     }
   }

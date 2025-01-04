@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import { execSync } from "child_process";
 import * as fs from "fs";
+import inquirer from "inquirer";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import { THEMES } from "./utils/classes/themes.js";
-import inquirer from "inquirer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -82,6 +84,14 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      width: {
+        "sidebar-width": "var(--sidebar-width)",
+        "sidebar-width-collapsed": "var(--sidebar-width-collapsed)",
+      },
+      backgroundImage: {
+        "gradient-complimentary":
+          "linear-gradient(to bottom right, hsl(var(--complimentary)) 0%, hsl(var(--adjacent)) 50%,  hsl(var(--complimentary)) 100%)",
       },
     },
   },

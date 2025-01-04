@@ -15,9 +15,11 @@ import {
   TabsList,
   TabsTrigger,
 } from "@fatcn/ui";
+import { Add01Icon } from "hugeicons-react";
 import { useMDXComponent } from "next-contentlayer2/hooks";
 import Link from "next/link";
 import * as React from "react";
+import { ComponentPreview } from "./component-preview";
 import CopyButton from "./copy.button";
 
 export enum Events {
@@ -25,7 +27,6 @@ export enum Events {
 }
 
 const components = {
-  
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -156,7 +157,7 @@ const components = {
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
-        "px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right text-secondary-foreground",
         className,
       )}
       {...props}
@@ -165,72 +166,76 @@ const components = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right text-muted-foreground",
         className,
       )}
       {...props}
     />
   ),
-pre: ({
-  className,
-  __rawString__,
-  __withMeta__,
-  __npmCommand__,
-  __yarnCommand__,
-  __src__,
-  __event__,
-  ...props
-}: React.HTMLAttributes<HTMLPreElement> & {
-  __rawString__?: string;
-  __withMeta__?: boolean;
-  __npmCommand__?: string;
-  __yarnCommand__?: string;
-  __src__?: string;
-  __event__?: Events;
-}) => {
-  const rawCode = __rawString__ || "";
-  if (__npmCommand__ || __yarnCommand__) {
-    return (
-      <Tabs defaultValue="npm">
-        <TabsList>
-          <TabsTrigger value="npm">npm</TabsTrigger>
-          <TabsTrigger value="yarn">yarn</TabsTrigger>
-        </TabsList>
-        <TabsContent value="npm">
-          <div className="relative">
-            <pre
-              className={cn(
-                "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
-                className
-              )}
-            >
-              <code className="relative font-mono text-sm">{__npmCommand__}</code>
-            </pre>
-            <CopyButton
-              value={__npmCommand__ || ""}
-              className="absolute right-4 top-4"
-            />
-          </div>
-        </TabsContent>
-        <TabsContent value="yarn">
-          <div className="relative">
-            <pre
-              className={cn(
-                "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
-                className
-              )}
-            >
-              <code className="relative font-mono text-sm">{__yarnCommand__}</code>
-            </pre>
-            <CopyButton
-              value={__yarnCommand__ || ""}
-              className="absolute right-4 top-4"
-            />
-          </div>
-        </TabsContent>
-      </Tabs>
-    );
-  }
+  pre: ({
+    className,
+    __rawString__,
+    __withMeta__,
+    __npmCommand__,
+    __yarnCommand__,
+    __src__,
+    __event__,
+    ...props
+  }: React.HTMLAttributes<HTMLPreElement> & {
+    __rawString__?: string;
+    __withMeta__?: boolean;
+    __npmCommand__?: string;
+    __yarnCommand__?: string;
+    __src__?: string;
+    __event__?: Events;
+  }) => {
+    const rawCode = __rawString__ || "";
+    if (__npmCommand__ || __yarnCommand__) {
+      return (
+        <Tabs defaultValue="npm">
+          <TabsList>
+            <TabsTrigger value="npm">npm</TabsTrigger>
+            <TabsTrigger value="yarn">yarn</TabsTrigger>
+          </TabsList>
+          <TabsContent value="npm">
+            <div className="relative">
+              <pre
+                className={cn(
+                  "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
+                  className,
+                )}
+              >
+                <code className="relative font-mono text-sm">
+                  {__npmCommand__}
+                </code>
+              </pre>
+              <CopyButton
+                value={__npmCommand__ || ""}
+                className="absolute right-4 top-4"
+              />
+            </div>
+          </TabsContent>
+          <TabsContent value="yarn">
+            <div className="relative">
+              <pre
+                className={cn(
+                  "mb-4 mt-2 overflow-x-auto rounded-xl w-full bg-primary text-primary-foreground p-4",
+                  className,
+                )}
+              >
+                <code className="relative font-mono text-sm">
+                  {__yarnCommand__}
+                </code>
+              </pre>
+              <CopyButton
+                value={__yarnCommand__ || ""}
+                className="absolute right-4 top-4"
+              />
+            </div>
+          </TabsContent>
+        </Tabs>
+      );
+    }
 
     return (
       <div className="relative w-full">
@@ -252,7 +257,10 @@ pre: ({
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <code
-      className={cn("rounded-lg px-2 py-1 font-mono text-sm w-full bg-primary text-primary-foreground", className)}
+      className={cn(
+        "rounded-lg px-2 py-1 font-mono text-sm w-full bg-primary text-primary-foreground",
+        className,
+      )}
       {...props}
     />
   ),
@@ -275,19 +283,26 @@ pre: ({
     <Button {...props} />
   ),
   Card: ({ className, ...props }: React.ComponentProps<typeof Card>) => (
-    <Card className={cn('mt-6', className)} {...props} />
+    <Card
+      variant="secondary"
+      className={cn("mt-6 border border-border", className)}
+      {...props}
+    />
   ),
   CardHeader: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardHeader>) => (
-    <CardHeader className={cn( className)} {...props} />
+    <CardHeader
+      className={cn("border-b border-border", className)}
+      {...props}
+    />
   ),
   CardTitle: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardTitle>) => (
-    <CardTitle className={cn( className)} {...props} />
+    <CardTitle className={cn(className)} {...props} />
   ),
   CardDescription: ({
     className,
@@ -299,7 +314,7 @@ pre: ({
     className,
     ...props
   }: React.ComponentProps<typeof CardContent>) => (
-    <CardContent className={cn(className)} {...props} />
+    <CardContent className={cn("py-6", className)} {...props} />
   ),
   CardFooter: ({
     className,
@@ -367,6 +382,10 @@ pre: ({
       {...props}
     />
   ),
+  ComponentPreview: ({...props}: any)=>(
+    <ComponentPreview {...props} />
+  ),
+  Add01Icon,
 };
 
 interface MdxProps {

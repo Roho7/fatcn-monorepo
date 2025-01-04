@@ -13,11 +13,20 @@ Generated 3 documents in .contentlayer
 [1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration#pattern-recommendations
  [32m[1m✓[22m[39m Compiled successfully
 [?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G[?25h
+./app/_components/component-preview.tsx
+24:3  Warning: 'type' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+27:3  Warning: 'extractClassname' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+28:3  Warning: 'extractedClassNames' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+30:3  Warning: 'description' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+103:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+103:15  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
 ./app/_components/docs-rhs.tsx
 75:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 ./app/_components/mdx-components.tsx
-98:15  Warning: 'className' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+99:15  Warning: 'className' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+385:34  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 ./lib/tableOfContent.ts
 13:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
@@ -27,23 +36,23 @@ Generated 3 documents in .contentlayer
 47:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G [36m...[39m [2K[1G [36m.[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
+[?25l [36m.[39m [2K[1G [36m..[39m [2K[1G[?25h    [32m[1m✓[22m[39m Linting and checking validity of types 
 [?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
-[?25l [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=   ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[==  ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=== ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[  ==][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[   =][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[   =][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[  ==][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[====][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (5/5)
+[?25l [37m[1m [22m[39m Generating static pages (0/5)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/5)  [36m[=   ][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (5/5)
 [?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
 [2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
 
 [4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
 ┌ ○ /                                    10.5 kB         [37m[1m165 kB[22m[39m
 ├ ○ /_not-found                          981 B           [37m[1m106 kB[22m[39m
-└ ƒ /docs/[...slug]                      6.8 kB          [37m[1m161 kB[22m[39m
+└ ƒ /docs/[...slug]                      7.58 kB         [37m[1m162 kB[22m[39m
 + First Load JS shared by all            [37m[1m105 kB[22m[39m
-  ├ chunks/855-86f27f7bb9301e91.js       50.5 kB
-  ├ chunks/87c73c54-699768dcfc3eb582.js  52.9 kB
-  └ other shared chunks (total)          1.92 kB
+  ├ chunks/855-581b352cb7b7fff8.js       50.5 kB
+  ├ chunks/87c73c54-f447a1136377368e.js  52.9 kB
+  └ other shared chunks (total)          1.99 kB
 
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
-[?25h[2K[1G✨  Done in 16.17s.
+[?25h[2K[1G✨  Done in 15.21s.

@@ -9,35 +9,9 @@ A button component that follows best practices for accessibility and provides mu
 
 ## Usage
 
-<Card size="md">
-<CardHeader>
-<CardTitle>Button</CardTitle>
-<CardDescription>Button variants</CardDescription>
-</CardHeader>
-<CardContent >
-<div className="flex gap-2 max-w-full justify-between">
-    <Button variant="default" size="sm">Default</Button>
-    <Button variant="secondary" size="sm">Secondary</Button>
-    <Button variant="destructive" size="sm">Destructive</Button>
-    <Button variant="outline" size="sm">Outline</Button>
-    <Button variant="ghost" size="sm">Ghost</Button>
-    <Button variant="gradient" size="sm">Gradient</Button>
-    <Button variant="link" size="sm">Link</Button>
-</div>
-</CardContent>
-</Card>
-
-
-```tsx
-import { Button } from '@/components/ui/button'
-
-export default function ButtonDemo() {
-return (
-    <Button variant="primary" onClick={() => console.log('clicked')}>
-        Click me
-    </Button>
-)}
-```
+<ComponentPreview
+name='button'
+/>
 
 
 ## Features
@@ -88,17 +62,11 @@ Buttons support various states including disabled and loading.
 
 Buttons can include icons before or after the text.
 
+<ComponentPreview
+name='icon_button'
+/>
 
-```tsx
-<Button>
-<IconPlus className="mr-2 h-4 w-4" />
-Add Item
-</Button>
-<Button>
-Next
-<IconArrowRight className="ml-2 h-4 w-4" />
-</Button>
-```
+
 
 
 ## Props
@@ -129,11 +97,3 @@ The Button component follows WAI-ARIA guidelines:
 - Includes appropriate ARIA attributes
 - Supports keyboard navigation
 - Maintains sufficient color contrast
-
-## Best Practices
-
-- Use clear, action-oriented text
-- Keep button text concise
-- Ensure adequate spacing between multiple buttons
-- Use loading state for async actions
-- Maintain consistent button hierarchy across your interface
