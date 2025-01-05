@@ -4,6 +4,7 @@ export * from './callout';
 export * from './card';
 export * from './checkbox';
 export * from './code';
+export * from './command-box';
 export * from './dialog';
 export * from './dropdown';
 export * from './input';
