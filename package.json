@@ -15,13 +15,14 @@
   },
   "packageManager": "yarn@1.22.22",
   "devDependencies": {
-    "turbo": "^2.3.3",
     "@changesets/cli": "^2.27.11",
-    "typescript": "^5.7.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
   }
 }

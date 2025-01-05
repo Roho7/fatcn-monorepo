@@ -1,28 +1,43 @@
 'use client';
 import { Cancel01Icon } from 'hugeicons-react';
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
 type ToastTypes = 'success' | 'error' | 'warning' | 'info';
 type ToastContextType = {
   showToast: (message: string, type: ToastTypes, duration: number) => void;
   removeToast: (id: number) => void;
-}
+};
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
-  const [toasts, setToasts] = useState<{ id: number; message: string; type: ToastTypes; duration: number }[]>([]);
+  const [toasts, setToasts] = useState<
+    { id: number; message: string; type: ToastTypes; duration: number }[]
+  >([]);
 
-  const showToast = useCallback((message: string, type: ToastTypes = 'success', duration = 3000) => {
-    const id = Date.now();
-    setToasts(prev => [...prev, { id, message, type, duration }]);
-  }, []);
+  const showToast = useCallback(
+    (message: string, type: ToastTypes = 'success', duration = 3000) => {
+      const id = Date.now();
+      setToasts((prev) => [...prev, { id, message, type, duration }]);
+    },
+    []
+  );
 
   const removeToast = useCallback((id: number) => {
-    setToasts(prev => prev.filter(toast => toast.id !== id));
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
 
-  const Toast = ({ message, type, duration, id }: { message: string, type: ToastTypes, duration: number, id: number }) => {
+  const Toast = ({
+    message,
+    type,
+    duration,
+    id,
+  }: {
+    message: string;
+    type: ToastTypes;
+    duration: number;
+    id: number;
+  }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     React.useEffect(() => {
@@ -56,20 +71,22 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
       data-[state=open]:opacity-100 
       data-[state=open]:translate-y-0
     `;
-    
+
     const typeStyles = {
       success: 'bg-primary text-primary-foreground ring-1 ring-ring',
-      error: 'bg-destructive text-destructive-foreground ring-1 ring-destructive-foreground',
-      warning: 'bg-secondary text-secondary-foreground ring-1 ring-secondary-foreground',
-      info: 'bg-complimentary text-complimentary-foreground ring-1 ring-complimentary-foreground'
+      error:
+        'bg-destructive text-destructive-foreground ring-1 ring-destructive-foreground',
+      warning:
+        'bg-secondary text-secondary-foreground ring-1 ring-secondary-foreground',
+      info: 'bg-complimentary text-complimentary-foreground ring-1 ring-complimentary-foreground',
     };
 
     return (
-      <div 
+      <div
         className={`${baseStyles} ${typeStyles[type]}`}
         data-state={isOpen ? 'open' : 'closed'}
       >
-        <div className="flex items-center gap-2 whitespace-nowrap justify-between">
+        <div className="flex items-center justify-between gap-2 whitespace-nowrap">
           <span>{message}</span>
           <button
             onClick={() => setIsOpen(false)}
@@ -85,8 +102,8 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext.Provider value={{ showToast, removeToast }}>
       {children}
-      <div className="fixed bottom-4 right-4 flex flex-col-reverse gap-2 z-50">
-        {toasts.map(toast => (
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col-reverse gap-2">
+        {toasts.map((toast) => (
           <Toast key={toast.id} {...toast} />
         ))}
       </div>

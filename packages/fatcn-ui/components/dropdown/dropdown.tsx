@@ -1,64 +1,64 @@
-"use client"
-import React from "react";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { cva } from "class-variance-authority";
-import { ArrowRight01Icon } from "hugeicons-react";
-import { cn } from "../../lib";
-import { Button } from "../button";
+'use client';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { cva } from 'class-variance-authority';
+import { ArrowRight01Icon } from 'hugeicons-react';
+import React from 'react';
+import { cn } from '../../lib';
+import { Button } from '../button';
 
 const dropdownContentVariants = cva(
-  "whitespace-nowrap flex flex-col gap-1 p-2.5 rounded-md text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 w-full",
+  'whitespace-nowrap flex flex-col gap-1 p-2.5 rounded-md text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 w-full',
   {
     variants: {
       variant: {
-        default: "bg-popover text-popover-foreground shadow w-full",
-        secondary: "bg-popover text-popover-foreground shadow w-full",
+        default: 'bg-popover text-popover-foreground shadow w-full',
+        secondary: 'bg-popover text-popover-foreground shadow w-full',
       },
     },
-  },
+  }
 );
 
 const dropdownTriggerVariants = cva(
-  "flex items-center justify-center gap-2 px-4 py-2 whitespace-nowrap rounded-md text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow",
+  'flex items-center justify-center gap-2 px-4 py-2 whitespace-nowrap rounded-md text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow',
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        secondary: "bg-popover text-popover-foreground shadow hover:bg-accent",
+          'bg-primary text-primary-foreground shadow hover:bg-primary/90',
+        secondary: 'bg-popover text-popover-foreground shadow hover:bg-accent',
       },
     },
-  },
+  }
 );
 
 const dropdownSubTriggerVariants = cva(
-  "flex items-center justify-between items-center gap-2 pl-4 pr-2 py-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+  'flex items-center justify-between items-center gap-2 pl-4 pr-2 py-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: "bg-popover text-popover-foreground hover:bg-accent",
-        secondary: "bg-popover text-popover-foreground hover:bg-accent",
+        default: 'bg-popover text-popover-foreground hover:bg-accent',
+        secondary: 'bg-popover text-popover-foreground hover:bg-accent',
       },
     },
-  },
+  }
 );
 
 const dropdownItemClassName =
-  "px-4 py-2 flex items-center justify-between gap-1 focus-visible:outline-none rounded-md focus:bg-accent cursor-pointer";
+  'px-4 py-2 flex items-center justify-between gap-1 focus-visible:outline-none rounded-md focus:bg-accent cursor-pointer';
 
 const Dropdown = ({
   children,
   options,
   icon,
-  variant = "default",
-  alignment = "start",
-  triggerSize = "md",
+  variant = 'default',
+  alignment = 'start',
+  triggerSize = 'md',
 }: {
   icon?: React.ReactNode;
-  alignment?: "start" | "end" | "center";
-  variant?: "default" | "secondary";
+  alignment?: 'start' | 'end' | 'center';
+  variant?: 'default' | 'secondary';
   children: React.ReactNode;
-  triggerSize?: "sm" | "md" | "lg";
+  triggerSize?: 'sm' | 'md' | 'lg';
   options: {
     action?: (event: Event) => void;
     element: React.ReactNode;
@@ -79,7 +79,7 @@ const Dropdown = ({
           size={triggerSize}
           className={cn(
             dropdownTriggerVariants({ variant: variant }),
-            icon ? "pl-2" : "",
+            icon ? 'pl-2' : ''
           )}
           aria-label="Customise options"
         >
@@ -115,7 +115,7 @@ const Dropdown = ({
                         onSelect={suboption.action}
                       >
                         <div className="flex items-center gap-1">
-                          {suboption.icon ? suboption.icon : null}{" "}
+                          {suboption.icon ? suboption.icon : null}{' '}
                           {suboption.element}
                         </div>
                         {suboption.rightSlot ? suboption.rightSlot : null}
@@ -135,7 +135,7 @@ const Dropdown = ({
                 </div>
                 {option.rightSlot ? option.rightSlot : null}
               </DropdownMenu.Item>
-            ),
+            )
           )}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
@@ -143,5 +143,5 @@ const Dropdown = ({
   );
 };
 
-Dropdown.displayName = "Dropdown";
+Dropdown.displayName = 'Dropdown';
 export { Dropdown };

@@ -1,35 +1,40 @@
-import * as React from "react"
-import { Pagination } from "../pagination/pagination"
-import { cn } from "../../lib"
+import * as React from 'react';
+import { cn } from '../../lib';
+import { Pagination } from '../pagination/pagination';
 interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
-  data: Record<string, any>[]
-  itemsPerPage?: number
-  tableClassName?: string
+  data: Record<string, any>[];
+  itemsPerPage?: number;
+  tableClassName?: string;
 }
 
 const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({ className, data, itemsPerPage = 10, tableClassName, ...props }, ref) => {
-    const [currentPage, setCurrentPage] = React.useState(1)
-    
-    const totalPages = Math.ceil(data.length / itemsPerPage)
-    const startIndex = (currentPage - 1) * itemsPerPage
-    const endIndex = startIndex + itemsPerPage
-    const currentData = data.slice(startIndex, endIndex)
+    const [currentPage, setCurrentPage] = React.useState(1);
+
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentData = data.slice(startIndex, endIndex);
 
     const columns = Object.keys(data[0]).map((key) => ({
       header: key.charAt(0).toUpperCase() + key.slice(1),
       accessor: key,
-    }))
+    }));
 
     return (
-      <div className={cn("flex flex-col gap-4 rounded-lg border overflow-hidden shadow", className)}>
+      <div
+        className={cn(
+          'flex flex-col gap-4 overflow-hidden rounded-lg border shadow',
+          className
+        )}
+      >
         <div className="relative w-full overflow-auto">
           <table
             ref={ref}
-            className={cn("w-full caption-bottom text-sm", tableClassName)}
+            className={cn('w-full caption-bottom text-sm', tableClassName)}
             {...props}
           >
-            <thead className="[&_tr]:border-b bg-accent/50">
+            <thead className="bg-accent/50 [&_tr]:border-b">
               <tr className="border-b transition-colors hover:bg-accent/50">
                 {columns.map((column, index) => (
                   <th
@@ -60,20 +65,20 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
             </tbody>
           </table>
         </div>
-        
-        <div className="py-1 border-t">
-            {totalPages > 1 && (
-              <Pagination
-                length={totalPages}
-                currentPage={currentPage}
-                onClick={setCurrentPage}
-              />
-            )}
+
+        <div className="border-t py-1">
+          {totalPages > 1 && (
+            <Pagination
+              length={totalPages}
+              currentPage={currentPage}
+              onClick={setCurrentPage}
+            />
+          )}
         </div>
       </div>
-    )
+    );
   }
-)
+);
 
-Table.displayName = "Table"
-export { Table }
+Table.displayName = 'Table';
+export { Table };

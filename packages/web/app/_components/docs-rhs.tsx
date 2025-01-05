@@ -1,6 +1,7 @@
 'use client'
 
 import { TocNode } from "@/lib/tableOfContent";
+import { cn } from "@fatcn/ui/lib";
 import React from "react";
 
 function useActiveItem(itemIds: string[]) {
@@ -38,6 +39,13 @@ function useActiveItem(itemIds: string[]) {
   return activeId
 }
 
+const depthMaps = {
+  1: 'ml-0',
+  2: 'ml-0',
+  3: 'ml-5',
+  4: 'ml-8',
+}
+
 
 const DocsRHS = ({ toc }: { toc: TocNode[] }) => {
   const itemIds = React.useMemo(
@@ -51,29 +59,16 @@ const DocsRHS = ({ toc }: { toc: TocNode[] }) => {
     [toc]
   )
 
+
   const activeHeading = useActiveItem(itemIds)
 
   return (
     <aside className='w-[20vw] bg-muted/30 border-l border-border p-4 hidden md:block md:sticky md:top-[4.5rem] md:h-[calc(100vh-4rem)] h-full overflow-y-auto'>
-        {/* <Card title="Profile Completion" variant="secondary" size={"sm"}>
-          <CardHeader>
-            <CardTitle>Profile Completion</CardTitle>
-            <CardDescription>Profile Completion</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-semibold">80%</div>
-          </CardContent>
-          <CardFooter>
-            <Button variant="gradient" size="xs" className="w-full">
-              Complete Now
-            </Button>
-          </CardFooter>
-        </Card> */}
 
         <div className="flex flex-col justify-start">
-          <h3 className="text-sm text-muted-foreground mb-2">Table of Contents</h3>
+          <h3 className="text-sm text-muted-foreground font-medium mb-2">Contents</h3>
           {toc.map((item: any) => (
-            <a href={`${item.url}`} key={item.url} className={`text-xs text-muted-foreground text-left pb-1 justify-start hover:text-primary-foreground ${activeHeading === item.url ? 'text-primary' : ''}`}>{item.value}</a>
+            <a href={`${item.url}`} key={item.url} className={cn('text-xs text-muted-foreground text-left pb-1 justify-start hover:text-primary-foreground', activeHeading === item.url ? 'text-primary' : '', depthMaps[item.depth as keyof typeof depthMaps])}>{item.value}</a>
           ))}
         </div>
     </aside>

@@ -111,6 +111,14 @@ body {
     ::-webkit-scrollbar-thumb:hover {
       background: hsl(var(--secondary-foreground) / 0.4);
     }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
 
 
     h1 {

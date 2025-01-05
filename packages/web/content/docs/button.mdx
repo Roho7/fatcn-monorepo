@@ -9,10 +9,7 @@ A button component that follows best practices for accessibility and provides mu
 
 ## Usage
 
-<ComponentPreview
-name='button'
-/>
-
+<ComponentPreview name="button" />
 
 ## Features
 
@@ -27,58 +24,70 @@ name='button'
 
 Buttons come in different variants to match your design needs.
 
-```tsx
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="link">Link</Button>
-```
-
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
+        <TabsTrigger value='gradient'>Gradient</TabsTrigger>
+        <TabsTrigger value='ghost'>Ghost</TabsTrigger>
+        <TabsTrigger value='link'>Link</TabsTrigger>
+    </TabsList>
+    <TabsContent value='default'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='secondary'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='gradient'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='ghost'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+    <TabsContent value='link'>
+        <ComponentPreview
+        name='link_button'
+        />
+    </TabsContent>
+</Tabs>
 
 ### Sizes
 
 Available in different sizes to fit your layout.
 
-
 ```tsx
+<Button size="xs">X-Small</Button>
 <Button size="sm">Small</Button>
 <Button size="md">Medium</Button>
 <Button size="lg">Large</Button>
 ```
 
-### States
-
-Buttons support various states including disabled and loading.
-
-
-```tsx
-<Button disabled>Disabled</Button>
-<Button loading>Loading</Button>
-```
-
 
 ### With Icons
 
-Buttons can include icons before or after the text.
+Icon buttons are a special size variant designed to fit icons perfectly. Fatcn ships with `hugeicons-react` which is our
+recommended icon pack for this design system.
 
-<ComponentPreview
-name='icon_button'
-/>
-
-
-
+<ComponentPreview name="icon_button" />
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | The visual style of the button |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | The size of the button |
-| `disabled` | `boolean` | `false` | Whether the button is disabled |
-| `loading` | `boolean` | `false` | Shows a loading spinner and disables the button |
-| `asChild` | `boolean` | `false` | Merge props onto child element instead of rendering button |
-| `className` | `string` | - | Additional CSS classes |
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | The visual style of the button                             |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
+| `disabled`  | `boolean`                                                    | `false`     | Whether the button is disabled                             |
+| `loading`   | `boolean`                                                    | `false`     | Shows a loading spinner and disables the button            |
+| `asChild`   | `boolean`                                                    | `false`     | Merge props onto child element instead of rendering button |
+| `className` | `string`                                                     | -           | Additional CSS classes                                     |
 
 ## Design Guidelines
 
