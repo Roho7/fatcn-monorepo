@@ -5,7 +5,7 @@ import {
     CommandInput,
     CommandItem,
     CommandList,
-} from '@fatcn/ui/dist';
+} from '@fatcn/ui';
 import { File01Icon } from 'hugeicons-react';
 import React from 'react';
 
