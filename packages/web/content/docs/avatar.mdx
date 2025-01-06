@@ -1,23 +1,15 @@
 ---
 title: 'Avatar'
-description: 'Interactive button component with various styles and states.'
+description: 'Avatar component with various shapes and states.'
 category: components
 ---
 
 # Avatar
 
-A button component that follows best practices for accessibility and provides multiple variants for different use cases.
-
+An avatar component represents a user or entity through an image, initials, or icon.
 ## Usage
 
 
-
-## Features
-
-- Multiple variants and sizes
-- Accessible by default with ARIA attributes
-- Support for icons and loading states
-- Keyboard navigation support
 
 ## Examples
 
@@ -90,10 +82,11 @@ recommended icon pack for this design system.
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `variant`   | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | The visual style of the button                             |
 | `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
-| `disabled`  | `boolean`                                                    | `false`     | Whether the button is disabled                             |
-| `loading`   | `boolean`                                                    | `false`     | Shows a loading spinner and disables the button            |
+| `shape`     | `'circle' \|'square'`                                        | `'primary'` | The shape of the button                                    |
+| `src`       | `string`                                                     | -           | The url of the avatar inage                                |
+| `alt`       | `string`                                                     | -           | Shows alternative string of the avatar                     |
+| `ring`      | `boolean`                                                    | `false`     | Adds a border around the avatar                            |
 | `asChild`   | `boolean`                                                    | `false`     | Merge props onto child element instead of rendering button |
 | `className` | `string`                                                     | -           | Additional CSS classes                                     |
 
@@ -109,8 +102,8 @@ recommended icon pack for this design system.
 
 The Button component follows WAI-ARIA guidelines:
 
-- Uses native `<button>` element by default
-- Properly handles disabled states
-- Includes appropriate ARIA attributes
-- Supports keyboard navigation
-- Maintains sufficient color contrast
+- Multiple shapes and sizes
+- Displays a profile image
+- Shows initials when an image is unavailable
+- Support for loading states
+- Keyboard navigation support
