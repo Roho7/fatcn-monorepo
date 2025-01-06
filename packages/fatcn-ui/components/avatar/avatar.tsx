@@ -1,5 +1,4 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import Image from 'next/image';
 import React from 'react';
 import { cn } from '../../lib';
 
@@ -77,7 +76,7 @@ const Avatar = ({
       )}
       {...props}
     >
-      <Image
+      <img
         src={src}
         alt={alt}
         {...avatarImageVariants[

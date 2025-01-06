@@ -1,0 +1,79 @@
+---
+title: 'Callout'
+description: 'Callout component with various styles.'
+category: components
+---
+
+# Callout
+
+A Callout is a UI element designed to grab attention and highlight important information. 
+
+## Usage
+
+<ComponentPreview name="callout" />
+
+## Examples
+
+### Variants
+
+Callouts come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='info'>Info</TabsTrigger>
+        <TabsTrigger value='warning'>Warning</TabsTrigger>
+        <TabsTrigger value='error'>Error</TabsTrigger>
+        <TabsTrigger value='success'>Success</TabsTrigger>
+    </TabsList>
+    <TabsContent value='default'>
+        <ComponentPreview
+        name='callout'
+        />
+    </TabsContent>
+    <TabsContent value='info'>
+        <ComponentPreview
+        name='info_callout'
+        />
+    </TabsContent>
+    <TabsContent value='warning'>
+        <ComponentPreview
+        name='warning_callout'
+        />
+    </TabsContent>
+    <TabsContent value='error'>
+        <ComponentPreview
+        name='error_callout'
+        />
+    </TabsContent>
+    <TabsContent value='success'>
+        <ComponentPreview
+        name='success_callout'
+        />
+    </TabsContent>
+</Tabs>
+
+
+## Props
+
+| Prop        | Type                                                          | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------- | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'default' \| 'info' \| 'warning' \| 'error' \| 'success`| `'default'` | The visual style of the callout                             |
+| `children`  | `React.ReactNode`                                                     | `null`     | The callout content |
+| `className` | `string`                                                      | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Use concise text to communicate the message.
+- Use meaningful icons that align with the context of the message.
+- Align text and visuals consistently for a clean appearance.
+- Provide adequate padding and margin to make the callout easy to read.
+- Use a uniform style for callouts across the interface to maintain coherence.
+
+## Accessibility
+
+- Highlight essential information only.
+- Apply color intentionally (e.g., green for success).
+- Position callouts strategically for visibility.
+- Ensure accessibility with ARIA and keyboard support.
+- Test across devices for effectiveness.

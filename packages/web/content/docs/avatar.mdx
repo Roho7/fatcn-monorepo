@@ -1,0 +1,77 @@
+---
+title: 'Avatar'
+description: 'Avatar component with various shapes and states.'
+category: components
+---
+
+# Avatar
+
+An avatar component represents a user or entity through an image, initials, or icon.
+## Usage
+
+<ComponentPreview name='circle_avatar' />
+
+## Examples
+
+### Variants
+
+Avatars come in two variatns: `square` or `circle`. The default is `circle`.
+
+<Tabs defaultValue='circle'>
+    <TabsList>
+        <TabsTrigger value='circle'>Circle</TabsTrigger>
+        <TabsTrigger value='square'>Square</TabsTrigger>
+    </TabsList>
+    <TabsContent value='square'>
+        <ComponentPreview
+        name='square_avatar'
+        />
+    </TabsContent>
+    <TabsContent value='circle'>
+        <ComponentPreview
+        name='circle_avatar'
+        />
+    </TabsContent>
+</Tabs>
+
+### Sizes
+
+Available in different sizes to fit your layout.
+
+<ComponentPreview name='avatar_sizes' />
+
+
+### With Ring
+
+Avatars can have an optional border which can be enabled with the `ring` prop. This ring borrows its
+color from the `--ring` variable configured in your `global.css` file.
+
+
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the avatar                                     |
+| `shape`     | `'circle' \|'square'`                                        | `'primary'` | The shape of the avatar                                    |
+| `src`       | `string`                                                     | -           | The url of the avatar image                                |
+| `alt`       | `string`                                                     | -           | Shows alternative string of the avatar                     |
+| `ring`      | `boolean`                                                    | `false`     | Adds a border around the avatar                            |
+| `className` | `string`                                                     | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Show initials if no image is available
+- Maintains sufficient color contrast
+- Maintain consistency across the interface
+- Use loading state for async actions
+
+## Accessibility
+
+The Button component follows WAI-ARIA guidelines:
+
+- Multiple shapes and sizes
+- Displays a profile image
+- Shows initials when an image is unavailable
+- Support for loading states
+- Keyboard navigation support

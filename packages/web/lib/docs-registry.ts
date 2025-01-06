@@ -8,9 +8,33 @@ type DocumentationPage = {
 
 export const documentationPages: DocumentationPage[] = [
   {
+    "title": "Avatar",
+    "link": "/docs/avatar",
+    "description": "Avatar component with various shapes and states.",
+    "category": "components"
+  },
+  {
     "title": "Button",
     "link": "/docs/button",
     "description": "Interactive button component with various styles and states.",
+    "category": "components"
+  },
+  {
+    "title": "Callout",
+    "link": "/docs/callout",
+    "description": "Callout component with various styles.",
+    "category": "components"
+  },
+  {
+    "title": "Card",
+    "link": "/docs/card",
+    "description": "Card component with various styles.",
+    "category": "components"
+  },
+  {
+    "title": "Checkbox",
+    "link": "/docs/checkbox",
+    "description": "Interactive checkbox component with various styles and states.",
     "category": "components"
   },
   {
@@ -24,6 +48,12 @@ export const documentationPages: DocumentationPage[] = [
     "link": "/docs/how-it-works",
     "description": "Learn how fatcn installs and configures components in your Next.js project.",
     "category": "overview"
+  },
+  {
+    "title": "Input",
+    "link": "/docs/input",
+    "description": "Interactive input component with various styles and states.",
+    "category": "components"
   },
   {
     "title": "Installation",
