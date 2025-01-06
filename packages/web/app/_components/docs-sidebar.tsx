@@ -23,6 +23,12 @@ const sidebarItems = [
         title: "Button",
         href: "/docs/button",
       },
+      
+      {
+        title: "Avatar",
+        href: "/docs/avatar",
+      },
+    
     ],
   },
 ];

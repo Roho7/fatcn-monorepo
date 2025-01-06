@@ -1,16 +1,16 @@
 ---
-title: 'Button'
+title: 'Avatar'
 description: 'Interactive button component with various styles and states.'
 category: components
 ---
 
-# Button
+# Avatar
 
 A button component that follows best practices for accessibility and provides multiple variants for different use cases.
 
 ## Usage
 
-<ComponentPreview name="button" />
+
 
 ## Features
 
@@ -65,10 +65,17 @@ Buttons come in different variants to match your design needs.
 Available in different sizes to fit your layout.
 
 ```tsx
-<Button size="xs">X-Small</Button>
-<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
+<Avatar size="sm">Small</Avatar>
+<Avatar size="md">Medium</Avatar>
+<Avatar size="lg">Large</Avatar>
+```
+### Shapes
+
+Available in different shapes to fit your layout.
+
+```tsx
+<Avatar shape="circle" src='https://your-img-url.com' alt='image'/>
+<Avatar shape="square" src='https://your-img-url.com' alt='image'/>
 ```
 
 
@@ -83,7 +90,7 @@ recommended icon pack for this design system.
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `variant`   | `'default' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'default'` | The visual style of the button                             |
+| `variant`   | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'primary'` | The visual style of the button                             |
 | `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
 | `disabled`  | `boolean`                                                    | `false`     | Whether the button is disabled                             |
 | `loading`   | `boolean`                                                    | `false`     | Shows a loading spinner and disables the button            |
