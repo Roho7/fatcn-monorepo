@@ -72,5 +72,27 @@ export const registry: Record<string, any> = {
     name: 'Error Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/error-callout-example")),
     src: "./_registry/examples/callout/callout/error-callout-example.tsx"
-  }
+  },
+  // Card
+  card: {
+    name: 'Card',
+    component: React.lazy(() => import("@/_registry/examples/card/card-example")),
+    src: "./_registry/examples/card/card-example.tsx"
+  },
+  secondary_card: {
+    name: 'Secondary Card',
+    component: React.lazy(() => import("@/_registry/examples/card/secondary-card-example")),
+    src: "./_registry/examples/card/secondary-card-example.tsx"
+  },
+  // Input
+  input: {
+    name: 'Input',
+    component: React.lazy(() => import("@/_registry/examples/input/input-example")),
+    src: "./_registry/examples/input/input-example.tsx"
+  },
+  checkbox: {
+    name: 'Checkbox',
+    component: React.lazy(() => import("@/_registry/examples/checkbox/checkbox-example")),
+    src: "./_registry/examples/checkbox/checkbox-example.tsx"
+  },
 }

@@ -15,3 +15,4 @@ yarn.lock
 .next
 
 .turbo
+turbo-build.log
