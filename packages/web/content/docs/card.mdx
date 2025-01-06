@@ -1,0 +1,91 @@
+---
+title: 'Card'
+description: 'Card component with various styles.'
+category: components
+---
+
+# Card
+
+The card component is a versatile container that groups related content and actions about a single subject.
+
+## Usage
+
+
+## Examples
+
+### Variants
+
+Cards come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
+        <TabsTrigger value='gradient'>Gradient</TabsTrigger>
+        <TabsTrigger value='ghost'>Ghost</TabsTrigger>
+        <TabsTrigger value='link'>Link</TabsTrigger>
+    </TabsList>
+    <TabsContent value='default'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='secondary'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='gradient'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='ghost'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+    <TabsContent value='link'>
+        <ComponentPreview
+        name='link_button'
+        />
+    </TabsContent>
+</Tabs>
+
+### Sizes
+
+Available in different sizes to fit your layout.
+
+```tsx
+<Card size="sm">Small</Card>
+<Card size="md">Medium</Card>
+<Card size="lg">Large</Card>
+```
+
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'default' \| 'secondary'`                                   | `'default'` | The visual style of the button                             |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
+
+## Design Guidelines
+
+- Use distinct sections to organize information logically.
+- Maintain consistent padding to improve readability and visual appeal.
+- Avoid overloading cards with too much content to keep them scannable.
+- Provide hover, focus, or click feedback for interactive cards.
+- Use clear, legible fonts with sufficient contrast for text elements.
+- Use high-quality images or illustrations for cards with media content.
+- Align elements consistently within and across cards for a polished look.
+
+## Accessibility
+
+
+- Multiple variants and sizes
+- Can hold text, images, buttons, icons, or other elements.
+- Supports actions such as clicks, hover effects, and embedded links.
+- Adjusts to fit different screen sizes and orientations.
+- Accessible by default with ARIA attributes
+- Keyboard navigation support
