@@ -1,7 +1,7 @@
 ---
 title: How It Works
 description: Learn how fatcn installs and configures components in your Next.js project.
-category: instructions
+category: overview
 ---
 
 # How It Works
@@ -20,11 +20,9 @@ Fatcn looks for a `components` directory in your project root. If it doesn't fin
 Currently fatcn doesn't support adding components one by one. It installs everything in one go. You can choose to delete the components you don't need. The `add` command is in the works.
 </Callout>
 
-### Configuration Updates
+### Tailwind Configuration
 
-#### Tailwind Configuration
-
-Fatcn automatically updates your `tailwind.config.ts` file to include necessary design tokens and theme configurations:
+Fatcn automatically updates your `tailwind.config` file to include necessary design tokens and theme configurations:
 
 - Adds custom colors and their variations
 - Configures animation properties

@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-background flex flex-1 flex-col min-h-screen w-screen`}>
+      <body className={`antialiased bg-background flex flex-1 flex-col min-h-screen w-screen overflow-x-hidden`}>
       <ThemeProvider
             attribute="class"
             defaultTheme="system"

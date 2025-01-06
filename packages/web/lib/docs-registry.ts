@@ -14,12 +14,6 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
-    "title": "Avatar",
-    "link": "/docs/avatar",
-    "description": "Avatar component with various shapes and states.",
-    "category": "components"
-  },
-  {
     "title": "Button",
     "link": "/docs/button",
     "description": "Interactive button component with various styles and states.",
@@ -38,10 +32,22 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
+    "title": "Checkbox",
+    "link": "/docs/checkbox",
+    "description": "Interactive checkbox component with various styles and states.",
+    "category": "components"
+  },
+  {
+    "title": "Dark Mode",
+    "link": "/docs/dark-mode",
+    "description": "Instruction to enabling dark mode in NEXT.js with Fatcn",
+    "category": "guide"
+  },
+  {
     "title": "How It Works",
     "link": "/docs/how-it-works",
     "description": "Learn how fatcn installs and configures components in your Next.js project.",
-    "category": "instructions"
+    "category": "overview"
   },
   {
     "title": "Input",
@@ -53,7 +59,7 @@ export const documentationPages: DocumentationPage[] = [
     "title": "Installation",
     "link": "/docs/installation",
     "description": "Install and configure fatcn in Next.js.",
-    "category": "instructions"
+    "category": "overview"
   }
 ];
 
