@@ -1,10 +1,10 @@
 ---
-title: 'Input'
-description: 'Interactive input component with various styles and states.'
+title: 'Checkbox'
+description: 'Interactive checkbox component with various styles and states.'
 category: components
 ---
 
-# Input
+# Checkbox
 
 A button component that follows best practices for accessibility and provides multiple variants for different use cases.
 
@@ -74,21 +74,25 @@ recommended icon pack for this design system.
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `label`     | `string`                                                     | -           | The content of the input box                                     |
+| `variant`   | `'default' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'default'` | The visual style of the button                             |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
+| `disabled`  | `boolean`                                                    | `false`     | Whether the button is disabled                             |
+| `loading`   | `boolean`                                                    | `false`     | Shows a loading spinner and disables the button            |
+| `asChild`   | `boolean`                                                    | `false`     | Merge props onto child element instead of rendering button |
 | `className` | `string`                                                     | -           | Additional CSS classes                                     |
 
 ## Design Guidelines
 
-- Use clear, descriptive labels and placeholders for context.
-- Ensure sufficient padding and legible font size for readability.
-- Provide visual feedback for focus, hover, and error states.
-- Use appropriate input types (e.g., text, password, email) for better functionality.
-- Ensure accessible error messaging and validation hints.
+- Use clear, descriptive labels for each checkbox.
+- Maintain sufficient spacing between checkboxes for readability.
+- Provide visual feedback for states: checked, unchecked, and indeterminate.
+- Ensure focus and hover states are easily noticeable.
+- Group related checkboxes with a clear heading or context.
 
 ## Accessibility
 
-- Multiple Types: Supports text, email, password, number, and more.
-- Validation Support: Includes client-side and server-side validation.
-- Customizable Styles: Flexible size, colors, and borders.
-- Keyboard and Screen Reader Accessible: Includes ARIA attributes for usability.
-- Responsive: Adapts seamlessly across screen sizes and devices.
+- Supports checked, unchecked, and indeterminate.
+- Fully operable via keyboard navigation.
+- Adaptable size, color, and labels.
+- Works seamlessly across devices and screen sizes.
+- Includes ARIA roles for accessibility.

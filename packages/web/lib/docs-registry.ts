@@ -14,6 +14,12 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
+    "title": "Avatar",
+    "link": "/docs/avatar",
+    "description": "Avatar component with various shapes and states.",
+    "category": "components"
+  },
+  {
     "title": "Button",
     "link": "/docs/button",
     "description": "Interactive button component with various styles and states.",
