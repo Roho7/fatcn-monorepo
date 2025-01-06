@@ -28,6 +28,21 @@ const sidebarItems = [
         title: "Avatar",
         href: "/docs/avatar",
       },
+
+      {
+        title: "Card",
+        href: "/docs/card",
+      },
+
+      {
+        title: "Callout",
+        href: "/docs/callout",
+      },
+    
+      {
+        title: "Input",
+        href: "/docs/input",
+      },
     
     ],
   },
