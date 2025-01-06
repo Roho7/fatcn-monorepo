@@ -9,45 +9,27 @@ category: components
 An avatar component represents a user or entity through an image, initials, or icon.
 ## Usage
 
-
+<ComponentPreview name='circle_avatar' />
 
 ## Examples
 
 ### Variants
 
-Buttons come in different variants to match your design needs.
+Avatars come in two variatns: `square` or `circle`. The default is `circle`.
 
-<Tabs defaultValue='default'>
+<Tabs defaultValue='circle'>
     <TabsList>
-        <TabsTrigger value='default'>Default</TabsTrigger>
-        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
-        <TabsTrigger value='gradient'>Gradient</TabsTrigger>
-        <TabsTrigger value='ghost'>Ghost</TabsTrigger>
-        <TabsTrigger value='link'>Link</TabsTrigger>
+        <TabsTrigger value='circle'>Circle</TabsTrigger>
+        <TabsTrigger value='square'>Square</TabsTrigger>
     </TabsList>
-    <TabsContent value='default'>
+    <TabsContent value='square'>
         <ComponentPreview
-        name='button'
+        name='square_avatar'
         />
     </TabsContent>
-    <TabsContent value='secondary'>
+    <TabsContent value='circle'>
         <ComponentPreview
-        name='secondary_button'
-        />
-    </TabsContent>
-    <TabsContent value='gradient'>
-        <ComponentPreview
-        name='gradient_button'
-        />
-    </TabsContent>
-    <TabsContent value='ghost'>
-        <ComponentPreview
-        name='ghost_button'
-        />
-    </TabsContent>
-    <TabsContent value='link'>
-        <ComponentPreview
-        name='link_button'
+        name='circle_avatar'
         />
     </TabsContent>
 </Tabs>
@@ -56,38 +38,25 @@ Buttons come in different variants to match your design needs.
 
 Available in different sizes to fit your layout.
 
-```tsx
-<Avatar size="sm">Small</Avatar>
-<Avatar size="md">Medium</Avatar>
-<Avatar size="lg">Large</Avatar>
-```
-### Shapes
-
-Available in different shapes to fit your layout.
-
-```tsx
-<Avatar shape="circle" src='https://your-img-url.com' alt='image'/>
-<Avatar shape="square" src='https://your-img-url.com' alt='image'/>
-```
+<ComponentPreview name='avatar_sizes' />
 
 
-### With Icons
+### With Ring
 
-Icon buttons are a special size variant designed to fit icons perfectly. Fatcn ships with `hugeicons-react` which is our
-recommended icon pack for this design system.
+Avatars can have an optional border which can be enabled with the `ring` prop. This ring borrows its
+color from the `--ring` variable configured in your `global.css` file.
 
-<ComponentPreview name="icon_button" />
+
 
 ## Props
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
-| `shape`     | `'circle' \|'square'`                                        | `'primary'` | The shape of the button                                    |
-| `src`       | `string`                                                     | -           | The url of the avatar inage                                |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the avatar                                     |
+| `shape`     | `'circle' \|'square'`                                        | `'primary'` | The shape of the avatar                                    |
+| `src`       | `string`                                                     | -           | The url of the avatar image                                |
 | `alt`       | `string`                                                     | -           | Shows alternative string of the avatar                     |
 | `ring`      | `boolean`                                                    | `false`     | Adds a border around the avatar                            |
-| `asChild`   | `boolean`                                                    | `false`     | Merge props onto child element instead of rendering button |
 | `className` | `string`                                                     | -           | Additional CSS classes                                     |
 
 ## Design Guidelines

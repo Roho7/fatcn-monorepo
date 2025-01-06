@@ -1,6 +1,6 @@
 'use client';
 import { Logout01Icon } from 'hugeicons-react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation.js';
 import {
   createContext,
   JSX,
