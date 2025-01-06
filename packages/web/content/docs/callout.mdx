@@ -16,7 +16,7 @@ A Callout is a UI element designed to grab attention and highlight important inf
 
 ### Variants
 
-Buttons come in different variants to match your design needs.
+Callouts come in different variants to match your design needs.
 
 <Tabs defaultValue='default'>
     <TabsList>
@@ -58,17 +58,12 @@ Buttons come in different variants to match your design needs.
 
 | Prop        | Type                                                          | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------- | ----------- | ---------------------------------------------------------- |
-| `variant`   | `'default' \| 'secondary' \| 'warning' \| 'error' \| 'success`| `'default'` | The visual style of the button                             |
-| `disabled`  | `boolean`                                                     | `false`     | Whether the button is disabled                             |
-| `loading`   | `boolean`                                                     | `false`     | Shows a loading spinner and disables the button            |
-| `asChild`   | `boolean`                                                     | `false`     | Merge props onto child element instead of rendering button |
-| `className` | `string`                                                      | -           | Additional CSS classes                                     |
+| `variant`   | `'default' \| 'secondary' \| 'warning' \| 'error' \| 'success`| `'default'` | The visual style of the callout                            |
+| `children`  | `React.ReactNode`                                             | -           | Additional CSS classes                                     |
 
 ## Design Guidelines
 
-- Use concise, actionable text to communicate the message effectively.
-- Ensure the title or main message is more prominent than the supporting text.
-- Apply sufficient contrast between the callout and its background for visibility.
+- Use concise text to communicate the message.
 - Use meaningful icons that align with the context of the message.
 - Align text and visuals consistently for a clean appearance.
 - Provide adequate padding and margin to make the callout easy to read.
@@ -76,10 +71,8 @@ Buttons come in different variants to match your design needs.
 
 ## Accessibility
 
-The Button component follows WAI-ARIA guidelines:
-
-- Uses native `<button>` element by default
-- Properly handles disabled states
-- Includes appropriate ARIA attributes
-- Supports keyboard navigation
-- Maintains sufficient color contrast
+- Highlight essential information only.
+- Apply color intentionally (e.g., green for success).
+- Position callouts strategically for visibility.
+- Ensure accessibility with ARIA and keyboard support.
+- Test across devices for effectiveness.

@@ -74,27 +74,21 @@ recommended icon pack for this design system.
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `variant`   | `'default' \| 'secondary' \| 'outline' \| 'ghost' \| 'link'` | `'default'` | The visual style of the button                             |
-| `size`      | `'sm' \| 'md' \| 'lg'`                                       | `'md'`      | The size of the button                                     |
-| `disabled`  | `boolean`                                                    | `false`     | Whether the button is disabled                             |
-| `loading`   | `boolean`                                                    | `false`     | Shows a loading spinner and disables the button            |
-| `asChild`   | `boolean`                                                    | `false`     | Merge props onto child element instead of rendering button |
+| `label`     | `string`                                                     | -           | The content of the input box                                     |
 | `className` | `string`                                                     | -           | Additional CSS classes                                     |
 
 ## Design Guidelines
 
-- Use primary buttons for main actions
-- Secondary buttons for alternative actions
-- Outline buttons for less prominent actions
-- Ghost buttons for subtle actions within a busy interface
-- Link buttons for navigation-like actions
+- Use clear, descriptive labels and placeholders for context.
+- Ensure sufficient padding and legible font size for readability.
+- Provide visual feedback for focus, hover, and error states.
+- Use appropriate input types (e.g., text, password, email) for better functionality.
+- Ensure accessible error messaging and validation hints.
 
 ## Accessibility
 
-The Button component follows WAI-ARIA guidelines:
-
-- Uses native `<button>` element by default
-- Properly handles disabled states
-- Includes appropriate ARIA attributes
-- Supports keyboard navigation
-- Maintains sufficient color contrast
+- Multiple Types: Supports text, email, password, number, and more.
+- Validation Support: Includes client-side and server-side validation.
+- Customizable Styles: Flexible size, colors, and borders.
+- Keyboard and Screen Reader Accessible: Includes ARIA attributes for usability.
+- Responsive: Adapts seamlessly across screen sizes and devices.

@@ -1,16 +1,15 @@
 ---
-title: 'Button'
-description: 'Interactive button component with various styles and states.'
+title: 'Checkbox'
+description: 'Interactive checkbox component with various styles and states.'
 category: components
 ---
 
-# Button
+# Checkbox
 
 A button component that follows best practices for accessibility and provides multiple variants for different use cases.
 
 ## Usage
 
-<ComponentPreview name="button" />
 
 ## Examples
 
@@ -70,7 +69,6 @@ Available in different sizes to fit your layout.
 Icon buttons are a special size variant designed to fit icons perfectly. Fatcn ships with `hugeicons-react` which is our
 recommended icon pack for this design system.
 
-<ComponentPreview name="icon_button" />
 
 ## Props
 
@@ -85,18 +83,16 @@ recommended icon pack for this design system.
 
 ## Design Guidelines
 
-- Use primary buttons for main actions
-- Secondary buttons for alternative actions
-- Outline buttons for less prominent actions
-- Ghost buttons for subtle actions within a busy interface
-- Link buttons for navigation-like actions
+- Use clear, descriptive labels for each checkbox.
+- Maintain sufficient spacing between checkboxes for readability.
+- Provide visual feedback for states: checked, unchecked, and indeterminate.
+- Ensure focus and hover states are easily noticeable.
+- Group related checkboxes with a clear heading or context.
 
 ## Accessibility
 
-The Button component follows WAI-ARIA guidelines:
-
-- Uses native `<button>` element by default
-- Properly handles disabled states
-- Includes appropriate ARIA attributes
-- Supports keyboard navigation
-- Maintains sufficient color contrast
+- Supports checked, unchecked, and indeterminate.
+- Fully operable via keyboard navigation.
+- Adaptable size, color, and labels.
+- Works seamlessly across devices and screen sizes.
+- Includes ARIA roles for accessibility.
