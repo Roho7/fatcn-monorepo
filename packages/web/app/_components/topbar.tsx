@@ -66,7 +66,7 @@ const Topbar = ({ className }: Props) => {
       <div className="flex gap-2">
         {/* <Input placeholder="Search" className="w-80 hidden md:block" /> */}
         <SearchCommandBox open={open} setOpen={setOpen} handleSelect={handleCommandSelect} />
-        <Button variant="default" size="sm" className='w-[20vw] justify-between' onClick={() => setOpen(true)}>
+        <Button variant="default" size="sm" className='w-[20vw] justify-between h-9' onClick={() => setOpen(true)}>
           <div className='flex items-center gap-2'>
             <Search01Icon className="h-4 w-4" />
             Search...

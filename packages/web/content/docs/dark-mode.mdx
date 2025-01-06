@@ -1,0 +1,154 @@
+---
+title: Dark Mode
+description: Instruction to enabling dark mode in NEXT.js with Fatcn
+category: guide
+---
+
+# Dark Mode
+
+This guide explains how to implement dark mode in your Next.js application using `next-themes` and Tailwind CSS.
+
+## Installation
+
+First, install the required package:
+
+```bash
+npm install next-themes
+```
+
+## Setup Theme Provider
+
+Create a Theme Provider component that will handle the dark mode functionality:
+
+```tsx
+// app/components/themeProvider.tsx
+
+"use client"
+
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import * as React from "react"
+
+export function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}
+```
+
+## Wrap Your Layout
+
+In your root layout file, wrap your application with the ThemeProvider:
+
+```tsx
+// app/layout.tsx
+
+import { ThemeProvider } from "@/components/themeProvider"
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`antialiased bg-background flex flex-1 flex-col min-h-screen w-screen`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          >
+            <div className="flex-1 relative">{children}</div>
+            <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+
+## Using Dark Mode with Tailwind CSS
+
+### Configure Tailwind
+
+Ensure your `tailwind.config.js` has dark mode enabled with the `class` strategy:
+
+```tsx
+// javascript:tailwind.config.js
+
+/ @type {import('tailwindcss').Config} /
+
+module.exports = {
+    darkMode: "class",
+
+    // ... rest of your config
+
+}
+```
+
+
+### Style Components
+
+Fatcn already imports dark mode variants in your `global.css`:
+
+```css
+// app/globals.css
+
+@layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+
+      / ... other light mode variables /
+
+    }
+
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+
+      / ... other dark mode variables /
+
+    }
+}
+```
+
+
+## Using the Theme Hook
+
+To programmatically control the theme or access the current theme state:
+
+```typescript
+import { useTheme } from "next-themes"
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  
+  return (
+    <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      Toggle theme
+    </Button>
+  )
+}
+```
+
+
+## Theme Properties
+
+The ThemeProvider accepts several props:
+
+- `attribute="class"`: Uses class-based dark mode
+- `defaultTheme="system"`: Uses system preferences by default
+- `enableSystem`: Enables system theme detection
+- `disableTransitionOnChange`: Prevents flash during theme changes
+
+## Notes
+
+- Add `suppressHydrationWarning` to the html element to prevent hydration mismatch warnings
+- The theme provider must be wrapped in a client component (hence the "use client" directive)
+- Dark mode styles are automatically applied when the `dark` class is present on the `html` element
+- Use Tailwind's dark mode modifier (`dark:`) to define dark mode styles
+
+For more information, refer to the [next-themes documentation](https://github.com/pacocoursey/next-themes) and [Tailwind dark mode documentation](https://tailwindcss.com/docs/dark-mode).

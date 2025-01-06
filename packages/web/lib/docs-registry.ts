@@ -14,16 +14,22 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
+    "title": "Dark Mode",
+    "link": "/docs/dark-mode",
+    "description": "Instruction to enabling dark mode in NEXT.js with Fatcn",
+    "category": "guide"
+  },
+  {
     "title": "How It Works",
     "link": "/docs/how-it-works",
     "description": "Learn how fatcn installs and configures components in your Next.js project.",
-    "category": "instructions"
+    "category": "overview"
   },
   {
     "title": "Installation",
     "link": "/docs/installation",
     "description": "Install and configure fatcn in Next.js.",
-    "category": "instructions"
+    "category": "overview"
   }
 ];
 
