@@ -6,7 +6,7 @@ category: components
 
 # Dropdown
 
-A Dropdown is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+A Dropdown is a UI element that displays a list of options or actions when triggered, allowing users to select one or perform an action.
 
 ## Usage
 
@@ -21,12 +21,12 @@ Dropdowns come in different variants to match your design needs.
         <TabsTrigger value='default'>Default</TabsTrigger>
         <TabsTrigger value='secondary'>Secondary</TabsTrigger>
     </TabsList>
-    <TabsContent value='success'>
+    <TabsContent value='default'>
         <ComponentPreview
         name='button'
         />
     </TabsContent>
-    <TabsContent value='error'>
+    <TabsContent value='secondary'>
         <ComponentPreview
         name='secondary_button'
         />
@@ -45,15 +45,16 @@ Dropdowns come in different variants to match your design needs.
 
 ## Design Guidelines
 
-- Keep messages concise and action-oriented.
-- Position toasts consistently, typically at the top-right or bottom-center of the screen.
-- Use appropriate colors to reflect the message type (e.g., success, error, info, warning).
-- Auto-dismiss toasts after a few seconds, with an option for manual dismissal.
-- Ensure toasts are responsive and do not obscure critical content.
+- Use a clear trigger (e.g., button or icon) with descriptive labels or tooltips.
+- Position dropdowns dynamically to avoid clipping or obscuring content.
+- Ensure adequate spacing and hover/focus states for each option.
+- Limit the number of options to maintain scannability; group options when necessary.
+- Allow keyboard navigation and close the dropdown on outside clicks or `Esc`.
 
 ## Accessibility
 
-- Configurable timeouts for automatic removal.
-- Allows buttons or links within the toast.
-- Displays multiple toasts in an organized, non-overlapping manner.
-- Includes ARIA roles and proper focus management for usability.
+- Can be opened via click, hover, or keyboard actions.
+- Adjusts placement based on screen space.
+- Supports icons, checkboxes, dividers, and submenus.
+- Navigable via arrow keys and dismissible with `Esc`.
+- Adapts to different devices and orientations seamlessly.

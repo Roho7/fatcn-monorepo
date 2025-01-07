@@ -6,7 +6,7 @@ category: components
 
 # Dialog
 
-A dialog is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+A Dialog is a modal UI element used to capture attention and display important content or actions, often requiring user interaction.
 
 ## Usage
 
@@ -56,15 +56,16 @@ Dialog come in different variants to match your design needs.
 
 ## Design Guidelines
 
-- Keep messages concise and action-oriented.
-- Position toasts consistently, typically at the top-right or bottom-center of the screen.
-- Use appropriate colors to reflect the message type (e.g., success, error, info, warning).
-- Auto-dismiss toasts after a few seconds, with an option for manual dismissal.
-- Ensure toasts are responsive and do not obscure critical content.
+- Use a clear title and concise content to communicate the purpose.
+- Provide actionable buttons (e.g., Confirm, Cancel) with clear hierarchy.
+- Ensure dialogs are dismissible via a close button, overlay click, or `Esc` key.
+- Center dialogs visually and use an overlay to focus user attention.
+- Avoid overusing dialogs to prevent disrupting the user experience.
 
 ## Accessibility
 
-- Configurable timeouts for automatic removal.
-- Allows buttons or links within the toast.
-- Displays multiple toasts in an organized, non-overlapping manner.
-- Includes ARIA roles and proper focus management for usability.
+- Supports headers, content areas, and footers.
+- Includes primary, secondary, and dismiss actions.
+- Fully navigable with the `Tab` key and dismissible with `Esc`.
+- Adapts to various screen sizes and orientations.
+- Uses roles like `dialog` and manages focus for accessibility.
