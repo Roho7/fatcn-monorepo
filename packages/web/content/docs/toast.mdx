@@ -1,0 +1,71 @@
+---
+title: 'Toast'
+description: 'Interactive toast component with various states.'
+category: components
+---
+
+# Toast
+
+A Toast is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Buttons come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='success'>Success</TabsTrigger>
+        <TabsTrigger value='error'>Error</TabsTrigger>
+        <TabsTrigger value='warning'>Warning</TabsTrigger>
+        <TabsTrigger value='info'>Info</TabsTrigger>
+    </TabsList>
+    <TabsContent value='success'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='error'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='warning'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='info'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'success' \| 'error' \| 'warning' \| 'info'`                | `'default'` | The visual style of the button                             |
+| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
+| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
+| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Keep messages concise and action-oriented.
+- Position toasts consistently, typically at the top-right or bottom-center of the screen.
+- Use appropriate colors to reflect the message type (e.g., success, error, info, warning).
+- Auto-dismiss toasts after a few seconds, with an option for manual dismissal.
+- Ensure toasts are responsive and do not obscure critical content.
+
+## Accessibility
+
+- Configurable timeouts for automatic removal.
+- Allows buttons or links within the toast.
+- Displays multiple toasts in an organized, non-overlapping manner.
+- Includes ARIA roles and proper focus management for usability.

@@ -56,22 +56,22 @@ export const registry: Record<string, any> = {
   info_callout: {
     name: 'Info Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/info-callout-example")),
-    src: "./_registry/examples/callout/callout/info-callout-example.tsx"
+    src: "./_registry/examples/callout/info-callout-example.tsx"
   },
   success_callout: {
     name: 'Success Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/success-callout-example")),
-    src: "./_registry/examples/callout/callout/success-callout-example.tsx"
+    src: "./_registry/examples/callout/success-callout-example.tsx"
   },
   warning_callout: {
     name: 'Warning Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/warning-callout-example")),
-    src: "./_registry/examples/callout/callout/warning-callout-example.tsx"
+    src: "./_registry/examples/callout/warning-callout-example.tsx"
   },
   error_callout: {
     name: 'Error Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/error-callout-example")),
-    src: "./_registry/examples/callout/callout/error-callout-example.tsx"
+    src: "./_registry/examples/callout/error-callout-example.tsx"
   },
   // Card
   card: {
