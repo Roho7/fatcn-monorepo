@@ -60,6 +60,12 @@ export const documentationPages: DocumentationPage[] = [
     "link": "/docs/installation",
     "description": "Install and configure fatcn in Next.js.",
     "category": "overview"
+  },
+  {
+    "title": "Pagination",
+    "link": "/docs/pagination",
+    "description": "Interactive pagination component with various states.",
+    "category": "components"
   }
 ];
 
