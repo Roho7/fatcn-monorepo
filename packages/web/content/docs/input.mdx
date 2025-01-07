@@ -10,72 +10,16 @@ A button component that follows best practices for accessibility and provides mu
 
 ## Usage
 
-
-## Examples
-
-### Variants
-
-Buttons come in different variants to match your design needs.
-
-<Tabs defaultValue='default'>
-    <TabsList>
-        <TabsTrigger value='default'>Default</TabsTrigger>
-        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
-        <TabsTrigger value='gradient'>Gradient</TabsTrigger>
-        <TabsTrigger value='ghost'>Ghost</TabsTrigger>
-        <TabsTrigger value='link'>Link</TabsTrigger>
-    </TabsList>
-    <TabsContent value='default'>
-        <ComponentPreview
-        name='button'
-        />
-    </TabsContent>
-    <TabsContent value='secondary'>
-        <ComponentPreview
-        name='secondary_button'
-        />
-    </TabsContent>
-    <TabsContent value='gradient'>
-        <ComponentPreview
-        name='gradient_button'
-        />
-    </TabsContent>
-    <TabsContent value='ghost'>
-        <ComponentPreview
-        name='ghost_button'
-        />
-    </TabsContent>
-    <TabsContent value='link'>
-        <ComponentPreview
-        name='link_button'
-        />
-    </TabsContent>
-</Tabs>
-
-### Sizes
-
-Available in different sizes to fit your layout.
-
-```tsx
-<Button size="xs">X-Small</Button>
-<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
-```
-
-
-### With Icons
-
-Icon buttons are a special size variant designed to fit icons perfectly. Fatcn ships with `hugeicons-react` which is our
-recommended icon pack for this design system.
+<ComponentPreview name='input' />
 
 
 ## Props
 
-| Prop        | Type                                                         | Default     | Description                                                |
-| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `label`     | `string`                                                     | -           | The content of the input box                                     |
-| `className` | `string`                                                     | -           | Additional CSS classes                                     |
+| Prop             | Type                                                         | Default     | Description                                                |
+| ---------------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `label`          | `string`                                                     | -           | The text of the input label                                |
+| `className`      | `string`                                                     | -           | Additional CSS classes for the input container             |
+| `inputClassName` | `string`                                                     | -           | Additional CSS classes for the input component             |
 
 ## Design Guidelines
 

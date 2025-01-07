@@ -7,13 +7,13 @@ import { cn } from '../../lib';
 const cardVariants = cva('flex flex-col space-y-1.5', {
   variants: {
     variant: {
-      default: 'bg-primary/50 text-primary-foreground shadow',
-      secondary: 'bg-card text-card-foreground shadow',
+      default: 'bg-card text-card-foreground shadow',
+      secondary: 'bg-background text-primary-foreground shadow border border-border',
     },
     size: {
-      sm: 'p-4 rounded-sm',
-      md: 'p-6 rounded-md',
-      lg: 'p-8 rounded-lg',
+      sm: 'p-4 rounded-md',
+      md: 'p-6 rounded-lg',
+      lg: 'p-8 rounded-xl',
     },
   },
   defaultVariants: {
