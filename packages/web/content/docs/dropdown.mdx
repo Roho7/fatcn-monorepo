@@ -1,12 +1,12 @@
 ---
-title: 'Toast'
-description: 'Interactive toast component with various states.'
+title: 'Dropdown'
+description: 'Interactive Dropdown component with various states.'
 category: components
 ---
 
-# Toast
+# Dropdown
 
-A Toast is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+A Dropdown is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
 
 ## Usage
 
@@ -14,14 +14,12 @@ A Toast is a non-intrusive, brief notification that provides feedback or updates
 
 ### Variants
 
-Toasts come in different variants to match your design needs.
+Dropdowns come in different variants to match your design needs.
 
 <Tabs defaultValue='default'>
     <TabsList>
-        <TabsTrigger value='success'>Success</TabsTrigger>
-        <TabsTrigger value='error'>Error</TabsTrigger>
-        <TabsTrigger value='warning'>Warning</TabsTrigger>
-        <TabsTrigger value='info'>Info</TabsTrigger>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
     </TabsList>
     <TabsContent value='success'>
         <ComponentPreview
@@ -33,23 +31,13 @@ Toasts come in different variants to match your design needs.
         name='secondary_button'
         />
     </TabsContent>
-    <TabsContent value='warning'>
-        <ComponentPreview
-        name='gradient_button'
-        />
-    </TabsContent>
-    <TabsContent value='info'>
-        <ComponentPreview
-        name='ghost_button'
-        />
-    </TabsContent>
 </Tabs>
 
 ## Props
 
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `variant`   | `'success' \| 'error' \| 'warning' \| 'info'`                | `'default'` | The visual style of the button                             |
+| `variant`   | `'default' \| 'secondary'`                                   | `'default'` | The visual style of the button                             |
 | `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
 | `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
 | `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
