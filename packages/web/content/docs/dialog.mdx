@@ -1,0 +1,71 @@
+---
+title: 'Dialog'
+description: 'Interactive dialog component with various states.'
+category: components
+---
+
+# Dialog
+
+A Dialog is a modal UI element used to capture attention and display important content or actions, often requiring user interaction.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Dialog come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='success'>Success</TabsTrigger>
+        <TabsTrigger value='error'>Error</TabsTrigger>
+        <TabsTrigger value='warning'>Warning</TabsTrigger>
+        <TabsTrigger value='info'>Info</TabsTrigger>
+    </TabsList>
+    <TabsContent value='success'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='error'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='warning'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='info'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
+| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
+| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Use a clear title and concise content to communicate the purpose.
+- Provide actionable buttons (e.g., Confirm, Cancel) with clear hierarchy.
+- Ensure dialogs are dismissible via a close button, overlay click, or `Esc` key.
+- Center dialogs visually and use an overlay to focus user attention.
+- Avoid overusing dialogs to prevent disrupting the user experience.
+
+## Accessibility
+
+- Supports headers, content areas, and footers.
+- Includes primary, secondary, and dismiss actions.
+- Fully navigable with the `Tab` key and dismissible with `Esc`.
+- Adapts to various screen sizes and orientations.
+- Uses roles like `dialog` and manages focus for accessibility.

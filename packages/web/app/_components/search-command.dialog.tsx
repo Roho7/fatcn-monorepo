@@ -1,10 +1,10 @@
 import { getDocumentationLinks } from '@/lib/docs-registry';
 import {
-    CommandBox,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
+  CommandDialog,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
 } from '@fatcn/ui';
 import { File01Icon } from 'hugeicons-react';
 import React from 'react';
@@ -40,12 +40,7 @@ const SearchCommandBox = ({
   }, []);
 
   return (
-    <CommandBox
-      open={open}
-      setOpen={setOpen}
-      loading={false}
-      title="Search documentation..."
-    >
+    <CommandDialog open={open} onOpenChange={setOpen}>
       <CommandInput placeholder="Search documentation..." />
       <CommandList className="max-h-[40vh] overflow-y-auto">
         <CommandGroup heading="Documentation">
@@ -61,7 +56,7 @@ const SearchCommandBox = ({
           ))}
         </CommandGroup>
       </CommandList>
-    </CommandBox>
+    </CommandDialog>
   );
 };
 

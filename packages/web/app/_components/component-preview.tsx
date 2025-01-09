@@ -107,7 +107,7 @@ export function ComponentPreview({
           </div>
           <img
             src="/grid.svg"
-            className="absolute left-0 top-0 -z-10 h-full w-full origin-top scale-110 fill-primary opacity-10 dark:opacity-50 max-md:object-cover"
+            className="absolute left-0 top-0 -z-10 h-full w-full origin-top scale-110 fill-primary opacity-10 dark:opacity-50 object-cover"
           ></img>
         </TabsContent>
         <TabsContent value="code">

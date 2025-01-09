@@ -12,20 +12,40 @@ const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<
-    { id: number; message: string; type: ToastTypes; duration: number }[]
+    { id: number; message: string; type: ToastTypes; duration: number; timer: NodeJS.Timeout }[]
   >([]);
+
+  const removeToast = useCallback((id: number) => {
+    setToasts((prev) => {
+      const toast = prev.find((t) => t.id === id);
+      if (toast) {
+        clearTimeout(toast.timer);
+      }
+      return prev.filter((toast) => toast.id !== id);
+    });
+  }, []);
 
   const showToast = useCallback(
     (message: string, type: ToastTypes = 'success', duration = 3000) => {
-      const id = Date.now();
-      setToasts((prev) => [...prev, { id, message, type, duration }]);
+      const id = Math.random();
+      
+      setToasts((prev) => {
+        const timer = setTimeout(() => {
+          removeToast(id);
+        }, duration);
+        
+        return [...prev, { id, message, type, duration, timer }];
+      });
     },
-    []
+    [removeToast]
   );
 
-  const removeToast = useCallback((id: number) => {
-    setToasts((prev) => prev.filter((toast) => toast.id !== id));
-  }, []);
+  // Cleanup timers when component unmounts
+  React.useEffect(() => {
+    return () => {
+      toasts.forEach((toast) => clearTimeout(toast.timer));
+    };
+  }, [toasts]);
 
   const Toast = ({
     message,
@@ -38,58 +58,28 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     duration: number;
     id: number;
   }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    React.useEffect(() => {
-      requestAnimationFrame(() => {
-        setIsOpen(true);
-      });
-    }, []);
-
-    React.useEffect(() => {
-      const timer = setTimeout(() => {
-        setIsOpen(false);
-      }, duration);
-
-      return () => clearTimeout(timer);
-    }, [duration]);
-
-    React.useEffect(() => {
-      if (!isOpen) {
-        const removeTimer = setTimeout(() => {
-          removeToast(id);
-        }, 300);
-        return () => clearTimeout(removeTimer);
-      }
-    }, [isOpen, id]);
-
     const baseStyles = `
       relative px-4 py-2 text-sm rounded-lg shadow-lg 
       transition-all duration-300 ease-in-out
-      data-[state=closed]:opacity-0 
-      data-[state=closed]:translate-y-[10px]
-      data-[state=open]:opacity-100 
-      data-[state=open]:translate-y-0
+      animate-in fade-in-0 slide-in-from-bottom-3
+      hover:opacity-80
     `;
 
     const typeStyles = {
       success: 'bg-primary text-primary-foreground ring-1 ring-ring',
       error:
-        'bg-destructive text-destructive-foreground ring-1 ring-destructive-foreground',
+        'bg-destructive text-destructive-foreground ring-1 ring-destructive',
       warning:
-        'bg-secondary text-secondary-foreground ring-1 ring-secondary-foreground',
-      info: 'bg-complimentary text-complimentary-foreground ring-1 ring-complimentary-foreground',
+        'bg-yellow-200 text-yellow-500 ring-1 ring-yellow-200 text-yellow-700',
+      info: 'bg-complimentary text-complimentary-foreground ring-1 ring-complimentary',
     };
 
     return (
-      <div
-        className={`${baseStyles} ${typeStyles[type]}`}
-        data-state={isOpen ? 'open' : 'closed'}
-      >
+      <div className={`${baseStyles} ${typeStyles[type]}`}>
         <div className="flex items-center justify-between gap-2 whitespace-nowrap">
           <span>{message}</span>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={() => removeToast(id)}
             className="ml-2 hover:text-primary-foreground/80"
           >
             <Cancel01Icon size={16} />

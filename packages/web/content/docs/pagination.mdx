@@ -1,0 +1,34 @@
+---
+title: 'Pagination'
+description: 'Interactive pagination component with various states.'
+category: components
+---
+
+# Pagination
+
+A pagination allows users to navigate large datasets by breaking content into manageable chunks or pages.
+
+## Usage
+
+<ComponentPreview name='pagination' />
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `length`    | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `className` | `string`                                                     | -           | Additional CSS classes                                     |
+| `onClick`   |  `(value: number) => void`                                   | -           | Handle function to control page clicks                     |
+| `currentPage` | `number`                                                   | 1           | The current page number                                    |            
+## Design Guidelines
+
+- Limit the number of visible page links to reduce clutter.
+- Ensure the pagination component is responsive and scales for mobile devices.
+- Use ARIA attributes to make navigation accessible.
+
+## Accessibility
+
+- Supports next, previous, first, last, and specific page links.
+- Adapts to various styles and layouts.
+- Works seamlessly across screen sizes.
+- Fully accessible keyboard navigation.

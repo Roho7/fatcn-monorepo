@@ -1,0 +1,32 @@
+---
+title: 'Command box'
+description: 'Interactive command box component with various states.'
+category: components
+---
+
+# Command box
+
+A command box is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+
+## Usage
+
+<ComponentPreview name='command_box' />
+
+### With dialog box
+
+<ComponentPreview name='command_box_dialog' />
+
+## Design Guidelines
+
+- Keep messages concise and action-oriented.
+- Position toasts consistently, typically at the top-right or bottom-center of the screen.
+- Use appropriate colors to reflect the message type (e.g., success, error, info, warning).
+- Auto-dismiss toasts after a few seconds, with an option for manual dismissal.
+- Ensure toasts are responsive and do not obscure critical content.
+
+## Accessibility
+
+- Configurable timeouts for automatic removal.
+- Allows buttons or links within the toast.
+- Displays multiple toasts in an organized, non-overlapping manner.
+- Includes ARIA roles and proper focus management for usability.

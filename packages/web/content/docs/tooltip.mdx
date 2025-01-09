@@ -1,0 +1,72 @@
+---
+title: 'Tooltips'
+description: 'Interactive tooltips component with various states.'
+category: components
+---
+
+# Tooltips
+
+A Tooltip is a small, contextual UI element that displays additional information when users hover over, focus on, or interact with a target element.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Tooltipss come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='success'>Success</TabsTrigger>
+        <TabsTrigger value='error'>Error</TabsTrigger>
+        <TabsTrigger value='warning'>Warning</TabsTrigger>
+        <TabsTrigger value='info'>Info</TabsTrigger>
+    </TabsList>
+    <TabsContent value='success'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='error'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='warning'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='info'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'success' \| 'error' \| 'warning' \| 'info'`                | `'default'` | The visual style of the button                             |
+| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
+| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
+| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Keep tooltip content concise and informative.
+- Position tooltips dynamically to avoid obscuring the target or nearby elements.
+- Ensure sufficient contrast between the tooltip and its background.
+- Provide smooth transitions for showing and hiding tooltips.
+- Use accessible triggers, ensuring they work with hover, focus, and screen readers.
+
+## Accessibility
+
+- Automatically adjusts placement based on available space.
+- Flexible in size, color, and typography.
+- Supports hover, focus, or click-based activation.
+- Includes ARIA roles and screen reader support.
+- Adapts seamlessly to different devices and screen orientations.
