@@ -1,0 +1,73 @@
+---
+title: 'Sidebar'
+description: 'Interactive Sidebar component with various states.'
+category: components
+---
+
+# Sidebar
+
+A sidebar is a vertical navigation panel used to organize and provide quick access to primary or supplementary content in an application.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Sidebars come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='success'>Success</TabsTrigger>
+        <TabsTrigger value='error'>Error</TabsTrigger>
+        <TabsTrigger value='warning'>Warning</TabsTrigger>
+        <TabsTrigger value='info'>Info</TabsTrigger>
+    </TabsList>
+    <TabsContent value='success'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='error'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+    <TabsContent value='warning'>
+        <ComponentPreview
+        name='gradient_button'
+        />
+    </TabsContent>
+    <TabsContent value='info'>
+        <ComponentPreview
+        name='ghost_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop               | Type                                                         | Default     | Description                                                |
+| ------------------ | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `header`           | `ReactNode`                                                  | `'default'` | The visual style of the button                             |
+| `content`          | `NavSection`                                                 | -           | Shows the number of pages shown at the same time           |
+| `footer`           | `ReactNode`                                                  | -           | Shows the number of pages shown at the same time           |
+| `showCloseButton`  | `boolean`                                                    | -           | Shows the number of pages shown at the same time           |
+| `className`        | `string`                                                     | -           | Additional CSS classes                                     |
+| `position`         | `'left' \| 'right'`                                          | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Keep the layout simple with clear, categorized links or actions.
+- Use collapsible sections to save space and enhance usability.
+- Highlight the active item to indicate the current location.
+- Ensure the sidebar remains functional on smaller screens, such as with a collapsible or overlay mode.
+- Provide clear icons and labels for better navigation and accessibility.
+
+## Accessibility
+
+- Supports fixed, collapsible, or overlay designs.
+- Adapts to smaller screens with toggle or slide-in functionality.
+- Includes links, icons, dropdowns, and badges.
+- Fully keyboard and screen reader-friendly.
+- Allows for live updates or integration with external data sources.

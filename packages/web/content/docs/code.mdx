@@ -1,0 +1,59 @@
+---
+title: 'Code'
+description: 'Interactive Code component with various states.'
+category: components
+---
+
+# Code
+
+A Code component displays snippets or blocks of code in a structured, readable format, often used for technical documentation or development tools.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Codes come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
+    </TabsList>
+    <TabsContent value='default'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='secondary'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop              | Type                                                         | Default     | Description                                                |
+| ----------------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `children`        | `ToastType`                                                  | -           | The visual style of the button                             |
+| `className`       | `string`                                                     | -           | Shows the number of pages shown at the same time           |
+| `variant`         |`'default' \| 'secondary'`                                    | `'default'` | Shows the number of pages shown at the same time           |
+| `showCopyButton`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+
+## Design Guidelines
+
+- Use monospaced fonts for clarity and consistency.
+- Highlight syntax to improve readability and comprehension.
+- Ensure adequate spacing and line height for multi-line code blocks.
+- Allow for scrolling or wrapping for long lines of code.
+- Provide copy-to-clipboard functionality for user convenience.
+
+## Accessibility
+
+- Supports multiple programming languages.
+- Adjustable themes, font sizes, and colors.
+- Copy-to-clipboard, line numbering, and collapsible blocks.
+- Adapts to various screen sizes, ensuring readability.
+- Includes ARIA roles and proper keyboard navigation for usability.

@@ -1,45 +1,22 @@
 ---
-title: 'Toast'
-description: 'Interactive toast component with various states.'
+title: 'Tooltips'
+description: 'Interactive tooltips component with various states.'
 category: components
 ---
 
-# Toast
+# Tooltips
 
-A Toast is a non-intrusive, brief notification that provides feedback or updates without disrupting the user’s workflow.
+A Tooltip is a small, contextual UI element that displays additional information when users hover over, focus on, or interact with a target element.
 
 ## Usage
-
-<ComponentPreview name='toast' />
-
-To use the toast, you need to wrap your root layout with the `ToastProvier`.
-
-```tsx
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        <ToastProvider>
-           {children}
-        </ToastProvider>
-      </body>
-    </html>
-  );
-}
-
-```
 
 ## Examples
 
 ### Variants
 
-Toasts come in different variants to match your design needs.
+Tooltipss come in different variants to match your design needs.
 
-<Tabs defaultValue='success'>
+<Tabs defaultValue='default'>
     <TabsList>
         <TabsTrigger value='success'>Success</TabsTrigger>
         <TabsTrigger value='error'>Error</TabsTrigger>
@@ -48,22 +25,22 @@ Toasts come in different variants to match your design needs.
     </TabsList>
     <TabsContent value='success'>
         <ComponentPreview
-        name='toast'
+        name='button'
         />
     </TabsContent>
     <TabsContent value='error'>
         <ComponentPreview
-        name='error_toast'
+        name='secondary_button'
         />
     </TabsContent>
     <TabsContent value='warning'>
         <ComponentPreview
-        name='warning_toast'
+        name='gradient_button'
         />
     </TabsContent>
     <TabsContent value='info'>
         <ComponentPreview
-        name='info_toast'
+        name='ghost_button'
         />
     </TabsContent>
 </Tabs>
@@ -80,15 +57,16 @@ Toasts come in different variants to match your design needs.
 
 ## Design Guidelines
 
-- Keep messages concise and action-oriented.
-- Position toasts consistently, typically at the top-right or bottom-center of the screen.
-- Use appropriate colors to reflect the message type (e.g., success, error, info, warning).
-- Auto-dismiss toasts after a few seconds, with an option for manual dismissal.
-- Ensure toasts are responsive and do not obscure critical content.
+- Keep tooltip content concise and informative.
+- Position tooltips dynamically to avoid obscuring the target or nearby elements.
+- Ensure sufficient contrast between the tooltip and its background.
+- Provide smooth transitions for showing and hiding tooltips.
+- Use accessible triggers, ensuring they work with hover, focus, and screen readers.
 
 ## Accessibility
 
-- Configurable timeouts for automatic removal.
-- Allows buttons or links within the toast.
-- Displays multiple toasts in an organized, non-overlapping manner.
-- Includes ARIA roles and proper focus management for usability.
+- Automatically adjusts placement based on available space.
+- Flexible in size, color, and typography.
+- Supports hover, focus, or click-based activation.
+- Includes ARIA roles and screen reader support.
+- Adapts seamlessly to different devices and screen orientations.

@@ -1,0 +1,60 @@
+---
+title: 'Dropdown'
+description: 'Interactive Dropdown component with various states.'
+category: components
+---
+
+# Dropdown
+
+A Dropdown is a UI element that displays a list of options or actions when triggered, allowing users to select one or perform an action.
+
+## Usage
+
+## Examples
+
+### Variants
+
+Dropdowns come in different variants to match your design needs.
+
+<Tabs defaultValue='default'>
+    <TabsList>
+        <TabsTrigger value='default'>Default</TabsTrigger>
+        <TabsTrigger value='secondary'>Secondary</TabsTrigger>
+    </TabsList>
+    <TabsContent value='default'>
+        <ComponentPreview
+        name='button'
+        />
+    </TabsContent>
+    <TabsContent value='secondary'>
+        <ComponentPreview
+        name='secondary_button'
+        />
+    </TabsContent>
+</Tabs>
+
+## Props
+
+| Prop        | Type                                                         | Default     | Description                                                |
+| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
+| `variant`   | `'default' \| 'secondary'`                                   | `'default'` | The visual style of the button                             |
+| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
+| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
+| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+
+## Design Guidelines
+
+- Use a clear trigger (e.g., button or icon) with descriptive labels or tooltips.
+- Position dropdowns dynamically to avoid clipping or obscuring content.
+- Ensure adequate spacing and hover/focus states for each option.
+- Limit the number of options to maintain scannability; group options when necessary.
+- Allow keyboard navigation and close the dropdown on outside clicks or `Esc`.
+
+## Accessibility
+
+- Can be opened via click, hover, or keyboard actions.
+- Adjusts placement based on screen space.
+- Supports icons, checkboxes, dividers, and submenus.
+- Navigable via arrow keys and dismissible with `Esc`.
+- Adapts to different devices and orientations seamlessly.
