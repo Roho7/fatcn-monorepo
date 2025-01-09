@@ -12,7 +12,7 @@ import {
 
 const CardsExample = ({className}: {className?: string}) => {
   return (
-    <div className={cn("grid grid-cols-2 gap-2 h-fit flex-1", className)}>
+    <div className={cn("grid grid-cols-2 gap-2 max-h-min flex-1", className)}>
       {[
         {
           label: "Customer Growth",
@@ -31,7 +31,7 @@ const CardsExample = ({className}: {className?: string}) => {
           key={index}
           variant={stat.variant as "default" | "secondary" | null}
           size={stat.size as "sm" | "md" | "lg" | null}
-          className="w-full"
+          className="w-full h-48"
         >
           <CardHeader>
             <CardTitle>{stat.label}</CardTitle>

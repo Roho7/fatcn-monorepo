@@ -10,6 +10,7 @@ A pagination allows users to navigate large datasets by breaking content into ma
 
 ## Usage
 
+<ComponentPreview name='pagination' />
 
 ## Props
 
@@ -17,7 +18,8 @@ A pagination allows users to navigate large datasets by breaking content into ma
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
 | `length`    | `number`                                                     | -           | Shows the number of pages shown at the same time           |
 | `className` | `string`                                                     | -           | Additional CSS classes                                     |
-
+| `onClick`   |  `(value: number) => void`                                   | -           | Handle function to control page clicks                     |
+| `currentPage` | `number`                                                   | 1           | The current page number                                    |            
 ## Design Guidelines
 
 - Limit the number of visible page links to reduce clutter.

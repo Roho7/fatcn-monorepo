@@ -84,6 +84,16 @@ export const registry: Record<string, any> = {
     component: React.lazy(() => import("@/_registry/examples/card/secondary-card-example")),
     src: "./_registry/examples/card/secondary-card-example.tsx"
   },
+  command_box: {
+    name: 'Command Box',
+    component: React.lazy(() => import("@/_registry/examples/command-box/command-example")),
+    src: "./_registry/examples/command-box/command-example.tsx"
+  },
+  command_box_dialog: {
+    name: 'Command Box Dialog',
+    component: React.lazy(() => import("@/_registry/examples/command-box/command-dialog-example")),
+    src: "./_registry/examples/command-box/command-dialog-example.tsx"
+  },
   // Input
   input: {
     name: 'Input',
@@ -95,4 +105,29 @@ export const registry: Record<string, any> = {
     component: React.lazy(() => import("@/_registry/examples/checkbox/checkbox-example")),
     src: "./_registry/examples/checkbox/checkbox-example.tsx"
   },
+  pagination: {
+    name: 'Pagination',
+    component: React.lazy(() => import("@/_registry/examples/pagination/pagination-example")),
+    src: "./_registry/examples/pagination/pagination-example.tsx"
+  },
+  toast: {
+    name: 'Toast',
+    component: React.lazy(() => import("@/_registry/examples/toast/toast-example")),
+    src: "./_registry/examples/toast/toast-example.tsx"
+  },
+  info_toast: {
+    name: 'Info Toast',
+    component: React.lazy(() => import("@/_registry/examples/toast/info-toast-example")),
+    src: "./_registry/examples/toast/info-toast-example.tsx"
+  },
+  warning_toast: {
+    name: 'Warning Toast',
+    component: React.lazy(() => import("@/_registry/examples/toast/warning-toast-example")),
+    src: "./_registry/examples/toast/warning-toast-example.tsx"
+  },
+  error_toast: {
+    name: 'Error Toast',
+    component: React.lazy(() => import("@/_registry/examples/toast/error-toast-example")),
+    src: "./_registry/examples/toast/error-toast-example.tsx"
+  }
 }

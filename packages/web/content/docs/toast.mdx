@@ -10,13 +10,36 @@ A Toast is a non-intrusive, brief notification that provides feedback or updates
 
 ## Usage
 
+<ComponentPreview name='toast' />
+
+To use the toast, you need to wrap your root layout with the `ToastProvier`.
+
+```tsx
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>
+        <ToastProvider>
+           {children}
+        </ToastProvider>
+      </body>
+    </html>
+  );
+}
+
+```
+
 ## Examples
 
 ### Variants
 
 Buttons come in different variants to match your design needs.
 
-<Tabs defaultValue='default'>
+<Tabs defaultValue='success'>
     <TabsList>
         <TabsTrigger value='success'>Success</TabsTrigger>
         <TabsTrigger value='error'>Error</TabsTrigger>
@@ -25,22 +48,22 @@ Buttons come in different variants to match your design needs.
     </TabsList>
     <TabsContent value='success'>
         <ComponentPreview
-        name='button'
+        name='toast'
         />
     </TabsContent>
     <TabsContent value='error'>
         <ComponentPreview
-        name='secondary_button'
+        name='error_toast'
         />
     </TabsContent>
     <TabsContent value='warning'>
         <ComponentPreview
-        name='gradient_button'
+        name='warning_toast'
         />
     </TabsContent>
     <TabsContent value='info'>
         <ComponentPreview
-        name='ghost_button'
+        name='info_toast'
         />
     </TabsContent>
 </Tabs>

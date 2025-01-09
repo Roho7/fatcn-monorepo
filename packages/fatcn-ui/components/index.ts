@@ -8,6 +8,7 @@ export * from './command-box';
 export * from './dialog';
 export * from './dropdown';
 export * from './input';
+export * from './pagination';
 export * from './sidebar';
 export * from './table';
 export * from './tabs';

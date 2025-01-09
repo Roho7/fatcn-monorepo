@@ -38,6 +38,12 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
+    "title": "Command box",
+    "link": "/docs/command-box",
+    "description": "Interactive command box component with various states.",
+    "category": "components"
+  },
+  {
     "title": "Dark Mode",
     "link": "/docs/dark-mode",
     "description": "Instruction to enabling dark mode in NEXT.js with Fatcn",
@@ -60,6 +66,18 @@ export const documentationPages: DocumentationPage[] = [
     "link": "/docs/installation",
     "description": "Install and configure fatcn in Next.js.",
     "category": "overview"
+  },
+  {
+    "title": "Pagination",
+    "link": "/docs/pagination",
+    "description": "Interactive pagination component with various states.",
+    "category": "components"
+  },
+  {
+    "title": "Toast",
+    "link": "/docs/toast",
+    "description": "Interactive toast component with various states.",
+    "category": "components"
   }
 ];
 

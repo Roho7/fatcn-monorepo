@@ -14,6 +14,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
+  ToastProvider,
 } from '@fatcn/ui';
 import { Add01Icon } from 'hugeicons-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
@@ -396,7 +397,9 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <div className="mdx w-full">
-      <Component components={components} />
+      <ToastProvider>
+        <Component components={components} />
+      </ToastProvider>
     </div>
   );
 }
