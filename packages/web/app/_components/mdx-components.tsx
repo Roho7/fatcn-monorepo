@@ -15,13 +15,15 @@ import {
   TabsList,
   TabsTrigger,
   ToastProvider,
+  TooltipProvider,
 } from '@fatcn/ui';
-import { Add01Icon } from 'hugeicons-react';
+import { Add01Icon, Settings01Icon } from 'hugeicons-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import Link from 'next/link';
 import * as React from 'react';
 import { ComponentPreview } from './component-preview';
 import CopyButton from './copy.button';
+import './mdx.css';
 
 export enum Events {
   copy_to_clipboard = 'copy_to_clipboard',
@@ -385,6 +387,7 @@ const components = {
   ),
   ComponentPreview: ({ ...props }: any) => <ComponentPreview {...props} />,
   Add01Icon,
+  Settings01Icon,
 };
 
 interface MdxProps {
@@ -398,7 +401,9 @@ export function Mdx({ code }: MdxProps) {
   return (
     <div className="mdx w-full">
       <ToastProvider>
-        <Component components={components} />
+        <TooltipProvider>
+          <Component components={components} />
+        </TooltipProvider>
       </ToastProvider>
     </div>
   );

@@ -11,13 +11,15 @@ A Table is a structured UI component used to display data in rows and columns fo
 
 ## Usage
 
+<ComponentPreview name='table' />
+
 
 ## Props
 
 | Prop            | Type                                                         | Default     | Description                                                |
 | --------------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `data`          | `record`                                                     | -           | Shows the number of pages shown at the same time           |
-| `itemsPerPage`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
+| `data`          | `Record<string, any>`                                        | -           | The data to be displayed in the table                      |
+| `itemsPerPage`  | `number`                                                     | -           | Fixes the number of items to show per pages                |
 | `tableClassName`| `string`                                                     | -           | Additional CSS classes                                     |
 
 ## Design Guidelines

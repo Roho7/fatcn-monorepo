@@ -10,49 +10,13 @@ Tabs organize content into multiple sections, allowing users to navigate between
 
 ## Usage
 
-## Examples
-
-### Variants
-
-Tabss come in different variants to match your design needs.
-
-<Tabs defaultValue='default'>
-    <TabsList>
-        <TabsTrigger value='success'>Success</TabsTrigger>
-        <TabsTrigger value='error'>Error</TabsTrigger>
-        <TabsTrigger value='warning'>Warning</TabsTrigger>
-        <TabsTrigger value='info'>Info</TabsTrigger>
-    </TabsList>
-    <TabsContent value='success'>
-        <ComponentPreview
-        name='button'
-        />
-    </TabsContent>
-    <TabsContent value='error'>
-        <ComponentPreview
-        name='secondary_button'
-        />
-    </TabsContent>
-    <TabsContent value='warning'>
-        <ComponentPreview
-        name='gradient_button'
-        />
-    </TabsContent>
-    <TabsContent value='info'>
-        <ComponentPreview
-        name='ghost_button'
-        />
-    </TabsContent>
-</Tabs>
+<ComponentPreview name='tabs' />
 
 ## Props
 
-| Prop        | Type                                                         | Default     | Description                                                |
-| ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
-| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
-| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
-| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
-| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+| Prop        | Type                                                         | Description                                                |
+| ----------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
+| `className` | `string`                                                     | The className to be passed to the tabs components (can be applied to each of the tabs components)          |
 
 ## Design Guidelines
 

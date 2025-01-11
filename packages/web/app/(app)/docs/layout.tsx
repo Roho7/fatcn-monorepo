@@ -1,5 +1,5 @@
 
-import "../../mdx.css";
+import "../../_components/mdx.css";
 
 
 const DocsLayout = ({ children }: { children: React.ReactNode }) => {

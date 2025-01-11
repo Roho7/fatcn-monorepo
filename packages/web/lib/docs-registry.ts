@@ -50,6 +50,18 @@ export const documentationPages: DocumentationPage[] = [
     "category": "guide"
   },
   {
+    "title": "Dialog",
+    "link": "/docs/dialog",
+    "description": "Interactive dialog component with various states.",
+    "category": "components"
+  },
+  {
+    "title": "Dropdown",
+    "link": "/docs/dropdown",
+    "description": "Interactive Dropdown component with various states.",
+    "category": "components"
+  },
+  {
     "title": "How It Works",
     "link": "/docs/how-it-works",
     "description": "Learn how fatcn installs and configures components in your Next.js project.",
@@ -74,9 +86,27 @@ export const documentationPages: DocumentationPage[] = [
     "category": "components"
   },
   {
+    "title": "Table",
+    "link": "/docs/table",
+    "description": "Interactive table component with various states.",
+    "category": "components"
+  },
+  {
+    "title": "Tabs",
+    "link": "/docs/tabs",
+    "description": "Interactive Tabs component with various states.",
+    "category": "components"
+  },
+  {
     "title": "Toast",
     "link": "/docs/toast",
     "description": "Interactive toast component with various states.",
+    "category": "components"
+  },
+  {
+    "title": "Tooltips",
+    "link": "/docs/tooltip",
+    "description": "Interactive tooltips component with various states.",
     "category": "components"
   }
 ];
