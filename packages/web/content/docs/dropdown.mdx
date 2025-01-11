@@ -10,6 +10,42 @@ A Dropdown is a UI element that displays a list of options or actions when trigg
 
 ## Usage
 
+<ComponentPreview name='dropdown' />
+
+### Options
+
+The dropdown component takes in an array of objects which lets you configure the options and supoptions.
+This design choice was taken to allow for more customization in the options, giving you the ability to set 
+icons, actions and rightSlots for each option.
+
+```tsx showLineNumbers
+{[
+    {
+    element: 'Profile Settings',
+    icon: <UserCircle02Icon className="h-4 w-4" />,
+    action: handleSettingsClick,
+    suboptions: [
+        {
+        element: 'Notifications',
+        icon: <SchoolBell01Icon className="h-4 w-4" />,
+        action: (e) => console.log('Notifications clicked'),
+        },
+        {
+        element: 'Email Preferences',
+        icon: <Mail01Icon className="h-4 w-4" />,
+        action: (e) => console.log('Email preferences clicked'),
+        },
+    ]
+    },
+    {
+    element: 'Logout',
+    icon: <Logout01Icon className="h-4 w-4" />,
+    action: handleLogout,
+    rightSlot: <RightAngleIcon className="h-4 w-4" />
+    },
+]}
+```
+
 ## Examples
 
 ### Variants
@@ -23,12 +59,12 @@ Dropdowns come in different variants to match your design needs.
     </TabsList>
     <TabsContent value='default'>
         <ComponentPreview
-        name='button'
+        name='dropdown'
         />
     </TabsContent>
     <TabsContent value='secondary'>
         <ComponentPreview
-        name='secondary_button'
+        name='secondary_dropdown'
         />
     </TabsContent>
 </Tabs>
@@ -38,10 +74,11 @@ Dropdowns come in different variants to match your design needs.
 | Prop        | Type                                                         | Default     | Description                                                |
 | ----------- | ------------------------------------------------------------ | ----------- | ---------------------------------------------------------- |
 | `variant`   | `'default' \| 'secondary'`                                   | `'default'` | The visual style of the button                             |
-| `message`   | `string`                                                     | -           | Shows the number of pages shown at the same time           |
-| `type`      | `ToastType`                                                  | -           | Shows the number of pages shown at the same time           |
-| `duration`  | `number`                                                     | -           | Shows the number of pages shown at the same time           |
-| `id`        | `number`                                                     | -           | Additional CSS classes                                     |
+| `alignment` | `'end' \| 'start'  \| 'center'`                              | `'start'`   | The alignment of the dropdown with respect to the trigger  |
+| `triggerSize`| `'sm' \| 'md' \| 'lg'`                                      | `'md'`      | The size of the trigger button                             |
+| `children`  | `React.ReactNode`                                            | -           | The content of the trigger                                 |
+| `options`   | `Record<string, any>`                                        | -           | The options of the dropdown (See usage above)              |
+| `rightSlot` | `React.ReactNode`                                            | -           | The icon to show up on the right side of the button (rotates automatically on dropdown open) | 
 
 ## Design Guidelines
 

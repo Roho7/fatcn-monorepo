@@ -12,7 +12,7 @@ const dropdownContentVariants = cva(
     variants: {
       variant: {
         default: 'bg-popover text-popover-foreground shadow w-full',
-        secondary: 'bg-popover text-popover-foreground shadow w-full',
+        secondary: 'bg-background text-foreground shadow w-full',
       },
     },
   }
@@ -24,15 +24,15 @@ const dropdownTriggerVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-primary text-primary-foreground shadow hover:bg-primary/90',
-        secondary: 'bg-popover text-popover-foreground shadow hover:bg-accent',
+          'bg-popover text-popover-foreground shadow hover:bg-accent',
+        secondary: 'bg-background border border-border text-foreground shadow hover:bg-popover/90',
       },
     },
   }
 );
 
 const dropdownSubTriggerVariants = cva(
-  'flex items-center justify-between items-center gap-2 pl-4 pr-2 py-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
+  'flex items-center justify-between items-center gap-2 pl-4 pr-2 py-2 whitespace-nowrap rounded-md text-sm font-medium focus:bg-accent focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -53,12 +53,14 @@ const Dropdown = ({
   variant = 'default',
   alignment = 'start',
   triggerSize = 'md',
+  rightSlot,
 }: {
   icon?: React.ReactNode;
   alignment?: 'start' | 'end' | 'center';
   variant?: 'default' | 'secondary';
   children: React.ReactNode;
   triggerSize?: 'sm' | 'md' | 'lg';
+  rightSlot?: React.ReactNode;
   options: {
     action?: (event: Event) => void;
     element: React.ReactNode;
@@ -79,11 +81,13 @@ const Dropdown = ({
           size={triggerSize}
           className={cn(
             dropdownTriggerVariants({ variant: variant }),
-            icon ? 'pl-2' : ''
+            'group'
+            // icon ? 'pl-2' : ''
           )}
           aria-label="Customise options"
         >
           {icon ? icon : null} {children}
+          <div className='group-aria-expanded:rotate-90 transition-transform duration-100'>{rightSlot ? rightSlot : null}</div>
         </Button>
       </DropdownMenu.Trigger>
 

@@ -5,7 +5,7 @@ export const registry: Record<string, any> = {
   button: {
     name: 'Button',
     component: React.lazy(() => import("@/_registry/examples/button-example")),
-    src: "./_registry/examples/button-example.tsx"
+    src: "./_registry/examples/button-example.tsx",
   },
   secondary_button: {
     name: 'Secondary Button',
@@ -129,5 +129,36 @@ export const registry: Record<string, any> = {
     name: 'Error Toast',
     component: React.lazy(() => import("@/_registry/examples/toast/error-toast-example")),
     src: "./_registry/examples/toast/error-toast-example.tsx"
+  },
+// Dialog
+  dialog: {
+    name: 'Dialog',
+    component: React.lazy(() => import("@/_registry/examples/dialog/dialog-example")),
+    src: "./_registry/examples/dialog/dialog-example.tsx"
+  },
+  table: {
+    name: 'Table',
+    component: React.lazy(() => import("@/_registry/examples/table/table-example")),
+    src: "./_registry/examples/table/table-example.tsx"
+  },
+  tabs: {
+    name: 'Tabs',
+    component: React.lazy(() => import("@/_registry/examples/tabs/tabs-example")),
+    src: "./_registry/examples/tabs/tabs-example.tsx"
+  },
+  dropdown: {
+    name: 'Dropdown',
+    component: React.lazy(() => import("@/_registry/examples/dropdown/dropdown-example")),
+    src: "./_registry/examples/dropdown/dropdown-example.tsx"
+    },
+    secondary_dropdown: {
+      name: 'Secondary Dropdown',
+      component: React.lazy(() => import("@/_registry/examples/dropdown/secondary-dropdown-example")),
+    src: "./_registry/examples/dropdown/secondary-dropdown-example.tsx"
+  },
+  tooltip: {
+    name: 'Tooltip',
+    component: React.lazy(() => import("@/_registry/examples/tooltip/tooltip-example")),
+    src: "./_registry/examples/tooltip/tooltip-example.tsx"
   }
 }

@@ -24,7 +24,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
     return (
       <div
         className={cn(
-          'flex flex-col gap-4 overflow-hidden rounded-lg border shadow',
+          'flex flex-col gap-4 overflow-hidden rounded-lg border border-border shadow bg-background',
           className
         )}
       >
@@ -34,8 +34,8 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
             className={cn('w-full caption-bottom text-sm', tableClassName)}
             {...props}
           >
-            <thead className="bg-accent/50 [&_tr]:border-b">
-              <tr className="border-b transition-colors hover:bg-accent/50">
+            <thead className="bg-accent/50 [&_tr]:border-b [&_tr]:border-border">
+              <tr className="border-b transition-colors">
                 {columns.map((column, index) => (
                   <th
                     key={index}
@@ -50,7 +50,7 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
               {currentData.map((row, rowIndex) => (
                 <tr
                   key={rowIndex}
-                  className="border-b transition-colors hover:bg-accent/50 data-[state=selected]:bg-accent"
+                  className="border-b border-border transition-colors hover:bg-accent/50 data-[state=selected]:bg-accent"
                 >
                   {columns.map((column, colIndex) => (
                     <td
@@ -66,15 +66,15 @@ const Table = React.forwardRef<HTMLTableElement, TableProps>(
           </table>
         </div>
 
-        <div className="border-t py-1">
-          {totalPages > 1 && (
+        {totalPages > 1 && (
+          <div className="border-t border-border py-1">
             <Pagination
               length={totalPages}
               currentPage={currentPage}
               onClick={setCurrentPage}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     );
   }
