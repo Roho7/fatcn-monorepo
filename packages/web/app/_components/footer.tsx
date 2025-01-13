@@ -9,6 +9,7 @@ const Footer = () => {
               href="https://roho.live"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-primary-foreground hover:underline"
             >
               Rohosen
             </a>{" "}
@@ -17,6 +18,7 @@ const Footer = () => {
               href="https://mistudesign.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-primary-foreground hover:underline"
             >
               Mistu
             </a>
