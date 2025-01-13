@@ -1,8 +1,11 @@
-import { Avatar } from '@fatcn/ui'
+import { Avatar, AvatarFallback, AvatarImage } from '@fatcn/ui'
 
 const CircleAvatarExample = () => {
   return (
-    <Avatar src="https://github.com/roho7.png" alt="Roho7" size="md" shape="circle" />
+    <Avatar size="md" shape="circle">
+      <AvatarImage src="https://github.com/roho7.png" alt="Roho7" />
+      <AvatarFallback>RO</AvatarFallback>
+    </Avatar>
   )
 }
 

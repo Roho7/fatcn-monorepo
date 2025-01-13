@@ -48,6 +48,11 @@ export const registry: Record<string, any> = {
     component: React.lazy(() => import("@/_registry/examples/avatar-sizes-example")),
     src: "./_registry/examples/avatar-sizes-example.tsx"
   },
+  avatar_with_ring: {
+    name: 'Avatar with Ring',
+    component: React.lazy(() => import("@/_registry/examples/avatar-with-ring-example")),
+    src: "./_registry/examples/avatar-with-ring-example.tsx"
+  },
   callout: {
     name: 'Callout',
     component: React.lazy(() => import("@/_registry/examples/callout/callout-example")),

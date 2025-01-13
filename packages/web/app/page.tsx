@@ -4,13 +4,9 @@ import {
   Card,
   CardContent,
   ToastProvider,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
+  TooltipProvider
 } from "@fatcn/ui";
 import { Button } from "@fatcn/ui/components/button";
-import { Copy01Icon } from "hugeicons-react";
 import Image from "next/image";
 import React from "react";
 import Grid from "../public/grid2.svg";
@@ -18,6 +14,7 @@ import VsCodeExample from "./_components/_examples/vscode.example";
 import ComponentsShowcase from "./_components/components.showcase";
 import HeroBannerLeft from "./_components/hero-banner-left";
 import HeroBannerRight from "./_components/hero-banner-right";
+import HeroCommand from "./_components/hero-command";
 import Topbar from "./_components/topbar";
 import "./globals.css";
 
@@ -50,25 +47,7 @@ export default function Page() {
             <HeroBannerLeft />
             <div className="flex flex-col items-center justify-center">
               <h1 className="text-6xl font-bold tracking-tight mb-4">fatcn</h1>
-              <code className="relative flex items-center whitespace-nowrap gap-4 bg-background pl-4 pr-2 py-2 mb-8 rounded-md font-mono text-sm text-secondary-foreground border border-border">
-                npx fatcn-ui init{" "}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      size="xs"
-                      variant="ghost"
-                      onClick={() => {
-                        navigator.clipboard.writeText("npx fatcn-ui init");
-                      }}
-                    >
-                      <Copy01Icon className="w-4 h-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Copy to clipboard</p>
-                  </TooltipContent>
-                </Tooltip>
-              </code>
+              <HeroCommand />
               <p className="text-sm text-primary-foreground/80">
                 Chonky UI that installs right into your repository
               </p>
@@ -110,6 +89,7 @@ export default function Page() {
               <div className="text-xs text-primary-foreground/60 flex items-center gap-2">
                 <Button
                   size="sm"
+                  variant='gradient'
                   onClick={() => {
                     const randomHue = Math.floor(Math.random() * 360);
                     document.documentElement.style.setProperty(

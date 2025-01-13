@@ -42,7 +42,7 @@ const SearchCommandBox = ({
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
       <CommandInput placeholder="Search documentation..." />
-      <CommandList className="max-h-[40vh] overflow-y-auto">
+      <CommandList className="max-h-[40vh] overflow-y-auto md:w-full">
         <CommandGroup heading="Documentation">
           {getDocumentationLinks().map((link) => (
             <CommandItem

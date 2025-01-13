@@ -58,20 +58,20 @@ const Topbar = ({ className }: Props) => {
         <Button
           variant="link"
           size="sm"
+          className='hidden md:block'
           onClick={() => router.push('/docs/installation')}
         >
           Documentation
         </Button>
       </div>
       <div className="flex gap-2">
-        {/* <Input placeholder="Search" className="w-80 hidden md:block" /> */}
         <SearchCommandBox open={open} setOpen={setOpen} handleSelect={handleCommandSelect} />
-        <Button variant="default" size="sm" className='w-[20vw] justify-between h-9' onClick={() => setOpen(true)}>
+        <Button variant="default" size="sm" className='md:w-[20vw] justify-between h-9' onClick={() => setOpen(true)}>
           <div className='flex items-center gap-2'>
             <Search01Icon className="h-4 w-4" />
             Search...
           </div>
-          <div className='flex items-center text-primary-foreground/50 text-sm gap-0.5'>
+          <div className='items-center text-primary-foreground/50 text-sm gap-0.5 hidden md:flex'>
             <CommandIcon className="h-3 w-3" /> K
           </div>
         </Button>

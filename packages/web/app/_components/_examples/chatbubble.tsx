@@ -1,4 +1,4 @@
-import { Avatar } from "@fatcn/ui";
+import { Avatar, AvatarFallback, AvatarImage } from "@fatcn/ui";
 
 
 export type SenderType = "self" | "other";
@@ -20,7 +20,10 @@ const ChatBubble = ({message, sender, timestamp, isPreviousMessageSameSender}: P
   >
     <div className={`${sender.type === "other" ? "w-6 flex-shrink-0" : ""}`}>
       {sender.type === "other" && !isPreviousMessageSameSender && 
-        <Avatar size='xs' shape='circle' ring src={sender.avatar} alt={sender.name} className="mt-2"/>
+        <Avatar size='xs' shape='circle' ring className="mt-2">
+          <AvatarImage src={sender.avatar} alt={sender.name} />
+          <AvatarFallback>{sender.name.charAt(0)}</AvatarFallback>
+        </Avatar>
       }
     </div>
     <div

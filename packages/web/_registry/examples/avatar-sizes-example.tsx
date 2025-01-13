@@ -1,14 +1,26 @@
-import { Avatar } from '@fatcn/ui'
+import { Avatar, AvatarFallback, AvatarImage } from '@fatcn/ui';
 
 const AvatarSizesExample = () => {
   return (
-    <div className='flex gap-4 items-center'>
-    <Avatar src="https://github.com/roho7.png" alt="Roho7" size="xs" shape="circle" ring />
-    <Avatar src="https://github.com/roho7.png" alt="Roho7" size="sm" shape="circle" ring />
-    <Avatar src="https://github.com/roho7.png" alt="Roho7" size="md" shape="circle" ring />
-    <Avatar src="https://github.com/roho7.png" alt="Roho7" size="lg" shape="circle" ring />
+    <div className="flex items-center gap-4">
+      <Avatar size="xs" shape="circle">
+        <AvatarImage src="https://github.com/mistu2002.png" alt="Mistu" />
+        <AvatarFallback>MI</AvatarFallback>
+      </Avatar>
+      <Avatar size="sm" shape="circle">
+        <AvatarImage src="https://github.com/mistu2002.png" alt="Mistu" />
+        <AvatarFallback>MI</AvatarFallback>
+      </Avatar>
+      <Avatar size="md" shape="circle">
+        <AvatarImage src="https://github.com/mistu2002.png" alt="Mistu" />
+        <AvatarFallback>MI</AvatarFallback>
+      </Avatar>
+      <Avatar size="lg" shape="circle">
+        <AvatarImage src="https://github.com/mistu2002.png" alt="Mistu" />
+        <AvatarFallback>MI</AvatarFallback>
+      </Avatar>
     </div>
-  )
-}
+  );
+};
 
-export default AvatarSizesExample
+export default AvatarSizesExample;
