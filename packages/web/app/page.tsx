@@ -7,6 +7,7 @@ import {
   TooltipProvider
 } from "@fatcn/ui";
 import { Button } from "@fatcn/ui/components/button";
+import { FigmaIcon } from "hugeicons-react";
 import Image from "next/image";
 import React from "react";
 import Grid from "../public/grid2.svg";
@@ -51,6 +52,11 @@ export default function Page() {
               <p className="text-sm text-primary-foreground/80">
                 Chonky UI that installs right into your repository
               </p>
+              <Button variant="ghost" size="sm" className="gap-2 mt-8 cursor-pointer" onClick={() => {
+                window.open("https://www.figma.com/community/file/1460647923890006936/fatcn", "_blank");
+              }}>
+                  <FigmaIcon size={16}/> Get the Design System
+              </Button>
             </div>
             <HeroBannerRight />
           </div>
