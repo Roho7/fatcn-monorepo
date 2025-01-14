@@ -30,7 +30,6 @@ const Topbar = ({ className }: Props) => {
       )}
     >
       <div className="flex items-center gap-4">
-        {pathname.includes('/docs') && (
           <Button
             variant="ghost"
             size="icon"
@@ -48,7 +47,6 @@ const Topbar = ({ className }: Props) => {
           >
             <Menu01Icon className="h-4 w-4" />
           </Button>
-        )}
         <h2
           className="cursor-pointer text-2xl font-bold text-primary-foreground"
           onClick={() => router.push('/')}
