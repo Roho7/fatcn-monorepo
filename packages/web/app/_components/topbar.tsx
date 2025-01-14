@@ -1,8 +1,11 @@
-import {
-  Button
-} from '@fatcn/ui';
+import { Button } from '@fatcn/ui';
 import { cn } from '@fatcn/ui/lib';
-import { CommandIcon, Menu01Icon, Search01Icon, Sun01Icon } from 'hugeicons-react';
+import {
+  CommandIcon,
+  Menu01Icon,
+  Search01Icon,
+  Sun01Icon,
+} from 'hugeicons-react';
 import { useTheme } from 'next-themes';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -30,6 +33,7 @@ const Topbar = ({ className }: Props) => {
       )}
     >
       <div className="flex items-center gap-4">
+        {pathname.includes('docs') && (
           <Button
             variant="ghost"
             size="icon"
@@ -47,29 +51,41 @@ const Topbar = ({ className }: Props) => {
           >
             <Menu01Icon className="h-4 w-4" />
           </Button>
+        )}
         <h2
           className="cursor-pointer text-2xl font-bold text-primary-foreground"
           onClick={() => router.push('/')}
         >
           fat
         </h2>
-        <Button
-          variant="link"
-          size="sm"
-          className='hidden md:block'
-          onClick={() => router.push('/docs/installation')}
-        >
-          Documentation
-        </Button>
+        {!pathname.includes('docs') && (
+          <Button
+            variant="link"
+            size="sm"
+            className=""
+            onClick={() => router.push('/docs/installation')}
+          >
+            Documentation
+          </Button>
+        )}
       </div>
       <div className="flex gap-2">
-        <SearchCommandBox open={open} setOpen={setOpen} handleSelect={handleCommandSelect} />
-        <Button variant="default" size="sm" className='md:w-[20vw] justify-between h-9' onClick={() => setOpen(true)}>
-          <div className='flex items-center gap-2'>
+        <SearchCommandBox
+          open={open}
+          setOpen={setOpen}
+          handleSelect={handleCommandSelect}
+        />
+        <Button
+          variant="default"
+          size="sm"
+          className="h-9 justify-between md:w-[20vw]"
+          onClick={() => setOpen(true)}
+        >
+          <div className="flex items-center gap-2">
             <Search01Icon className="h-4 w-4" />
             Search...
           </div>
-          <div className='items-center text-primary-foreground/50 text-sm gap-0.5 hidden md:flex'>
+          <div className="hidden items-center gap-0.5 text-sm text-primary-foreground/50 md:flex">
             <CommandIcon className="h-3 w-3" /> K
           </div>
         </Button>
