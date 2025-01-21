@@ -1,4 +1,4 @@
-import { Callout } from '@fatcn/ui/components/callout'
+import { Callout } from '@fatcn-ui'
 
 const WarningCalloutExample = () => {
   return (

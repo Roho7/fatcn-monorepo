@@ -1,7 +1,7 @@
 'use client'
 import { getDocumentationByCategory } from "@/lib/docs-registry";
-import { Button } from "@fatcn/ui/components/button";
-import { cn } from "@fatcn/ui/lib";
+import { Button } from "@fatcn-ui/components/button";
+import { cn } from "@fatcn-ui/lib";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef } from "react";
 

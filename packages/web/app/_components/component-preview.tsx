@@ -1,12 +1,12 @@
 'use client';
 
 import {
+  cn,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@fatcn/ui/components/tabs';
-import { cn } from '@fatcn/ui/lib';
+} from '@fatcn-ui';
 import * as React from 'react';
 import { registry } from '../../_registry/registry';
 

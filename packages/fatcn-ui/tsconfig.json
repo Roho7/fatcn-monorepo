@@ -11,7 +11,7 @@
       "rootDir": ".",
       "baseUrl": ".",
       "paths": {
-        "@fatcn/ui/*": ["components/*"]
+        "fatcn-ui/*": ["components/*"]
       },
       "strict": true,
       "esModuleInterop": true,
@@ -20,7 +20,7 @@
       "forceConsistentCasingInFileNames": true,
     },
     "include": [
-      "./cli.ts"
+      "cli.ts"
     ],
     "exclude": [
       "node_modules",

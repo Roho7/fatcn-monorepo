@@ -4,7 +4,7 @@ import {
     TooltipContent,
     TooltipTrigger,
     useToast,
-} from '@fatcn/ui';
+} from 'fatcn-ui';
 import { CheckmarkCircle01Icon, Copy01Icon } from 'hugeicons-react';
 import { useState } from 'react';
 

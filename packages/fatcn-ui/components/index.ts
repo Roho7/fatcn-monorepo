@@ -12,6 +12,6 @@ export * from './pagination';
 export * from './sidebar';
 export * from './table';
 export * from './tabs';
-export * from './toast';
 export * from './tooltip';
+export * from './use-toast';
 

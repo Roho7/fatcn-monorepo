@@ -6,12 +6,19 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
+    "web#build": {
+      "dependsOn": ["fatcn-ui#build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "fatcn-ui#build": {
+      "outputs": ["dist/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "clean": {
-      "cache": false
+      "cache": true
     },
     "lint": {
       "outputs": []

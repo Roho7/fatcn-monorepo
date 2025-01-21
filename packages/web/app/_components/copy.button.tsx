@@ -1,7 +1,7 @@
 'use client'
-import { Button, cn } from "@fatcn/ui";
 import { CheckmarkCircle01Icon, Copy01Icon } from "hugeicons-react";
 import { useState } from "react";
+import { Button, cn } from "../../../fatcn-ui";
 import { Events } from "./mdx-components";
 
 type Props = {

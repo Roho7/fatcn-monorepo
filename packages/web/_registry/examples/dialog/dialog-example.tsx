@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
   Input,
-} from '@fatcn/ui';
+} from '@fatcn-ui';
 
 const DialogExample = () => {
   return (

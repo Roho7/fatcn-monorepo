@@ -16,7 +16,7 @@ import {
   TabsTrigger,
   ToastProvider,
   TooltipProvider,
-} from '@fatcn/ui';
+} from '@fatcn-ui';
 import { Add01Icon, Settings01Icon } from 'hugeicons-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import Link from 'next/link';

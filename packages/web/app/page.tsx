@@ -1,12 +1,12 @@
 "use client";
 
+import { Button } from "@fatcn-ui/components/button";
 import {
-  Card,
-  CardContent,
-  ToastProvider,
-  TooltipProvider
-} from "@fatcn/ui";
-import { Button } from "@fatcn/ui/components/button";
+    Card,
+    CardContent,
+    ToastProvider,
+    TooltipProvider
+} from "fatcn-ui";
 import { FigmaIcon } from "hugeicons-react";
 import Image from "next/image";
 import React from "react";

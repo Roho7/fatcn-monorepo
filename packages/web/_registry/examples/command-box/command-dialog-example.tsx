@@ -1,4 +1,4 @@
-import { Button, CommandDialog, CommandGroup, CommandInput, CommandItem, CommandList } from '@fatcn/ui';
+import { Button, CommandDialog, CommandGroup, CommandInput, CommandItem, CommandList } from '@fatcn-ui';
 import { Download01Icon, StarCircleIcon } from 'hugeicons-react';
 import { useState } from 'react';
 
