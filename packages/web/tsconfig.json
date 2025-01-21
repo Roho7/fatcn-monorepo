@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated", "contentlayer.config.ts", "content/docs/button.mdx", "tailwind.config.js", "lib/docs-registry.js", "lib/generate-docs.mjs", "lib/generate-docs.mts",
+    ".contentlayer/generated", "contentlayer.config.ts", "content/docs/button.mdx", "tailwind.config.js", "lib/docs-registry.js", "lib/generate-docs.mjs", "lib/generate-docs.mts", "packages/commands/cli.js",
   ],
   "exclude": ["node_modules"]
 }

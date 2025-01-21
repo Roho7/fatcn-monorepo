@@ -20,7 +20,7 @@
       "forceConsistentCasingInFileNames": true,
     },
     "include": [
-      "./cli.ts"
+      "cli.ts"
     ],
     "exclude": [
       "node_modules",

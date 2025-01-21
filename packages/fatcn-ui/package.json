@@ -1,6 +1,6 @@
 {
-  "name": "@fatcn/ui",
-  "version": "1.1.1",
+  "name": "fatcn-ui",
+  "version": "1.2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,10 +11,11 @@
   "scripts": {
     "build": "tsc && mkdir -p dist/source && cp -r ./components ./lib dist/source/",
     "postbuild": "chmod +x dist/cli.js",
-    "dev": "tsup ./index.ts --format esm,cjs --watch --dts --external react",
+    "dev": "tsup ./cli.ts --format esm,cjs --watch --dts --external react",
     "clean": "rm -rf dist",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "cli:link": "npm unlink --global fatcn-ui && npm link"
   },
   "files": [
     "dist/**"
@@ -61,7 +62,18 @@
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "tsup": "^8.3.5"
+    "chalk": "^5.4.1",
+    "fs-extra": "^11.1.1",
+		"cli-alerts": "^2.0.0",
+		"cli-handle-error": "^4.4.0",
+		"cli-handle-unhandled": "^1.1.1",
+		"cli-meow-help": "^4.0.0",
+		"cli-welcome": "^3.0.0",
+		"get-package-json-file": "^2.0.0",
+		"meow": "^13.2.0",
+    "tsup": "^8.3.5",
+    "path": "^0.12.7",
+    "commander": "^11.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -72,6 +84,8 @@
     "eslint-config-next": "15.1.2",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^8.2.5",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
