@@ -1,4 +1,4 @@
-import { Pagination } from '@fatcn/ui';
+import { Pagination } from 'fatcn-ui';
 import { useState } from 'react';
 
 const PaginationExample = () => {

@@ -1,11 +1,11 @@
-import { Button, Card, CardContent, cn } from '@fatcn/ui';
+import { Button, Card, CardContent, cn } from 'fatcn-ui';
 import {
-  HelpCircleIcon,
-  Home01Icon,
-  InboxCheckIcon,
-  Settings01Icon,
-  Ticket01Icon,
-  UserCircleIcon,
+    HelpCircleIcon,
+    Home01Icon,
+    InboxCheckIcon,
+    Settings01Icon,
+    Ticket01Icon,
+    UserCircleIcon,
 } from 'hugeicons-react';
 
 const SidebarExample = ({ className }: { className?: string }) => {

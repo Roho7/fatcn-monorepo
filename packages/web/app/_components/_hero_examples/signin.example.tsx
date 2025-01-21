@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, Input } from '@fatcn/ui';
+import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cn, Input } from 'fatcn-ui';
 
 const SigninExample = ({className}: {className?: string}) => {
   return (

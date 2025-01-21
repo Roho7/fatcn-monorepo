@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@fatcn/ui';
-import { Button } from '@fatcn/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from 'fatcn-ui';
+import { Button } from 'fatcn-ui/components/button';
 import { InboxCheckIcon, Mail01Icon } from 'hugeicons-react';
 
 const InboxExample = () => {

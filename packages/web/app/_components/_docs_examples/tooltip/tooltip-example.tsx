@@ -1,5 +1,5 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from '@fatcn/ui';
-import { Button } from '@fatcn/ui/components/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from 'fatcn-ui';
+import { Button } from 'fatcn-ui/components/button';
 import { InformationCircleIcon } from 'hugeicons-react';
 
 type Props = {};

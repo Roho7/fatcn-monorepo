@@ -5,8 +5,8 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@fatcn/ui/components/tabs';
-import { cn } from '@fatcn/ui/lib';
+} from 'fatcn-ui/components/tabs';
+import { cn } from 'fatcn-ui/lib';
 import * as React from 'react';
 import { registry } from '../../_registry/registry';
 

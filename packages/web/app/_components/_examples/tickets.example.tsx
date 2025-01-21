@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, CardTitle, cn } from '@fatcn/ui'
+import { Button, Card, CardContent, CardHeader, CardTitle, cn } from 'fatcn-ui'
 import { Tag01Icon, Ticket01Icon } from 'hugeicons-react'
 
 const TicketsExample = ({className}: {className?: string}) => {

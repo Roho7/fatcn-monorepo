@@ -1,4 +1,4 @@
-import { Input } from '@fatcn/ui'
+import { Input } from 'fatcn-ui'
 
 const InputExample = () => {
   return (

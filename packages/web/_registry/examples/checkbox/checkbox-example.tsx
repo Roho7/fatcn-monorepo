@@ -1,4 +1,4 @@
-import { Checkbox } from '@fatcn/ui'
+import { Checkbox } from 'fatcn-ui'
 
 const CheckboxExample = () => {
   return (
