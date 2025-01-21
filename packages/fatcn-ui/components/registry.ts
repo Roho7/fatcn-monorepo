@@ -219,6 +219,16 @@ export const ui: Registry[] = [
 		]
 	},
 	{
+		name: 'callout',
+		type: 'registry:ui',
+		files: [
+			{
+				path: 'components/callout.tsx',
+				type: 'registry:ui'
+			}
+		]
+	},
+	{
 		name: 'context-menu',
 		type: 'registry:ui',
 		dependencies: ['@radix-ui/react-context-menu'],
