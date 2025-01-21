@@ -1,4 +1,4 @@
-import { Button } from "@fatcn/ui/components/button";
+import { Button } from "@fatcn-ui";
 import { Add01Icon } from "hugeicons-react";
 
 export default function IconButtonExample() {

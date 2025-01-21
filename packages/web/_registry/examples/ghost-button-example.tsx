@@ -1,4 +1,4 @@
-import { Button } from "@fatcn/ui/components/button";
+import { Button } from "@fatcn-ui";
 
 export default function GhostButtonExample() {
   return <Button variant='ghost'>Click me</Button>

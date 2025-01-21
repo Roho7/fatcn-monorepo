@@ -1,7 +1,7 @@
 'use client';
 
 import { TocNode } from '@/lib/tableOfContent';
-import { cn } from 'fatcn-ui/lib';
+import { cn } from '@fatcn-ui/lib';
 import React from 'react';
 
 function useActiveItem(itemIds: string[]) {

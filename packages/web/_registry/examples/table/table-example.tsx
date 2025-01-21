@@ -1,4 +1,4 @@
-import { Table } from 'fatcn-ui'
+import { Table } from '@fatcn-ui'
 
 const data = [
   {

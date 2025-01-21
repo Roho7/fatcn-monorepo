@@ -1,4 +1,4 @@
-import { Dropdown } from "@fatcn/ui"
+import { Dropdown } from "@fatcn-ui"
 
 type Props = {}
 

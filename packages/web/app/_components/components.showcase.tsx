@@ -1,15 +1,15 @@
+import { ArrowDown01Icon, ArrowUp01Icon } from "hugeicons-react";
+import { useState } from "react";
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-  cn,
-} from "@fatcn/ui";
-import { Button } from "@fatcn/ui/components/button";
-import { ArrowDown01Icon, ArrowUp01Icon } from "hugeicons-react";
-import { useState } from "react";
+  cn
+} from "../../../fatcn-ui";
 import ChatExample from "./_examples/chat.example";
 import InboxExample from "./_examples/inbox.example";
 import SidebarExample from "./_examples/sidebar.example";

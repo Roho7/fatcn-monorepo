@@ -1,4 +1,4 @@
-import { Button, useToast } from 'fatcn-ui';
+import { Button, useToast } from '@fatcn-ui';
 
 const ToastExample = () => {
     const { showToast } = useToast();

@@ -1,7 +1,7 @@
+import { cn } from '@fatcn-ui/lib';
 import {
   Button
 } from 'fatcn-ui';
-import { cn } from 'fatcn-ui/lib';
 import { CommandIcon, Menu01Icon, Search01Icon, Sun01Icon } from 'hugeicons-react';
 import { useTheme } from 'next-themes';
 import { usePathname, useRouter } from 'next/navigation';

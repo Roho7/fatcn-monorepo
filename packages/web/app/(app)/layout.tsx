@@ -1,6 +1,6 @@
 "use client";
 
-import { ToastProvider } from "@fatcn/ui";
+import { ToastProvider } from "fatcn-ui";
 import Topbar from "../_components/topbar";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {

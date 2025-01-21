@@ -1,4 +1,4 @@
-import { Dropdown } from 'fatcn-ui'
+import { Dropdown } from '@fatcn-ui'
 import { ArrowRight01Icon, Logout01Icon, Mail01Icon, SchoolBell01Icon, Settings01Icon, UserCircle02Icon } from 'hugeicons-react'
 
 const DropdownExample = () => {

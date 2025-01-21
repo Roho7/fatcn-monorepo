@@ -1,13 +1,13 @@
 import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  cn,
-} from "@fatcn/ui";
+    Button,
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+    cn,
+} from "fatcn-ui";
 
 
 const CardsExample = ({className}: {className?: string}) => {

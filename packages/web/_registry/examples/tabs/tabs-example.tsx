@@ -1,4 +1,4 @@
-import { Button, Card, Input, Tabs, TabsContent, TabsList, TabsTrigger } from 'fatcn-ui'
+import { Button, Card, Input, Tabs, TabsContent, TabsList, TabsTrigger } from '@fatcn-ui'
 
 const TabsExample = () => {
   return (

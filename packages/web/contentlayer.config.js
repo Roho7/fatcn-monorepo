@@ -2,7 +2,7 @@ import { getHighlighter } from "@shikijs/compat";
 import {
   defineDocumentType,
   defineNestedType,
-  makeSource,
+  makeSource
 } from "contentlayer2/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -81,7 +81,8 @@ export const Doc = defineDocumentType(() => ({
   },
   computedFields,
 }));
-export default makeSource({
+
+const config = makeSource({
   contentDirPath: "./content",
   documentTypes: [Doc],
   mdx: {
@@ -203,3 +204,5 @@ export default makeSource({
     ],
   },
 });
+
+export default config;

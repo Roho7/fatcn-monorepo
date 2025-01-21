@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from 'fatcn-ui';
+import { Avatar, AvatarFallback, AvatarImage } from '@fatcn-ui';
 
 const SquareAvatarExample = () => {
   return (

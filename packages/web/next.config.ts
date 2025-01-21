@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 import { createContentlayerPlugin } from "next-contentlayer2";
 
+const withContentlayer = createContentlayerPlugin();
+
 const nextConfig: NextConfig = {
+  transpilePackages: ['fatcn-ui'],
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@fatcn-ui': 'fatcn-ui'
+    }
+    return config
+  },
   images: {
     remotePatterns: [
       {
@@ -14,10 +24,9 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    esmExternals: true // This might help with ESM-related issues
+  }
 };
 
-const withContentlayer = createContentlayerPlugin({
-  // Additional Contentlayer config options
-})
-
-export default withContentlayer(nextConfig)
+export default withContentlayer(nextConfig);

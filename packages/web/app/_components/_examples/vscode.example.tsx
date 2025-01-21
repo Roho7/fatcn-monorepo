@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@fatcn/ui";
+import { Card, CardContent } from "fatcn-ui";
 import {
-  ArrowDown01Icon,
-  ArrowRight01Icon,
-  File01Icon,
-  Folder01Icon,
-  ReactIcon,
-  Typescript01Icon,
+    ArrowDown01Icon,
+    ArrowRight01Icon,
+    File01Icon,
+    Folder01Icon,
+    ReactIcon,
+    Typescript01Icon,
 } from "hugeicons-react";
 
 

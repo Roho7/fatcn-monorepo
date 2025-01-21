@@ -1,12 +1,12 @@
 import {
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  cn,
-  Input,
-} from "@fatcn/ui";
+    Button,
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+    cn,
+    Input,
+} from "fatcn-ui";
 import { SentIcon } from "hugeicons-react";
 import ChatBubble, { SenderDetails } from "./chatbubble";
 
