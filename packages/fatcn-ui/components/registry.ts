@@ -207,13 +207,13 @@ export const ui: Registry[] = [
 		]
 	},
 	{
-		name: 'command',
+		name: 'command-box',
 		type: 'registry:ui',
 		dependencies: ['cmdk@1.0.0'],
 		registryDependencies: ['dialog'],
 		files: [
 			{
-				path: 'components/command.tsx',
+				path: 'components/command-box.tsx',
 				type: 'registry:ui'
 			}
 		]
