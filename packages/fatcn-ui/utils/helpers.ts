@@ -12,6 +12,8 @@ const BASE_DEPENDENCIES = [
   "clsx",
   "hugeicons-react",
   "next-themes",
+  "tailwind-merge",
+  "tailwindcss-animate",
 ]
 
 export async function ensureComponentsDir(): Promise<string> {
