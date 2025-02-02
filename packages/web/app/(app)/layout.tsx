@@ -1,16 +1,30 @@
 "use client";
 
+import { AuthProvider } from '@/components/auth-provider';
+import { ConvexClientProvider } from "@/convex/convexProvider";
+import { ConvexAuthProvider } from "@convex-dev/auth/react";
+import { ConvexReactClient } from "convex/react";
 import { ToastProvider } from "fatcn-ui";
 import Topbar from "../_components/topbar";
+import { ChatSidebar } from "../build/_components/chatSidebar";
+
+const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL ?? "https://determined-warbler-853.convex.cloud");
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <ToastProvider>
-        <Topbar />
-          <div className="flex-1 relative">{children}</div>
-      </ToastProvider>
-    </div>
+    <AuthProvider>
+      <ConvexClientProvider>
+        <ConvexAuthProvider client={convex}>
+          <ToastProvider>
+            <Topbar />
+            <div className="flex flex-1">
+              <ChatSidebar />
+              <div className="flex-1 relative">{children}</div>
+            </div>
+          </ToastProvider>
+        </ConvexAuthProvider>
+      </ConvexClientProvider>
+    </AuthProvider>
   );
 };
 

@@ -1,10 +1,10 @@
-import { getDocumentationLinks } from '@/lib/docs-registry';
+import { getDocumentationLinks } from '@/lib/docs-helper';
 import {
-    CommandDialog,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
+  CommandDialog,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
 } from 'fatcn-ui';
 import { File01Icon } from 'hugeicons-react';
 import React from 'react';

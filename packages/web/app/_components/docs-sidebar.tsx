@@ -1,5 +1,5 @@
 'use client'
-import { getDocumentationByCategory } from "@/lib/docs-registry";
+import { getDocumentationByCategory } from "@/lib/docs-helper";
 import { Button } from "@fatcn-ui/components/button";
 import { cn } from "@fatcn-ui/lib";
 import { usePathname, useRouter } from "next/navigation";

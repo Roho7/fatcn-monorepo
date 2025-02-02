@@ -2,10 +2,10 @@
 
 import { Button } from "@fatcn-ui/components/button";
 import {
-    Card,
-    CardContent,
-    ToastProvider,
-    TooltipProvider
+  Card,
+  CardContent,
+  ToastProvider,
+  TooltipProvider
 } from "fatcn-ui";
 import { FigmaIcon } from "hugeicons-react";
 import Image from "next/image";
@@ -85,13 +85,13 @@ export default function Page() {
               <h2 className="text-xl font-semibold text-primary-foreground">
                 Quick Themes
               </h2>
-              <p className="text-sm text-primary-foreground/80">
+              <div className="text-sm text-primary-foreground/80">
                 Just change the{" "}
                 <code className="bg-primary-foreground/10 px-2 py-1 rounded">
                   --hue
                 </code>{" "}
                 flag to switch themes.
-              </p>
+              </div>
               <div className="text-xs text-primary-foreground/60 flex items-center gap-2">
                 <Button
                   size="sm"

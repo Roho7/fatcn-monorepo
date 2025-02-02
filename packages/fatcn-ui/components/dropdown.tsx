@@ -7,7 +7,7 @@ import { cn } from '../lib';
 import { Button } from './button';
 
 const dropdownContentVariants = cva(
-  'whitespace-nowrap flex flex-col gap-1 p-2.5 rounded-md text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 w-full',
+  'whitespace-nowrap flex flex-col gap-1 max-h-[300px] overflow-y-auto no-scrollbar p-2.5 rounded-md text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 w-full',
   {
     variants: {
       variant: {

@@ -8,7 +8,7 @@ import {
   TabsTrigger,
 } from '@fatcn-ui';
 import * as React from 'react';
-import { registry } from '../../_registry/registry';
+import { registry } from '../../_registry/examples-registry';
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
