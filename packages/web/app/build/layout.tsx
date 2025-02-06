@@ -2,7 +2,6 @@
 
 import { ConvexClientProvider } from "@/convex/convexProvider"
 import Topbar from "../_components/topbar"
-import { ChatSidebar } from "./_components/chatSidebar"
 
 const BuilderLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,7 +10,7 @@ const BuilderLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="flex flex-col w-full">
         <Topbar />
       <div className="flex flex-1 w-full">
-        <ChatSidebar />
+        {/* <ChatSidebar /> */}
         {children}
       </div>
     </div>
