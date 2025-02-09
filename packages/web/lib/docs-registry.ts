@@ -68,6 +68,12 @@ export const documentationPages: DocumentationPage[] = [
     "category": "overview"
   },
   {
+    "title": "How to Use",
+    "link": "/docs/howtouse",
+    "description": "Interactive input component with various styles and states.",
+    "category": "overview"
+  },
+  {
     "title": "Input",
     "link": "/docs/input",
     "description": "Interactive input component with various styles and states.",

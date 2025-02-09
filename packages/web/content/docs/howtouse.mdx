@@ -1,0 +1,62 @@
+---
+title: 'How to Use'
+description: 'Interactive input component with various styles and states.'
+category: overview
+---
+
+# How to Use `fatcn/ui`
+
+## Introduction
+
+[fatcn/ui](https://ui.fatcn.com) is a set of customizable and unstyled React components built on top of Radix UI primitives. It’s a great choice if you need flexible and accessible components in your Next.js project.
+
+## Installation
+
+First, ensure you have a Next.js project set up. If not, create one using:
+
+```bash
+npx create-next-app@latest my-app --ts --tailwind
+cd my-app
+```
+
+Then, install fatcn:
+
+```bash
+npx fatcn-ui@latest init
+```
+
+Follow the prompts to configure your setup.
+
+## Adding Components
+
+To add a specific component, run:
+
+```bash
+npx fatcn-ui@latest add button
+```
+
+Replace `button` with the component you need.
+
+## Usage Example
+
+Once installed, you can use the component like this:
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export default function Home() {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Button variant="default">Click Me</Button>
+    </div>
+  );
+}
+```
+
+## Alerts Example
+
+<ComponentPreview name="card"/>
+
+## Conclusion
+
+fatcn/ui makes it easy to add high-quality components to your Next.js project. Explore more at [ui.fatcn.com](https://ui.fatcn.com)!
