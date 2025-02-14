@@ -26,16 +26,10 @@ const CopyButton = ({ value, className }: Props) => {
 
   return (
     <Button variant="ghost" size="icon" onClick={copyToClipboard} className={cn(
-      "relative z-10 h-6 w-6",
+      "absolute z-10 h-6 w-6",
       className
     )}>
       {hasCopied ? <CheckmarkCircle01Icon className="h-3 w-3" /> : <Copy01Icon className="h-3 w-3" />}
-      {/* <span className="sr-only">Copy</span> */}
-      {/* {hasCopied && (
-        <div className="absolute -top-10 left-1/2 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs text-primary-foreground">
-          Copied!
-        </div>
-      )} */}
     </Button>
   );
 };

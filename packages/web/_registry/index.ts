@@ -1,2 +1,3 @@
+export * from "./docs-registry";
 export * from "./examples";
-export * from "./registry";
+

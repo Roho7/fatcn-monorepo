@@ -214,7 +214,7 @@ const components = {
               </pre>
               <CopyButton
                 value={__npmCommand__ || ''}
-                className="absolute right-4 top-4"
+                className="right-4 top-4"
               />
             </div>
           </TabsContent>
@@ -261,7 +261,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
     <code
       className={cn(
-        'w-full rounded-lg bg-primary px-2 py-1 font-mono text-sm text-primary-foreground',
+        'w-full bg-primary px-2 py-1 font-mono text-sm text-primary-foreground',
         className
       )}
       {...props}
@@ -379,7 +379,7 @@ const components = {
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn(
-        'flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10',
+        'flex w-full flex-col items-center border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10',
         className
       )}
       {...props}

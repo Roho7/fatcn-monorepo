@@ -8,7 +8,7 @@ import {
   TabsTrigger,
 } from '@fatcn-ui';
 import * as React from 'react';
-import { registry } from '../../_registry/registry';
+import { registry } from '../../_registry/docs-registry';
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
@@ -62,7 +62,7 @@ export function ComponentPreview({
       <Tabs defaultValue="preview" className="relative mr-auto w-full">
         <div className="flex items-center justify-between pb-3">
           {!hideCode && (
-            <TabsList className="w-full justify-start rounded-none border-b border-border bg-transparent p-0">
+            <TabsList className="w-full justify-start border-b border-border bg-transparent p-0">
               <TabsTrigger
                 value="preview"
                 className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent"

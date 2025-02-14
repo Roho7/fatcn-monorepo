@@ -21,8 +21,9 @@ program
   .command('add')
   .description('Add a specific component to your project')
   .argument('<component>', 'name of the component to add')
-  .action(async (component) => {
-    await add(component);
+  .option('-no-css, --no-css', 'Do not add the component\'s CSS file')
+  .action(async (component, options) => {
+    await add(component, options);
   });
 
 program.parse();

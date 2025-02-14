@@ -1,4 +1,3 @@
-
 import fs from "fs"
 import path from "path"
 import { u } from "unist-builder"
@@ -34,7 +33,10 @@ export function rehypeComponent() {
             
             // Read the source file.
             const filePath = src
-            const source = fs.readFileSync(filePath, "utf8")
+            let source = fs.readFileSync(filePath, "utf8")
+
+            // Replace @fatcn-ui with @components
+            source = source.replace(/@fatcn-ui/g, '@components')
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -77,9 +79,12 @@ export function rehypeComponent() {
             // TODO: Add your logic here to determine the source file path
             const src = registry[name as keyof typeof registry].src
             
-            // // Read the source file.
+            // Read the source file.
             const filePath = src
-            const source = fs.readFileSync(filePath, "utf8")
+            let source = fs.readFileSync(filePath, "utf8")
+
+            // Replace @fatcn-ui with @components
+            source = source.replace(/@fatcn-ui/g, '@components')
   
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
