@@ -9,20 +9,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-accent shadow ',
+        default: 'bg-primary text-primary-foreground hover:bg-accent shadow',
         secondary: 'bg-background text-foreground hover:bg-accent shadow border border-border',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow ',
         outline:
           'text-secondary-foreground hover:bg-secondary/90 shadow ring-ring ring-1',
-        ghost: 'text-foreground hover:bg-accent',
-        link: 'text-foreground underline-offset-4 hover:underline',
+        ghost: 'text-foreground hover:bg-accent pixel-no-border',
+        link: 'text-foreground underline-offset-4 hover:underline pixel-no-border',
         gradient:
-          'bg-gradient-complimentary text-complimentary-foreground ring-2 ring-complimentary font-medium transition-[background-position] duration-300 bg-[size:200%_200%] hover:bg-[position:100%_100%] shadow',
+          'bg-gradient-complimentary text-complimentary-foreground ring-2 ring-complimentary font-medium transition-[background-position] delay-50 duration-700 bg-[size:200%_200%] hover:bg-[position:100%_100%] shadow',
       },
       size: {
         xs: 'h-6 min-w-6 rounded-md px-1 text-xs',
-        sm: 'h-10 rounded-md px-2 text-xs',
+        sm: 'h-9 rounded-md px-2 text-xs',
         md: 'h-12 px-3 py-2 rounded-lg',
         lg: 'h-14 rounded-xl px-4',
         icon: 'h-9 w-9 shrink-0',
@@ -46,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className }), 'group-[button]')}
         ref={ref}
         {...props}
       />

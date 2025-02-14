@@ -87,7 +87,7 @@ const Dropdown = ({
           aria-label="Customise options"
         >
           {icon ? icon : null} {children}
-          <div className='group-aria-expanded:rotate-90 transition-transform duration-100'>{rightSlot ? rightSlot : null}</div>
+          {rightSlot ? <div className='group-aria-expanded:rotate-90 transition-transform duration-100'> {rightSlot}</div> : null}
         </Button>
       </DropdownMenu.Trigger>
 

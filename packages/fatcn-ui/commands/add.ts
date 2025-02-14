@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 const PACKAGE_ROOT = path.join(__dirname, '..');
 export const SOURCE_DIR = path.join(PACKAGE_ROOT, 'source');
 
-export default async function add(componentName: string) {
+export default async function add(componentName: string, options: { noCss?: boolean }) {
   try {
     // Check if component exists in registry
     const component = ui.find((c) => c.name === componentName);
@@ -50,7 +50,9 @@ export default async function add(componentName: string) {
     console.log('📂 Copying lib to your project...');
     await copyDirectoryRecursively(sourceLibDir, libDir);
 
-    await setupGlobalsCss('rose');
+    if (!options.noCss) {
+      await setupGlobalsCss('rose');
+    }
 
     await setupTailwindConfig();
 
