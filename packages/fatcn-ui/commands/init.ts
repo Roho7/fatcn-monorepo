@@ -26,7 +26,7 @@ export default async function init() {
 				type: 'list',
 				name: 'theme',
 				message: 'Please select a theme:',
-				choices: [{ name: 'Rose (Default)', value: 'rose' }],
+				choices: [{ name: 'Base (Default)', value: 'base' }, { name: 'Pixel', value: 'pixel' }],
 			},
 		]);
 

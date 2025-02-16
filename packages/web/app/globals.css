@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,14 +11,14 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  /* font-family: 'Rubik', serif; */
-  font-family: 'Pixelify Sans', sans-serif;
+  font-family: 'Rubik', serif;
+  /* font-family: 'Pixelify Sans', sans-serif; */
 }
 
 
 @layer base {
       :root {
-        --hue: 0;
+        --hue: 111;
         
         --background: var(--hue) 100% 100%;
         --foreground: var(--hue) 45% 37%;

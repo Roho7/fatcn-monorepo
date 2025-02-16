@@ -51,6 +51,7 @@ export default function RootLayout({
           <div className="relative flex-1">{children}</div>
           <Footer />
         </ThemeProvider>
+        
       </body>
     </html>
   );

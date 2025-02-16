@@ -8,9 +8,9 @@ type DocumentationPage = {
 
 export const documentationPages: DocumentationPage[] = [
   {
-    "title": "Avatar",
+    "title": "Accordion",
     "link": "/docs/accordion",
-    "description": "Avatar component with various shapes and states.",
+    "description": "Accordion component that is animated creatively.",
     "category": "components"
   },
   {

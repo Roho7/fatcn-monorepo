@@ -65,6 +65,16 @@ const Topbar = ({ className }: Props) => {
             Documentation
           </Button>
         )}
+        {(
+          <Button
+            variant="link"
+            size="sm"
+            className=""
+            onClick={() => router.push('/support')}
+          >
+            Support Us
+          </Button>
+        )}
       </div>
       <div className="flex gap-2">
         <SearchCommandBox
