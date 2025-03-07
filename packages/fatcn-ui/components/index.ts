@@ -14,4 +14,4 @@ export * from './table';
 export * from './tabs';
 export * from './tooltip';
 export * from './use-toast';
-
+export * from './switch'

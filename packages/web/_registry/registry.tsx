@@ -165,5 +165,11 @@ export const registry: Record<string, any> = {
     name: 'Tooltip',
     component: React.lazy(() => import("@/_registry/examples/tooltip/tooltip-example")),
     src: "./_registry/examples/tooltip/tooltip-example.tsx"
+  },
+
+  switch: {
+    name: 'Switch',
+    component: React.lazy(() => import("@/_registry/examples/switch/switch-example")),
+    src: "./_registry/examples/switch/switch-example.tsx"
   }
 }
