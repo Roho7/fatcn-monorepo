@@ -38,19 +38,18 @@ export interface SwitchProps
   asChild?: boolean; // Allows the switch to be rendered as a different element
 }
 
-const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ className, variant, size, state, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? 'div' : RadixSwitch;
-
-    return (
-      <Comp
-        className={cn(switchVariants({ variant, size, state, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+const Switch = React.forwardRef<
+  React.ElementRef<typeof RadixSwitch>,
+  SwitchProps
+>(({ className, variant, size, state, asChild = false, ...props }, ref) => {
+  return (
+    <RadixSwitch
+      className={cn(switchVariants({ variant, size, state, className }))}
+      ref={ref}
+      {...props}
+    />
+  );
+});
 Switch.displayName = 'Switch';
 
 export { Switch, switchVariants };
